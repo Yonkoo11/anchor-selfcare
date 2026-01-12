@@ -15,6 +15,8 @@ const PRECACHE_ASSETS = [
   '/about',
   '/manifest.json',
   '/icon.svg',
+  '/icon-192.png',
+  '/icon-512.png',
 ];
 
 // Install event - precache essential assets
