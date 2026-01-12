@@ -1,0 +1,924 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DESIGN SYSTEM - Self-Care Guide
+   A calm, grounded, earthy design for tired humans
+   Supports Light and Dark modes
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BASE STYLES
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  /* Light mode (default) */
+  body {
+    @apply bg-cream text-earth;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Dark mode */
+  .dark body {
+    @apply bg-night-900 text-limestone;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-sage/20 text-bark;
+  }
+
+  .dark ::selection {
+    @apply bg-sage/30 text-parchment;
+  }
+
+  /* Focus ring for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-sage ring-offset-2 ring-offset-cream;
+  }
+
+  .dark *:focus-visible {
+    @apply ring-offset-night-900;
+  }
+
+  /* Smooth transitions for theme switching */
+  html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Smooth scrolling respects user preference */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   TYPOGRAPHY COMPONENTS - Premium Serif + Sans Pairing
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  /* Hero title - Large, emotional, serif */
+  .heading-hero {
+    @apply font-serif text-4xl md:text-5xl font-semibold text-bark tracking-tight;
+  }
+  .dark .heading-hero {
+    @apply text-parchment;
+  }
+
+  /* Page titles - Serif for warmth */
+  .heading-page {
+    @apply font-serif text-3xl font-semibold text-bark tracking-tight;
+  }
+  .dark .heading-page {
+    @apply text-parchment;
+  }
+
+  /* Section headings - Serif for emotional connection */
+  .heading-section {
+    @apply font-serif text-2xl font-semibold text-bark;
+  }
+  .dark .heading-section {
+    @apply text-parchment;
+  }
+
+  /* Subsection headings */
+  .heading-sub {
+    @apply text-xl font-medium text-bark;
+  }
+  .dark .heading-sub {
+    @apply text-parchment;
+  }
+
+  /* Body text */
+  .prose-body {
+    @apply text-base text-earth leading-relaxed;
+  }
+  .dark .prose-body {
+    @apply text-limestone;
+  }
+
+  /* Lead text - Slightly larger for hero descriptions */
+  .prose-lead {
+    @apply text-lg text-clay leading-relaxed;
+  }
+  .dark .prose-lead {
+    @apply text-ash;
+  }
+
+  /* Secondary text */
+  .prose-muted {
+    @apply text-clay;
+  }
+  .dark .prose-muted {
+    @apply text-ash;
+  }
+
+  /* Hint text */
+  .prose-hint {
+    @apply text-sm text-dust italic;
+  }
+  .dark .prose-hint {
+    @apply text-coal;
+  }
+
+  /* Labels */
+  .label {
+    @apply text-xs font-medium uppercase tracking-wider text-clay;
+  }
+  .dark .label {
+    @apply text-ash;
+  }
+
+  /* Accent label - with terracotta */
+  .label-accent {
+    @apply text-xs font-medium uppercase tracking-wider text-terracotta;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CARD COMPONENTS - Premium Hierarchy System
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  /* Base card */
+  .card {
+    @apply bg-sand rounded-xl border border-stone-100;
+  }
+  .dark .card {
+    @apply bg-night-800 border-night-600;
+  }
+
+  /* Elevated card */
+  .card-elevated {
+    @apply bg-sand rounded-xl shadow-soft border-0;
+    @apply transition-all duration-normal ease-out;
+  }
+  .dark .card-elevated {
+    @apply bg-night-800 shadow-soft-dark;
+  }
+
+  .card-elevated:hover {
+    @apply shadow-medium -translate-y-0.5;
+  }
+  .dark .card-elevated:hover {
+    @apply shadow-medium-dark;
+  }
+
+  /* Interactive card */
+  .card-interactive {
+    @apply card-elevated cursor-pointer;
+  }
+
+  /* Featured card */
+  .card-featured {
+    @apply bg-gradient-to-br from-sand to-stone-100 rounded-xl shadow-medium;
+    @apply border border-stone-100/50;
+  }
+  .dark .card-featured {
+    @apply from-night-800 to-night-700 shadow-medium-dark border-night-600/50;
+  }
+
+  /* ═══════════════════════════════════════════════════════════════════════════
+     PREMIUM CARD VARIANTS - World-Class Design
+     ═══════════════════════════════════════════════════════════════════════════ */
+
+  /* Glass card - Frosted glassmorphism effect */
+  .card-glass {
+    @apply rounded-2xl;
+    @apply transition-all duration-normal ease-out;
+    background: rgba(245, 242, 237, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .dark .card-glass {
+    background: rgba(42, 40, 37, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .card-glass:hover {
+    background: rgba(245, 242, 237, 0.8);
+    @apply shadow-medium -translate-y-0.5;
+  }
+  .dark .card-glass:hover {
+    background: rgba(42, 40, 37, 0.8);
+    @apply shadow-medium-dark;
+  }
+
+  /* Premium card - Gradient background with elevated shadow */
+  .card-premium {
+    @apply rounded-2xl shadow-elevated;
+    @apply transition-all duration-normal ease-out;
+    background: linear-gradient(135deg, theme('colors.sand') 0%, theme('colors.stone.100') 100%);
+    border: 1px solid rgba(232, 228, 222, 0.5);
+  }
+  .dark .card-premium {
+    background: linear-gradient(135deg, theme('colors.night.800') 0%, theme('colors.night.700') 100%);
+    border: 1px solid rgba(69, 65, 61, 0.5);
+    @apply shadow-elevated-dark;
+  }
+  .card-premium:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 8px 30px rgba(45, 42, 38, 0.12), 0 16px 40px rgba(45, 42, 38, 0.08);
+  }
+  .dark .card-premium:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 16px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Accent card - Left border highlight with terracotta */
+  .card-accent {
+    @apply bg-sand rounded-2xl shadow-medium;
+    @apply transition-all duration-normal ease-out;
+    border-left: 4px solid theme('colors.terracotta');
+  }
+  .dark .card-accent {
+    @apply bg-night-800 shadow-medium-dark;
+  }
+  .card-accent:hover {
+    @apply shadow-elevated -translate-y-0.5;
+  }
+  .dark .card-accent:hover {
+    @apply shadow-elevated-dark;
+  }
+
+  /* Glow card - Subtle sage glow on hover */
+  .card-glow {
+    @apply bg-sand rounded-2xl shadow-soft;
+    @apply transition-all duration-slow ease-out;
+    border: 1px solid transparent;
+  }
+  .dark .card-glow {
+    @apply bg-night-800 shadow-soft-dark;
+  }
+  .card-glow:hover {
+    @apply shadow-glow-sage -translate-y-0.5;
+    border-color: rgba(125, 139, 122, 0.2);
+  }
+  .dark .card-glow:hover {
+    @apply shadow-glow-sage-dark;
+    border-color: rgba(125, 139, 122, 0.3);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BUTTON COMPONENTS
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-5 py-2.5 rounded-lg font-medium text-sm;
+    @apply transition-all duration-fast ease-out;
+    @apply focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-sage text-cream shadow-soft;
+    @apply hover:bg-sage-dark hover:shadow-medium hover:-translate-y-0.5;
+    @apply active:translate-y-0 active:shadow-soft;
+  }
+  .dark .btn-primary {
+    @apply shadow-soft-dark hover:shadow-medium-dark;
+  }
+
+  .btn-secondary {
+    @apply btn bg-transparent border border-stone-200 text-earth;
+    @apply hover:bg-sand hover:border-stone-300;
+    @apply active:bg-stone-100;
+  }
+  .dark .btn-secondary {
+    @apply border-night-500 text-limestone;
+    @apply hover:bg-night-700 hover:border-night-400;
+    @apply active:bg-night-600;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-sage;
+    @apply hover:bg-sage-muted;
+    @apply active:bg-sage/20;
+  }
+  .dark .btn-ghost {
+    @apply hover:bg-sage-muted-dark;
+  }
+
+  /* Accent button - Terracotta for CTAs */
+  .btn-accent {
+    @apply btn bg-terracotta text-cream shadow-soft;
+    @apply hover:shadow-medium hover:-translate-y-0.5;
+    @apply active:translate-y-0 active:shadow-soft;
+  }
+  .dark .btn-accent {
+    @apply shadow-soft-dark hover:shadow-medium-dark;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   FLOATING DECORATIONS - Ambient Layer
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  .floating-orb {
+    @apply absolute rounded-full pointer-events-none;
+    filter: blur(60px);
+  }
+
+  .floating-orb-sage {
+    @apply floating-orb bg-sage;
+    opacity: 0.06;
+  }
+  .dark .floating-orb-sage {
+    opacity: 0.08;
+  }
+
+  .floating-orb-terracotta {
+    @apply floating-orb bg-terracotta;
+    opacity: 0.04;
+  }
+  .dark .floating-orb-terracotta {
+    opacity: 0.06;
+  }
+
+  /* Animation delay utilities */
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+  .animation-delay-3000 {
+    animation-delay: 3000ms;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4000ms;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   TEXTURE & PATTERN UTILITIES
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  .texture-paper {
+    position: relative;
+  }
+
+  .texture-paper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  .dark .texture-paper::before {
+    opacity: 0.04;
+  }
+
+  .gradient-fade-down {
+    background: linear-gradient(180deg, transparent 0%, theme('colors.cream') 100%);
+  }
+  .dark .gradient-fade-down {
+    background: linear-gradient(180deg, transparent 0%, theme('colors.night.900') 100%);
+  }
+
+  .gradient-fade-up {
+    background: linear-gradient(0deg, transparent 0%, theme('colors.cream') 100%);
+  }
+  .dark .gradient-fade-up {
+    background: linear-gradient(0deg, transparent 0%, theme('colors.night.900') 100%);
+  }
+
+  .gradient-sage {
+    background: linear-gradient(135deg, theme('colors.sage.DEFAULT') 0%, theme('colors.moss') 100%);
+  }
+
+  .gradient-warm {
+    background: linear-gradient(135deg, theme('colors.sand') 0%, theme('colors.stone.100') 100%);
+  }
+  .dark .gradient-warm {
+    background: linear-gradient(135deg, theme('colors.night.800') 0%, theme('colors.night.700') 100%);
+  }
+
+  .glow-sage {
+    box-shadow: 0 0 40px -10px theme('colors.sage.DEFAULT');
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ANIMATION UTILITIES
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  .stagger-children > * {
+    animation: fade-up 400ms ease-out backwards;
+  }
+
+  .stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+  .stagger-children > *:nth-child(2) { animation-delay: 50ms; }
+  .stagger-children > *:nth-child(3) { animation-delay: 100ms; }
+  .stagger-children > *:nth-child(4) { animation-delay: 150ms; }
+  .stagger-children > *:nth-child(5) { animation-delay: 200ms; }
+  .stagger-children > *:nth-child(6) { animation-delay: 250ms; }
+  .stagger-children > *:nth-child(7) { animation-delay: 300ms; }
+  .stagger-children > *:nth-child(8) { animation-delay: 350ms; }
+
+  .hover-lift {
+    @apply transition-all duration-normal ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-medium;
+  }
+  .dark .hover-lift:hover {
+    @apply shadow-medium-dark;
+  }
+
+  .pulse-gentle {
+    animation: breathe 4s ease-in-out infinite;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   DIVIDER COMPONENTS
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  .divider {
+    @apply h-px bg-stone-100 my-8;
+  }
+  .dark .divider {
+    @apply bg-night-600;
+  }
+
+  .divider-lg {
+    @apply h-px bg-stone-100 my-12;
+  }
+  .dark .divider-lg {
+    @apply bg-night-600;
+  }
+
+  .divider-dot {
+    @apply flex items-center gap-4 my-10;
+  }
+
+  .divider-dot::before,
+  .divider-dot::after {
+    content: '';
+    @apply flex-1 h-px bg-stone-100;
+  }
+  .dark .divider-dot::before,
+  .dark .divider-dot::after {
+    @apply bg-night-600;
+  }
+
+  .divider-dot::before {
+    @apply bg-gradient-to-r from-transparent to-stone-100;
+  }
+  .dark .divider-dot::before {
+    @apply bg-gradient-to-r from-transparent to-night-600;
+  }
+
+  .divider-dot::after {
+    @apply bg-gradient-to-l from-transparent to-stone-100;
+  }
+  .dark .divider-dot::after {
+    @apply bg-gradient-to-l from-transparent to-night-600;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   COLLAPSIBLE ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  .collapse-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 400ms ease-out;
+  }
+
+  .collapse-content[data-open="true"] {
+    grid-template-rows: 1fr;
+  }
+
+  .collapse-content > div {
+    overflow: hidden;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ICON STYLES
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  .icon {
+    @apply w-5 h-5 text-clay;
+  }
+  .dark .icon {
+    @apply text-ash;
+  }
+
+  .icon-sm {
+    @apply w-4 h-4;
+  }
+
+  .icon-lg {
+    @apply w-6 h-6;
+  }
+
+  .icon-sage {
+    @apply text-sage;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SCROLLBAR STYLING
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-stone-200 rounded-full;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-night-600;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-stone-300;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-night-500;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.stone.200') transparent;
+  }
+  .dark * {
+    scrollbar-color: theme('colors.night.600') transparent;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   LOADING STATES
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  .skeleton {
+    @apply bg-stone-100 rounded animate-pulse;
+  }
+  .dark .skeleton {
+    @apply bg-night-700;
+  }
+
+  .skeleton-text {
+    @apply skeleton h-4 w-full;
+  }
+
+  .skeleton-heading {
+    @apply skeleton h-8 w-2/3;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PAGE TRANSITION
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  .page-enter {
+    @apply animate-fade-up;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   NEXT-LEVEL MICRO-INTERACTIONS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Button press effect */
+.btn-press {
+  @apply transition-transform duration-100;
+}
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+/* Card interactive hover with lift and glow */
+.card-interactive {
+  @apply transition-all duration-300 ease-out;
+}
+.card-interactive:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 20px 40px -10px rgba(125, 139, 122, 0.15),
+    0 10px 20px -5px rgba(125, 139, 122, 0.1);
+}
+.dark .card-interactive:hover {
+  box-shadow:
+    0 20px 40px -10px rgba(125, 139, 122, 0.25),
+    0 10px 20px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Card shine effect on hover */
+.card-shine {
+  @apply relative overflow-hidden;
+}
+.card-shine::before {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.2) 45%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.2) 55%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+}
+.card-shine:hover::before {
+  @apply opacity-100;
+  animation: shine-sweep 0.6s ease-out forwards;
+}
+
+@keyframes shine-sweep {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Icon bounce on hover */
+.icon-bounce {
+  @apply transition-transform duration-300;
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.group:hover .icon-bounce,
+.icon-bounce:hover {
+  transform: scale(1.1) translateY(-2px);
+}
+
+/* Springy chevron rotation */
+.chevron-spring {
+  @apply transition-transform duration-500;
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Scroll reveal stagger animation */
+.reveal-stagger > * {
+  @apply opacity-0 transition-all duration-500 ease-out;
+  transform: translateY(20px);
+}
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: calc(var(--stagger-delay, 80ms) * 0); opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: calc(var(--stagger-delay, 80ms) * 1); opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: calc(var(--stagger-delay, 80ms) * 2); opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: calc(var(--stagger-delay, 80ms) * 3); opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: calc(var(--stagger-delay, 80ms) * 4); opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: calc(var(--stagger-delay, 80ms) * 5); opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(7) { transition-delay: calc(var(--stagger-delay, 80ms) * 6); opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(8) { transition-delay: calc(var(--stagger-delay, 80ms) * 7); opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(9) { transition-delay: calc(var(--stagger-delay, 80ms) * 8); opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(10) { transition-delay: calc(var(--stagger-delay, 80ms) * 9); opacity: 1; transform: none; }
+
+/* Animated gradient background */
+.gradient-animate {
+  background: linear-gradient(
+    -45deg,
+    rgba(250, 248, 245, 1),
+    rgba(245, 242, 237, 1),
+    rgba(232, 228, 222, 1),
+    rgba(125, 139, 122, 0.1),
+    rgba(245, 242, 237, 1)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 20s ease infinite;
+}
+.dark .gradient-animate {
+  background: linear-gradient(
+    -45deg,
+    rgba(33, 31, 29, 1),
+    rgba(45, 42, 39, 1),
+    rgba(33, 31, 29, 1),
+    rgba(125, 139, 122, 0.15),
+    rgba(45, 42, 39, 1)
+  );
+  background-size: 400% 400%;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Breathing glow effect */
+.glow-breathe {
+  animation: glow-breathe 4s ease-in-out infinite;
+}
+
+@keyframes glow-breathe {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(125, 139, 122, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(125, 139, 122, 0.4);
+  }
+}
+
+/* Ripple effect for breathing timer */
+.ripple {
+  @apply absolute rounded-full;
+  animation: ripple-expand 1s ease-out forwards;
+}
+
+@keyframes ripple-expand {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Ripple out animation for breathing timer */
+.animate-ripple-out {
+  animation: ripple-out 1s ease-out forwards;
+}
+
+@keyframes ripple-out {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Number flip animation */
+.number-flip {
+  @apply inline-block;
+  animation: number-flip 0.3s ease-out;
+}
+
+@keyframes number-flip {
+  0% {
+    transform: translateY(-10px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Skeleton shimmer animation */
+.skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+.dark .skeleton-shimmer::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Magnetic hover effect helper */
+.magnetic {
+  @apply transition-transform duration-200 ease-out;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   THEME TRANSITION
+   Smooth transition when switching themes
+   ───────────────────────────────────────────────────────────────────────────── */
+@layer base {
+  html.transitioning,
+  html.transitioning *,
+  html.transitioning *::before,
+  html.transitioning *::after {
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.3s ease, fill 0.3s ease, stroke 0.3s ease !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PRINT STYLES
+   Clean output for printing the quick reference page
+   ───────────────────────────────────────────────────────────────────────────── */
+@media print {
+  /* Hide navigation and decorative elements */
+  nav,
+  .floating-orb-sage,
+  .floating-orb-terracotta,
+  .gradient-fade-up,
+  footer,
+  button {
+    display: none !important;
+  }
+
+  /* Reset background for printing */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Ensure cards print well */
+  .card-glass {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Optimize text colors for print */
+  .text-sage,
+  .text-terracotta,
+  .text-clay,
+  .text-bark,
+  .text-dust {
+    color: #333 !important;
+  }
+
+  /* Page breaks */
+  section {
+    page-break-inside: avoid;
+  }
+
+  h2 {
+    page-break-after: avoid;
+  }
+
+  /* Remove max-width for full page print */
+  main {
+    max-width: none !important;
+    padding: 20px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ACCESSIBILITY - Reduced Motion
+   Respects user preference for reduced animations
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-float,
+  .animate-float-slow,
+  .animate-glow-pulse,
+  .animate-fade-up,
+  .animate-fade-up-lg,
+  .floating-orb-sage,
+  .floating-orb-terracotta {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

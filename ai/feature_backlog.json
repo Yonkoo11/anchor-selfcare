@@ -1,0 +1,112 @@
+{
+  "project": "selfcare-guide",
+  "description": "A calm, grounded self-care guide web application",
+  "features": [
+    {
+      "id": "F001",
+      "name": "Homepage with navigation",
+      "status": "completed",
+      "priority": "high",
+      "notes": "Hero section, navigation cards, random suggestion"
+    },
+    {
+      "id": "F002",
+      "name": "Daily Baseline page",
+      "status": "completed",
+      "priority": "high",
+      "notes": "Non-negotiable self-care tasks"
+    },
+    {
+      "id": "F003",
+      "name": "When You Feel Off page",
+      "status": "completed",
+      "priority": "high",
+      "notes": "Troubleshooting guide for specific issues"
+    },
+    {
+      "id": "F004",
+      "name": "Mind & Calm page",
+      "status": "completed",
+      "priority": "high",
+      "notes": "Mental wellness section with breathing exercises"
+    },
+    {
+      "id": "F005",
+      "name": "Movement & Posture page",
+      "status": "completed",
+      "priority": "high",
+      "notes": "Physical movement guide"
+    },
+    {
+      "id": "F006",
+      "name": "Breathing Timer component",
+      "status": "completed",
+      "priority": "high",
+      "notes": "Interactive timer with multiple patterns, audio cues, Web Audio API"
+    },
+    {
+      "id": "F007",
+      "name": "Light/Dark theme toggle",
+      "status": "completed",
+      "priority": "medium",
+      "notes": "Warm firelight dark mode, localStorage persistence"
+    },
+    {
+      "id": "F008",
+      "name": "Scroll reveal animations",
+      "status": "completed",
+      "priority": "medium",
+      "notes": "ScrollReveal, TextReveal, TextFadeIn components"
+    },
+    {
+      "id": "F009",
+      "name": "Random suggestion feature",
+      "status": "completed",
+      "priority": "low",
+      "notes": "Displays random wellness suggestions"
+    },
+    {
+      "id": "F010",
+      "name": "Quick Reference page",
+      "status": "completed",
+      "priority": "medium",
+      "notes": "Quick reference for common needs"
+    },
+    {
+      "id": "F011",
+      "name": "About page",
+      "status": "completed",
+      "priority": "low",
+      "notes": "Project information"
+    },
+    {
+      "id": "F012",
+      "name": "PWA support",
+      "status": "pending",
+      "priority": "medium",
+      "notes": "Enable offline use, installable app"
+    },
+    {
+      "id": "F013",
+      "name": "Additional breathing patterns",
+      "status": "pending",
+      "priority": "low",
+      "notes": "More breathing exercise variations"
+    },
+    {
+      "id": "F014",
+      "name": "Guided meditation audio",
+      "status": "pending",
+      "priority": "low",
+      "notes": "Optional audio guidance for exercises"
+    },
+    {
+      "id": "F015",
+      "name": "Test coverage",
+      "status": "pending",
+      "priority": "medium",
+      "notes": "Unit and integration tests"
+    }
+  ],
+  "statusOptions": ["pending", "in_progress", "blocked", "completed", "deferred"]
+}
