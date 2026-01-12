@@ -2,6 +2,14 @@
 
 ## Key Decisions
 
+### Strategic Direction (Jan 12, 2025)
+- **Business Model**: Ethical Freemium (Proton/Signal model for wellness)
+- **Target Market**: "Wellness refugees" - people burned out by traditional wellness apps
+- **Positioning**: "The anti-wellness app" - serves survival, not optimization
+- **Revenue Path**: Free public launch → Premium tier (local-only features) → B2B
+- **Core Values**: Privacy first, no tracking, no shame, one thing is enough
+- **See**: `PRODUCT_PRINCIPLES.md` for decision framework
+
 ### Design Philosophy
 - **Core principle**: "Every visual choice should make a tired, confused person feel calmer"
 - **Aesthetic**: Grounded & earthy - like a quiet forest cabin
@@ -39,6 +47,7 @@
 - `ScrollReveal.tsx` & `TextReveal.tsx` - Animation components
 - `RandomSuggestion.tsx` - Random wellness suggestions
 - `Collapsible.tsx` - Expandable content sections
+- `FeedbackForm.tsx` - Anonymous feedback via mailto (no data stored)
 
 ### Pages
 1. `/` - Homepage with hero + navigation cards
@@ -81,5 +90,12 @@
 ### What Could Improve
 - Mockups directory unused - could generate visual previews
 - No test coverage currently
-- Could add more breathing patterns to timer
-- Consider adding PWA support for offline use
+- Could add more breathing patterns to timer (Phase 2 premium feature)
+- PNG icons needed for better PWA compatibility (currently using SVG)
+
+### Recently Added (Jan 12, 2025)
+- PWA support with service worker (`public/sw.js`)
+- SEO optimization (sitemap.ts, robots.ts)
+- Anonymous feedback form on About page
+- Product principles documentation (`PRODUCT_PRINCIPLES.md`)
+- Git repository initialized

@@ -1,12 +1,15 @@
 {
   "project": "selfcare-guide",
-  "description": "A calm, grounded self-care guide web application",
+  "description": "A calm, grounded self-care guide - the anti-wellness app for wellness refugees",
+  "businessModel": "Ethical Freemium",
+  "currentPhase": "Phase 1 - Free Public Launch",
   "features": [
     {
       "id": "F001",
       "name": "Homepage with navigation",
       "status": "completed",
       "priority": "high",
+      "phase": "v1.0",
       "notes": "Hero section, navigation cards, random suggestion"
     },
     {
@@ -14,6 +17,7 @@
       "name": "Daily Baseline page",
       "status": "completed",
       "priority": "high",
+      "phase": "v1.0",
       "notes": "Non-negotiable self-care tasks"
     },
     {
@@ -21,6 +25,7 @@
       "name": "When You Feel Off page",
       "status": "completed",
       "priority": "high",
+      "phase": "v1.0",
       "notes": "Troubleshooting guide for specific issues"
     },
     {
@@ -28,6 +33,7 @@
       "name": "Mind & Calm page",
       "status": "completed",
       "priority": "high",
+      "phase": "v1.0",
       "notes": "Mental wellness section with breathing exercises"
     },
     {
@@ -35,6 +41,7 @@
       "name": "Movement & Posture page",
       "status": "completed",
       "priority": "high",
+      "phase": "v1.0",
       "notes": "Physical movement guide"
     },
     {
@@ -42,6 +49,7 @@
       "name": "Breathing Timer component",
       "status": "completed",
       "priority": "high",
+      "phase": "v1.0",
       "notes": "Interactive timer with multiple patterns, audio cues, Web Audio API"
     },
     {
@@ -49,6 +57,7 @@
       "name": "Light/Dark theme toggle",
       "status": "completed",
       "priority": "medium",
+      "phase": "v1.0",
       "notes": "Warm firelight dark mode, localStorage persistence"
     },
     {
@@ -56,6 +65,7 @@
       "name": "Scroll reveal animations",
       "status": "completed",
       "priority": "medium",
+      "phase": "v1.0",
       "notes": "ScrollReveal, TextReveal, TextFadeIn components"
     },
     {
@@ -63,6 +73,7 @@
       "name": "Random suggestion feature",
       "status": "completed",
       "priority": "low",
+      "phase": "v1.0",
       "notes": "Displays random wellness suggestions"
     },
     {
@@ -70,43 +81,143 @@
       "name": "Quick Reference page",
       "status": "completed",
       "priority": "medium",
+      "phase": "v1.0",
       "notes": "Quick reference for common needs"
     },
     {
       "id": "F011",
-      "name": "About page",
+      "name": "About page with feedback",
       "status": "completed",
       "priority": "low",
-      "notes": "Project information"
+      "phase": "v1.0",
+      "notes": "Project information + anonymous feedback form"
     },
     {
       "id": "F012",
       "name": "PWA support",
-      "status": "pending",
-      "priority": "medium",
-      "notes": "Enable offline use, installable app"
+      "status": "completed",
+      "priority": "high",
+      "phase": "Phase 1",
+      "notes": "Service worker for offline, manifest for install"
     },
     {
       "id": "F013",
-      "name": "Additional breathing patterns",
-      "status": "pending",
-      "priority": "low",
-      "notes": "More breathing exercise variations"
+      "name": "SEO optimization",
+      "status": "completed",
+      "priority": "high",
+      "phase": "Phase 1",
+      "notes": "sitemap.ts, robots.ts, meta tags"
     },
     {
       "id": "F014",
-      "name": "Guided meditation audio",
-      "status": "pending",
-      "priority": "low",
-      "notes": "Optional audio guidance for exercises"
+      "name": "Anonymous feedback mechanism",
+      "status": "completed",
+      "priority": "medium",
+      "phase": "Phase 1",
+      "notes": "FeedbackForm component using mailto (no data stored)"
     },
     {
       "id": "F015",
+      "name": "Product principles documentation",
+      "status": "completed",
+      "priority": "high",
+      "phase": "Phase 1",
+      "notes": "PRODUCT_PRINCIPLES.md with decision framework"
+    },
+    {
+      "id": "F016",
+      "name": "PNG icons for PWA",
+      "status": "pending",
+      "priority": "medium",
+      "phase": "Phase 1",
+      "notes": "Generate 192x192 and 512x512 PNG icons from SVG"
+    },
+    {
+      "id": "F017",
+      "name": "Privacy-respecting analytics",
+      "status": "pending",
+      "priority": "medium",
+      "phase": "Phase 1",
+      "notes": "Add Plausible or similar (no cookies, GDPR compliant)"
+    },
+    {
+      "id": "F018",
+      "name": "Product Hunt / Launch prep",
+      "status": "pending",
+      "priority": "high",
+      "phase": "Phase 1",
+      "notes": "Prepare assets and copy for public launch"
+    },
+    {
+      "id": "F019",
+      "name": "Local-only habit tracking",
+      "status": "pending",
+      "priority": "high",
+      "phase": "Phase 2 (Premium)",
+      "notes": "Optional checkboxes stored in localStorage only"
+    },
+    {
+      "id": "F020",
+      "name": "Custom breathing patterns",
+      "status": "pending",
+      "priority": "medium",
+      "phase": "Phase 2 (Premium)",
+      "notes": "Create and save custom patterns (localStorage)"
+    },
+    {
+      "id": "F021",
+      "name": "Printable PDF guides",
+      "status": "pending",
+      "priority": "medium",
+      "phase": "Phase 2 (Premium)",
+      "notes": "Beautiful offline-friendly PDF exports"
+    },
+    {
+      "id": "F022",
+      "name": "Stripe payment integration",
+      "status": "pending",
+      "priority": "high",
+      "phase": "Phase 2 (Premium)",
+      "notes": "$3-5/mo, $30/yr, $50-75 lifetime options"
+    },
+    {
+      "id": "F023",
+      "name": "Accessibility pack",
+      "status": "pending",
+      "priority": "low",
+      "phase": "Phase 2 (Premium)",
+      "notes": "Dyslexia fonts, high contrast, enhanced screen reader"
+    },
+    {
+      "id": "F024",
+      "name": "Internationalization",
+      "status": "pending",
+      "priority": "medium",
+      "phase": "Phase 3 (Scale)",
+      "notes": "Translation framework for multiple languages"
+    },
+    {
+      "id": "F025",
+      "name": "React Native mobile app",
+      "status": "pending",
+      "priority": "low",
+      "phase": "Phase 3 (Scale)",
+      "notes": "Native app using existing component logic"
+    },
+    {
+      "id": "F026",
       "name": "Test coverage",
       "status": "pending",
       "priority": "medium",
+      "phase": "Ongoing",
       "notes": "Unit and integration tests"
     }
   ],
-  "statusOptions": ["pending", "in_progress", "blocked", "completed", "deferred"]
+  "statusOptions": ["pending", "in_progress", "blocked", "completed", "deferred"],
+  "phases": {
+    "v1.0": "Initial app build (completed Jan 10, 2025)",
+    "Phase 1": "Free Public Launch - Build trust, validate demand",
+    "Phase 2 (Premium)": "Ethical Freemium - Local-only premium features",
+    "Phase 3 (Scale)": "Scale & Diversify - i18n, mobile, B2B"
+  }
 }

@@ -90,6 +90,17 @@ const themeScript = `
   })();
 `;
 
+// Service Worker registration for PWA offline support
+const swScript = `
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js').catch(function(err) {
+        console.log('SW registration failed:', err);
+      });
+    });
+  }
+`;
+
 export default function RootLayout({
   children,
 }: {
@@ -100,6 +111,8 @@ export default function RootLayout({
       <head>
         {/* Prevent flash of wrong theme */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {/* Register service worker for offline support */}
+        <script dangerouslySetInnerHTML={{ __html: swScript }} />
         {/* Preload fonts for better performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
