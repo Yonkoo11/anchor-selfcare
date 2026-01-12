@@ -6,21 +6,17 @@ import { RandomSuggestion, ScrollReveal, TextReveal, TextFadeIn } from '@/compon
 export default function Home() {
   return (
     <div className="space-y-16">
-      {/* Hero Section - Premium Impact with Animated Gradient */}
+      {/* Hero Section - V1 Earthy Cabin Style */}
       <header className="relative pt-8 pb-4">
-        {/* Ambient gradient background */}
-        <div className="absolute inset-0 -z-10 gradient-animate opacity-30 rounded-3xl blur-3xl" />
-
-        {/* Decorative icon with glow */}
+        {/* Decorative icon - clean, grounded */}
         <ScrollReveal direction="none" delay={0}>
           <div className="
-            w-16 h-16 mb-6
+            w-14 h-14 mb-6
             flex items-center justify-center
-            rounded-2xl
-            bg-gradient-to-br from-sage-muted to-sage/20
-            dark:from-sage-muted-dark dark:to-sage/10
+            rounded-xl
+            bg-sage-muted dark:bg-sage-muted-dark
+            border border-sage/10 dark:border-sage/5
             text-sage
-            animate-glow-pulse
           ">
             <WelcomeIcon />
           </div>
@@ -107,12 +103,16 @@ export default function Home() {
         </section>
       </ScrollReveal>
 
-      {/* What This Is Not - Glass Card */}
+      {/* What This Is Not - V1 Paper Style */}
       <ScrollReveal delay={100}>
         <section>
           <h2 className="heading-section mb-5">What This Is Not</h2>
 
-          <div className="card-glass card-shine p-6 dark:bg-night-800/60">
+          <div className="
+            bg-cream dark:bg-night-800
+            border border-stone-200/50 dark:border-night-600/50
+            rounded-lg p-6
+          ">
             <ul className="space-y-3">
               {[
                 'Not a wellness app',
@@ -121,7 +121,7 @@ export default function Home() {
                 'Not tracking anything about you',
               ].map((item, index) => (
                 <li key={index} className="flex items-center gap-3 text-clay dark:text-ash">
-                  <span className="w-1.5 h-1.5 rounded-full bg-sage/50" />
+                  <span className="text-terracotta/60">—</span>
                   {item}
                 </li>
               ))}
@@ -130,11 +130,14 @@ export default function Home() {
         </section>
       </ScrollReveal>
 
-      {/* Closing Statement */}
+      {/* Closing Statement - V1 Clean Footer */}
       <ScrollReveal delay={200}>
         <footer className="text-center pb-8">
-          <div className="divider-dot mb-8">
-            <LeafIcon className="w-4 h-4 text-sage/40" />
+          {/* Simple divider line */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-px w-12 bg-stone-200 dark:bg-night-600" />
+            <span className="text-sage/40 text-xs">*</span>
+            <div className="h-px w-12 bg-stone-200 dark:bg-night-600" />
           </div>
           <TextFadeIn delay={100}>
             <p className="font-serif text-lg text-dust dark:text-coal italic">
@@ -168,14 +171,25 @@ function GuideCard({
 }) {
   const cardClasses = {
     featured: `
-      card-accent p-6 card-interactive card-shine
-      dark:border-l-terracotta
+      bg-cream dark:bg-night-800
+      border-l-[3px] border-l-sage
+      rounded-lg p-6
+      shadow-sm hover:shadow-md
+      transition-shadow duration-200
     `,
     glass: `
-      card-glass p-5 card-interactive card-shine
+      bg-cream/80 dark:bg-night-800/60
+      border border-stone-200/50 dark:border-night-600/50
+      rounded-lg p-5
+      hover:bg-cream dark:hover:bg-night-800
+      transition-colors duration-200
     `,
     standard: `
-      card-elevated p-5 card-interactive card-shine
+      bg-cream dark:bg-night-800
+      border border-stone-200 dark:border-night-600
+      rounded-lg p-5
+      shadow-sm hover:shadow-md
+      transition-shadow duration-200
     `,
   }
 
@@ -189,32 +203,29 @@ function GuideCard({
         ${cardClasses[variant]}
       `}
     >
-      {/* Badge for featured */}
+      {/* Badge for featured - subtle pill */}
       {badge && (
         <span className="
           absolute -top-2 left-6
-          px-3 py-1
-          text-xs font-medium
-          bg-terracotta text-cream
+          px-2 py-0.5
+          text-[10px] font-medium uppercase tracking-wider
+          bg-sage/10 text-sage
+          border border-sage/20
           rounded-full
-          shadow-soft
         ">
           {badge}
         </span>
       )}
 
-      {/* Icon */}
+      {/* Icon - clean, grounded */}
       <span className={`
         flex-shrink-0
-        ${variant === 'featured' ? 'w-14 h-14' : 'w-12 h-12'}
+        ${variant === 'featured' ? 'w-12 h-12' : 'w-10 h-10'}
         flex items-center justify-center
-        rounded-xl
-        ${variant === 'featured'
-          ? 'bg-gradient-to-br from-sage-muted to-sage/20 dark:from-sage-muted-dark dark:to-sage/10'
-          : 'bg-sage-muted dark:bg-sage-muted-dark'
-        }
+        rounded-lg
+        bg-sage-muted dark:bg-sage-muted-dark
         text-sage
-        transition-all duration-normal
+        transition-transform duration-200
         group-hover:scale-105
       `}>
         {icon}
@@ -297,12 +308,3 @@ function MindIcon() {
   )
 }
 
-function LeafIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c-4-4-8-7.5-8-12a8 8 0 0116 0c0 4.5-4 8-8 12z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21V9" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M8 13c2 0 4-2 4-4" />
-    </svg>
-  )
-}
