@@ -11,21 +11,16 @@ interface PageHeaderProps {
 export function PageHeader({ title, description, icon }: PageHeaderProps) {
   return (
     <header className="relative pt-4 pb-4 mb-10">
-      {/* Ambient gradient background */}
-      <div className="absolute inset-0 -z-10 gradient-animate opacity-20 rounded-3xl blur-3xl" />
-
-      {/* Icon with glow effect */}
+      {/* Icon - V1 clean, grounded style */}
       {icon && (
         <ScrollReveal direction="none" delay={0}>
           <div className="
-            w-14 h-14 mb-5
+            w-12 h-12 mb-5
             flex items-center justify-center
-            rounded-2xl
-            bg-gradient-to-br from-sage-muted to-sage/20
-            dark:from-sage-muted-dark dark:to-sage/10
+            rounded-xl
+            bg-sage-muted dark:bg-sage-muted-dark
+            border border-sage/10 dark:border-sage/5
             text-sage
-            animate-glow-pulse
-            shadow-sm
           ">
             {icon}
           </div>
@@ -48,9 +43,9 @@ export function PageHeader({ title, description, icon }: PageHeaderProps) {
         </TextFadeIn>
       )}
 
-      {/* Accent line */}
+      {/* Accent line - simple sage gradient */}
       <ScrollReveal delay={500} direction="left" distance={20}>
-        <div className="mt-5 h-1 w-12 rounded-full bg-gradient-to-r from-terracotta to-terracotta/50" />
+        <div className="mt-5 h-px w-16 bg-gradient-to-r from-sage to-transparent" />
       </ScrollReveal>
     </header>
   )

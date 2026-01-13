@@ -113,7 +113,7 @@ export default function Mind() {
 
       {/* Crisis Resources - Gentle and Non-judgmental */}
       <section className="mt-12">
-        <div className="card-glass p-6 border-l-4 border-l-sage">
+        <div className="card-glass p-6 border-l-[3px] border-l-sage">
           <div className="flex items-start gap-4">
             <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-sage-muted dark:bg-sage-muted-dark text-sage">
               <HeartHandIcon />

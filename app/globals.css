@@ -197,26 +197,22 @@
      PREMIUM CARD VARIANTS - World-Class Design
      ═══════════════════════════════════════════════════════════════════════════ */
 
-  /* Glass card - Frosted glassmorphism effect */
+  /* Glass card - V1 Earthy Cabin style (clean, grounded) */
   .card-glass {
-    @apply rounded-2xl;
-    @apply transition-all duration-normal ease-out;
-    background: rgba(245, 242, 237, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    @apply rounded-lg;
+    @apply transition-all duration-200 ease-out;
+    background: theme('colors.cream');
+    border: 1px solid rgba(214, 211, 209, 0.5);
   }
   .dark .card-glass {
-    background: rgba(42, 40, 37, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: theme('colors.night.800');
+    border: 1px solid rgba(82, 79, 75, 0.5);
   }
   .card-glass:hover {
-    background: rgba(245, 242, 237, 0.8);
-    @apply shadow-medium -translate-y-0.5;
+    @apply shadow-sm;
   }
   .dark .card-glass:hover {
-    background: rgba(42, 40, 37, 0.8);
-    @apply shadow-medium-dark;
+    @apply shadow-sm;
   }
 
   /* Premium card - Gradient background with elevated shadow */

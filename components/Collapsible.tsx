@@ -15,31 +15,31 @@ export function Collapsible({ title, defaultOpen = false, icon, children, varian
   const contentRef = useRef<HTMLDivElement>(null)
   const contentId = useId()
 
-  // Variant-specific container classes
+  // Variant-specific container classes - V1 Earthy Cabin style
   const variantClasses = {
     featured: `
       relative overflow-hidden
-      bg-gradient-to-br from-sand to-stone-100/50
-      dark:from-night-800 dark:to-night-700/50
-      rounded-2xl
-      shadow-medium dark:shadow-medium-dark
-      card-interactive card-shine
-      border-y border-r border-stone-100/50 dark:border-night-600/50
-      border-l-[4px] border-l-terracotta
-      ${isOpen ? 'shadow-elevated dark:shadow-elevated-dark' : ''}
+      bg-cream dark:bg-night-800
+      rounded-lg
+      border-l-[3px] border-l-sage
+      border-y border-r border-stone-200/50 dark:border-night-600/50
+      shadow-sm hover:shadow-md
+      transition-shadow duration-200
     `,
     glass: `
       relative overflow-hidden
-      card-glass card-interactive card-shine
-      dark:bg-night-800/70 dark:border-night-600/50
-      rounded-2xl
-      ${isOpen ? 'shadow-soft dark:shadow-soft-dark' : ''}
+      bg-cream/80 dark:bg-night-800/60
+      border border-stone-200/50 dark:border-night-600/50
+      rounded-lg
+      hover:bg-cream dark:hover:bg-night-800
+      transition-colors duration-200
     `,
     standard: `
-      bg-sand dark:bg-night-800 rounded-xl
-      shadow-soft dark:shadow-soft-dark hover:shadow-medium dark:hover:shadow-medium-dark
-      border border-stone-100/50 dark:border-night-600/50
-      ${isOpen ? 'shadow-medium dark:shadow-medium-dark' : ''}
+      bg-cream dark:bg-night-800
+      border border-stone-200 dark:border-night-600
+      rounded-lg
+      shadow-sm hover:shadow-md
+      transition-shadow duration-200
     `,
   }
 
@@ -51,10 +51,6 @@ export function Collapsible({ title, defaultOpen = false, icon, children, varian
         ${variantClasses[variant]}
       `}
     >
-      {/* Featured variant decorative glow */}
-      {variant === 'featured' && (
-        <div className="absolute top-0 left-0 w-32 h-32 bg-terracotta/5 blur-2xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      )}
       {/* Header Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -70,18 +66,15 @@ export function Collapsible({ title, defaultOpen = false, icon, children, varian
         aria-expanded={isOpen}
         aria-controls={contentId}
       >
-        {/* Optional Icon */}
+        {/* Optional Icon - V1 clean style */}
         {icon && (
           <span className={`
-            flex-shrink-0 w-10 h-10
+            flex-shrink-0 w-9 h-9
             flex items-center justify-center
-            rounded-xl
-            ${variant === 'featured'
-              ? 'bg-gradient-to-br from-sage-muted to-sage/20 dark:from-sage-muted-dark dark:to-sage/10 shadow-sm'
-              : 'bg-sage-muted dark:bg-sage-muted-dark'
-            }
+            rounded-lg
+            bg-sage-muted dark:bg-sage-muted-dark
             text-sage
-            transition-all duration-normal
+            transition-transform duration-200
             group-hover:scale-105
           `}>
             {icon}
@@ -143,14 +136,8 @@ export function Collapsible({ title, defaultOpen = false, icon, children, varian
             px-6 pb-6
             ${icon ? 'pl-20' : ''}
           `}>
-            {/* Subtle top border */}
-            <div className={`
-              h-px mb-5 -mx-6 opacity-50
-              ${variant === 'featured'
-                ? 'bg-gradient-to-r from-terracotta/20 via-terracotta/40 to-terracotta/20'
-                : 'bg-gradient-to-r from-stone-100 via-stone-200 to-stone-100 dark:from-night-600 dark:via-night-500 dark:to-night-600'
-              }
-            `} />
+            {/* Subtle top border - V1 simple style */}
+            <div className="h-px mb-5 -mx-6 bg-stone-200/50 dark:bg-night-600/50" />
 
             {/* Content */}
             <div className="prose-body">

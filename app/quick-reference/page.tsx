@@ -120,12 +120,24 @@ export default function QuickReference() {
       {/* The Rules */}
       <section className="mb-10">
         <h2 className="heading-section mb-4">Remember</h2>
-        <div className="card-glass p-5 border-l-4 border-l-terracotta">
+        <div className="card-glass p-5 border-l-[3px] border-l-sage">
           <ul className="space-y-2 text-clay dark:text-ash">
-            <li>One cycle is enough. You can stop anytime.</li>
-            <li>Pick one thing. Start there.</li>
-            <li>Something is better than nothing.</li>
-            <li>Missing a day isn't failure. It's just a day.</li>
+            <li className="flex items-start gap-2">
+              <span className="text-sage/60">—</span>
+              <span>One cycle is enough. You can stop anytime.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-sage/60">—</span>
+              <span>Pick one thing. Start there.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-sage/60">—</span>
+              <span>Something is better than nothing.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-sage/60">—</span>
+              <span>Missing a day isn't failure. It's just a day.</span>
+            </li>
           </ul>
         </div>
       </section>

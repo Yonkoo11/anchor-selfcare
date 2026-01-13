@@ -83,7 +83,7 @@ export default function About() {
       {/* Privacy */}
       <section className="mb-12">
         <h2 className="heading-section mb-5">Privacy</h2>
-        <div className="card-glass p-6 border-l-4 border-l-sage">
+        <div className="card-glass p-6 border-l-[3px] border-l-sage">
           <p className="text-clay dark:text-ash mb-4">
             This site doesn't use cookies, analytics, or any form of tracking.
             Everything happens in your browser. We literally can't know who you are.
@@ -103,23 +103,23 @@ export default function About() {
         </p>
         <ul className="space-y-2 text-sm text-clay dark:text-ash">
           <li className="flex items-start gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-sage mt-2 flex-shrink-0" />
+            <span className="text-sage/60 flex-shrink-0">—</span>
             <span>Box breathing and physiological sighing from neuroscience research</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-sage mt-2 flex-shrink-0" />
+            <span className="text-sage/60 flex-shrink-0">—</span>
             <span>Grounding techniques from trauma-informed therapy</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-sage mt-2 flex-shrink-0" />
+            <span className="text-sage/60 flex-shrink-0">—</span>
             <span>Affect labeling from cognitive psychology</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-sage mt-2 flex-shrink-0" />
+            <span className="text-sage/60 flex-shrink-0">—</span>
             <span>Sleep hygiene from behavioral sleep medicine</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-sage mt-2 flex-shrink-0" />
+            <span className="text-sage/60 flex-shrink-0">—</span>
             <span>Movement basics from physical therapy principles</span>
           </li>
         </ul>

@@ -105,19 +105,19 @@ export default function Baseline() {
             <p className="text-sm font-medium text-bark dark:text-parchment mb-3">If sleep is hard:</p>
             <ul className="space-y-2 text-sm text-clay dark:text-ash">
               <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-sage/50 mt-1.5 flex-shrink-0" />
+                <span className="text-sage/60 flex-shrink-0">—</span>
                 <span>Same bedtime, same wake time. Even weekends. Your body likes rhythm.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-sage/50 mt-1.5 flex-shrink-0" />
+                <span className="text-sage/60 flex-shrink-0">—</span>
                 <span>Screens off 30 minutes before bed. The light tricks your brain.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-sage/50 mt-1.5 flex-shrink-0" />
+                <span className="text-sage/60 flex-shrink-0">—</span>
                 <span>Cool room, dark room. Your body temperature drops when you sleep.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-sage/50 mt-1.5 flex-shrink-0" />
+                <span className="text-sage/60 flex-shrink-0">—</span>
                 <span>Can't sleep after 20 minutes? Get up. Do something boring. Try again.</span>
               </li>
             </ul>
