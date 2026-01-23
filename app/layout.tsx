@@ -138,7 +138,7 @@ export default function RootLayout({
           <Navigation />
 
           {/* Main content with page entrance animation */}
-          <main id="main-content" className="relative max-w-reading mx-auto px-6 py-10 pb-28 md:pb-12 page-enter">
+          <main id="main-content" className="relative z-10 max-w-reading mx-auto px-6 py-10 pb-28 md:pb-12 page-enter">
             {children}
           </main>
 

@@ -924,11 +924,16 @@
   .animate-float-slow,
   .animate-glow-pulse,
   .animate-fade-up,
-  .animate-fade-up-lg,
+  .animate-fade-up-lg {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Keep orbs subtle even with reduced motion */
   .floating-orb-sage,
   .floating-orb-terracotta {
     animation: none !important;
-    opacity: 1 !important;
     transform: none !important;
   }
 }

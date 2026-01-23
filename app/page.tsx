@@ -15,102 +15,111 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════════
           HERO SECTION - Emotional Hook
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 gradient-animate">
-        {/* Subtle texture overlay */}
-        <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0iIzAwMCIvPgo8Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIxLjUiIGZpbGw9IiNmZmYiLz4KPC9zdmc+')]" />
-
-        {/* Badge */}
-        <div className="mb-8">
-          <span className="
-            inline-flex items-center gap-2
-            px-3 py-1.5
-            text-xs font-medium tracking-wide uppercase
-            text-sage
-            bg-sage/5
-            border border-sage/10
-            rounded-full
-          ">
-            <span className="w-1.5 h-1.5 rounded-full bg-sage animate-pulse" />
-            No tracking. No judgment. No pressure.
-          </span>
-        </div>
-
-        {/* Main Headline - The Hook */}
-        <h1 className="
-          font-serif
-          text-4xl sm:text-5xl md:text-6xl lg:text-7xl
-          font-semibold
-          leading-[1.1]
-          tracking-tight
-          text-bark dark:text-parchment
-          mb-6
+      <section className="relative pt-8 pb-12 md:pt-12 md:pb-16 -mx-6 px-6">
+        {/* Hero content container - wider than reading width */}
+        <div className="
+          relative z-20
+          max-w-3xl mx-auto
+          p-8 sm:p-10 md:p-12
+          bg-cream/95 dark:bg-night-800/95
+          backdrop-blur-md
+          border border-stone-200/50 dark:border-night-600/50
+          rounded-2xl
+          shadow-elevated dark:shadow-elevated-dark
         ">
-          One shower<br />
-          <span className="text-sage">is enough.</span>
-        </h1>
-
-        {/* Subheadline - Explain the positioning */}
-        <p className="
-          text-lg sm:text-xl
-          text-clay dark:text-ash
-          leading-relaxed
-          max-w-xl
-          mb-10
-        ">
-          A quiet guide for when everything feels like too much.
-          No accounts. No streaks. No guilt trips about missing days.
-          <span className="block mt-2 text-dust dark:text-coal italic">
-            Just the basics. Just what you need. Just enough.
-          </span>
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-wrap items-center gap-4">
-          <Link
-            href="/baseline"
-            className="
-              group
-              inline-flex items-center gap-3
-              px-6 py-3.5
-              bg-bark dark:bg-parchment
-              text-cream dark:text-bark
-              font-medium
-              rounded-lg
-              shadow-md hover:shadow-lg
-              transition-all duration-200
-              hover:-translate-y-0.5
-            "
-          >
-            Begin with the basics
-            <svg
-              className="w-4 h-4 transition-transform group-hover:translate-x-1"
-              fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
-
-          <Link
-            href="/quick-reference"
-            className="
+          {/* Badge */}
+          <div className="mb-6">
+            <span className="
               inline-flex items-center gap-2
-              px-5 py-3.5
-              text-clay dark:text-ash
-              font-medium
-              hover:text-bark dark:hover:text-parchment
-              transition-colors
-            "
-          >
-            Browse the guide
-          </Link>
-        </div>
+              px-3 py-1.5
+              text-xs font-medium tracking-wide uppercase
+              text-sage
+              bg-sage/5
+              border border-sage/10
+              rounded-full
+            ">
+              <span className="w-1.5 h-1.5 rounded-full bg-sage animate-pulse" />
+              No tracking. No judgment. No pressure.
+            </span>
+          </div>
 
-        {/* Visual Accent */}
-        <div className="mt-12 flex items-center gap-3">
-          <div className="h-px flex-1 max-w-[60px] bg-gradient-to-r from-terracotta to-transparent" />
-          <span className="text-xs text-dust dark:text-coal tracking-widest uppercase">
-            For the overwhelmed
-          </span>
+          {/* Main Headline - The Hook */}
+          <h1 className="
+            font-serif
+            text-4xl sm:text-5xl md:text-6xl lg:text-7xl
+            font-semibold
+            leading-[1.1]
+            tracking-tight
+            text-bark dark:text-parchment
+            mb-6
+          ">
+            One shower<br />
+            <span className="text-sage">is enough.</span>
+          </h1>
+
+          {/* Subheadline - Explain the positioning */}
+          <p className="
+            text-lg sm:text-xl
+            text-clay dark:text-ash
+            leading-relaxed
+            max-w-xl
+            mb-10
+          ">
+            A quiet guide for when everything feels like too much.
+            No accounts. No streaks. No guilt trips about missing days.
+            <span className="block mt-2 text-dust dark:text-coal italic">
+              Just the basics. Just what you need. Just enough.
+            </span>
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap items-center gap-4">
+            <Link
+              href="/baseline"
+              className="
+                group
+                inline-flex items-center gap-3
+                px-6 py-3.5
+                bg-bark dark:bg-parchment
+                text-cream dark:text-bark
+                font-medium
+                rounded-lg
+                shadow-md hover:shadow-lg
+                transition-all duration-200
+                hover:-translate-y-0.5
+              "
+            >
+              Begin with the basics
+              <svg
+                className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+
+            <Link
+              href="/quick-reference"
+              className="
+                inline-flex items-center gap-2
+                px-5 py-3.5
+                text-clay dark:text-ash
+                font-medium
+                hover:text-bark dark:hover:text-parchment
+                transition-colors
+              "
+            >
+              Browse the guide
+            </Link>
+          </div>
+
+          {/* Visual Accent */}
+          <div className="mt-10 flex items-center gap-3">
+            <div className="h-px flex-1 max-w-[60px] bg-gradient-to-r from-terracotta to-transparent" />
+            <span className="text-xs text-dust dark:text-coal tracking-widest uppercase">
+              For the overwhelmed
+            </span>
+          </div>
         </div>
       </section>
 
