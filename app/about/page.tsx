@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div>
       <PageHeader
-        title="About This Guide"
+        title="About ANCHOR"
         description="Why this exists and what it's trying to be."
         icon={<InfoIcon />}
       />
@@ -28,7 +28,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* What We Don't Do */}
+      {/* What We Do Not Do */}
       <section className="mb-12">
         <h2 className="heading-section mb-5">What We Don't Do</h2>
         <div className="card-glass p-6">

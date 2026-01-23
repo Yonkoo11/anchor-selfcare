@@ -66,7 +66,7 @@ export function Collapsible({ title, defaultOpen = false, icon, children, varian
         aria-expanded={isOpen}
         aria-controls={contentId}
       >
-        {/* Optional Icon - V1 clean style */}
+        {/* Optional Icon - V1 clean style with bounce */}
         {icon && (
           <span className={`
             flex-shrink-0 w-9 h-9
@@ -74,8 +74,7 @@ export function Collapsible({ title, defaultOpen = false, icon, children, varian
             rounded-lg
             bg-sage-muted dark:bg-sage-muted-dark
             text-sage
-            transition-transform duration-200
-            group-hover:scale-105
+            icon-bounce
           `}>
             {icon}
           </span>

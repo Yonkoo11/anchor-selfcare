@@ -9,6 +9,31 @@ export default function Mind() {
         icon={<MindIcon />}
       />
 
+      {/* Why This Works - Nervous System Basics */}
+      <section className="mb-8">
+        <div className="card-glass p-6 border-l-[3px] border-l-sage">
+          <h2 className="font-medium text-bark dark:text-parchment mb-3">Your nervous system has two modes</h2>
+          <p className="text-clay dark:text-ash mb-4">
+            Your body has a gas pedal (sympathetic - fight/flight) and a brake pedal (parasympathetic - rest/digest).
+            Stress slams the gas. These techniques tap the brake.
+          </p>
+          <div className="space-y-3">
+            <NervousTip
+              title="The Vagus Nerve"
+              description="A long nerve running from your brain to your gut. It controls the brake pedal. Slow exhales and cold water activate it."
+            />
+            <NervousTip
+              title="Why Exhales Matter"
+              description="Inhaling speeds your heart. Exhaling slows it. Longer exhales = stronger brake pedal signal."
+            />
+            <NervousTip
+              title="You Can't Think Your Way Calm"
+              description="Your thinking brain can't override panic directly. But your body can. Start with the body, the mind follows."
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Interactive Breathing Timer */}
       <section className="mb-12">
         <h2 className="heading-section mb-5">Guided Breathing</h2>
@@ -58,6 +83,11 @@ export default function Mind() {
             ]}
             closingNote="This is what your body does naturally when crying stops. You're triggering calm on purpose."
           />
+          <div className="mt-4 pt-4 border-t border-stone-200/50 dark:border-night-600/50">
+            <p className="text-sm text-clay dark:text-ash">
+              <strong className="text-bark dark:text-parchment">Why it works:</strong> The double inhale pops open tiny air sacs in your lungs that collapse when stressed, maximizing oxygen. The long exhale activates your vagus nerve, triggering the parasympathetic "calm down" response.
+            </p>
+          </div>
         </Collapsible>
 
         <Collapsible title="Cold Water Reset" icon={<DropletIcon />}>
@@ -74,6 +104,11 @@ export default function Mind() {
             ]}
             closingNote="This is biology, not willpower. Your body will respond."
           />
+          <div className="mt-4 pt-4 border-t border-stone-200/50 dark:border-night-600/50">
+            <p className="text-sm text-clay dark:text-ash">
+              <strong className="text-bark dark:text-parchment">Why it works:</strong> Cold water on your face triggers the mammalian dive reflex - an ancient survival mechanism. Your heart rate drops 10-25%, blood redirects to vital organs, and your vagus nerve fires. This works even when you're panicking because it bypasses your thinking brain entirely.
+            </p>
+          </div>
         </Collapsible>
 
         <Collapsible title="Name the Feeling" icon={<TagIcon />}>
@@ -163,7 +198,7 @@ export default function Mind() {
         </div>
       </section>
 
-      <Footer>
+      <Footer nextPage={{ href: '/movement', label: 'Move your body' }}>
         Your mind and body are not separate. Calming one calms the other.
         Start with your breath.
       </Footer>
@@ -248,5 +283,21 @@ function ExternalLinkIcon() {
     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
     </svg>
+  )
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Nervous System Tip Component
+// ─────────────────────────────────────────────────────────────────────────────
+
+function NervousTip({ title, description }: { title: string; description: string }) {
+  return (
+    <div className="flex items-start gap-3">
+      <span className="text-sage/60 flex-shrink-0 mt-0.5">-</span>
+      <div>
+        <span className="font-medium text-bark dark:text-parchment">{title}:</span>{' '}
+        <span className="text-clay dark:text-ash">{description}</span>
+      </div>
+    </div>
   )
 }

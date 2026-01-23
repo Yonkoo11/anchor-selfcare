@@ -1,6 +1,12 @@
-# Project Memory - Self-Care Guide
+# Project Memory - ANCHOR
 
 ## Key Decisions
+
+### Brand Identity (Jan 13, 2026)
+- **Name**: ANCHOR (rebranded from "Self-Care Guide")
+- **Tagline**: "Something to hold onto when you're drifting"
+- **Typography**: Bold, all-caps wordmark in header
+- **Philosophy**: Grounded, stable, minimal - anti-wellness positioning
 
 ### Strategic Direction (Jan 12, 2025)
 - **Business Model**: Ethical Freemium (Proton/Signal model for wellness)
@@ -99,3 +105,9 @@
 - Anonymous feedback form on About page
 - Product principles documentation (`PRODUCT_PRINCIPLES.md`)
 - Git repository initialized
+
+### Session Jan 13, 2026
+- Rebranded to ANCHOR
+- Redesigned header (full-width, bold caps wordmark)
+- World-class landing page with interactive breathing
+- Framework lesson: Next.js slow dev server - consider Svelte+Vite for future

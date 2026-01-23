@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
+import { createContext, useContext, useEffect, useState, useCallback, ReactNode } from 'react'
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // THEME CONTEXT
@@ -17,6 +17,22 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
+
+// ─────────────────────────────────────────────────────────────────────────────
+// HELPER FUNCTIONS (outside component to avoid recreation)
+// ─────────────────────────────────────────────────────────────────────────────
+
+const getSystemTheme = (): 'light' | 'dark' => {
+  if (typeof window === 'undefined') return 'light'
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
+
+const applyThemeToDOM = (resolved: 'light' | 'dark') => {
+  const root = document.documentElement
+  root.classList.remove('light', 'dark')
+  root.classList.add(resolved)
+  root.style.colorScheme = resolved
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // PROVIDER COMPONENT
@@ -38,51 +54,40 @@ export function ThemeProvider({
   const [mounted, setMounted] = useState(false)
 
   // ─────────────────────────────────────────────────────────────────────────
-  // RESOLVE SYSTEM PREFERENCE
-  // ─────────────────────────────────────────────────────────────────────────
-  const getSystemTheme = (): 'light' | 'dark' => {
-    if (typeof window === 'undefined') return 'light'
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  }
-
-  // ─────────────────────────────────────────────────────────────────────────
   // APPLY THEME TO DOM
   // ─────────────────────────────────────────────────────────────────────────
-  const applyTheme = (newTheme: Theme) => {
+  const applyTheme = useCallback((newTheme: Theme) => {
     const resolved = newTheme === 'system' ? getSystemTheme() : newTheme
     setResolvedTheme(resolved)
-
-    // Add/remove 'dark' class on <html>
-    const root = document.documentElement
-    root.classList.remove('light', 'dark')
-    root.classList.add(resolved)
-
-    // Update color-scheme for native elements (scrollbars, inputs)
-    root.style.colorScheme = resolved
-  }
+    applyThemeToDOM(resolved)
+  }, [])
 
   // ─────────────────────────────────────────────────────────────────────────
   // SET THEME (with localStorage)
   // ─────────────────────────────────────────────────────────────────────────
-  const setTheme = (newTheme: Theme) => {
+  const setTheme = useCallback((newTheme: Theme) => {
     setThemeState(newTheme)
     localStorage.setItem(storageKey, newTheme)
     applyTheme(newTheme)
-  }
+  }, [storageKey, applyTheme])
 
   // ─────────────────────────────────────────────────────────────────────────
   // TOGGLE BETWEEN LIGHT AND DARK
   // ─────────────────────────────────────────────────────────────────────────
-  const toggleTheme = () => {
-    const newTheme = resolvedTheme === 'light' ? 'dark' : 'light'
-    setTheme(newTheme)
-  }
+  const toggleTheme = useCallback(() => {
+    setThemeState(prev => {
+      const resolved = prev === 'system' ? getSystemTheme() : prev
+      const newTheme = resolved === 'light' ? 'dark' : 'light'
+      localStorage.setItem(storageKey, newTheme)
+      applyTheme(newTheme)
+      return newTheme
+    })
+  }, [storageKey, applyTheme])
 
   // ─────────────────────────────────────────────────────────────────────────
   // INITIALIZE ON MOUNT
   // ─────────────────────────────────────────────────────────────────────────
   useEffect(() => {
-    // Get stored theme or use default
     const stored = localStorage.getItem(storageKey) as Theme | null
     const initialTheme = stored || defaultTheme
 
@@ -93,21 +98,24 @@ export function ThemeProvider({
     // Listen for system theme changes
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     const handleChange = () => {
-      if (theme === 'system') {
-        applyTheme('system')
-      }
+      setThemeState(current => {
+        if (current === 'system') {
+          applyTheme('system')
+        }
+        return current
+      })
     }
 
     mediaQuery.addEventListener('change', handleChange)
     return () => mediaQuery.removeEventListener('change', handleChange)
-  }, [])
+  }, [storageKey, defaultTheme, applyTheme])
 
   // Re-apply when theme changes
   useEffect(() => {
     if (mounted) {
       applyTheme(theme)
     }
-  }, [theme, mounted])
+  }, [theme, mounted, applyTheme])
 
   // ─────────────────────────────────────────────────────────────────────────
   // PREVENT FLASH OF WRONG THEME

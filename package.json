@@ -2,6 +2,12 @@
   "name": "selfcare-guide",
   "version": "1.0.0",
   "private": true,
+  "eslintConfig": {
+    "extends": "next/core-web-vitals",
+    "rules": {
+      "react/no-unescaped-entities": "off"
+    }
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -22,6 +28,7 @@
     "eslint": "^8.0.0",
     "eslint-config-next": "^14.2.0",
     "postcss": "^8.4.0",
+    "puppeteer": "^24.35.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.0.0"

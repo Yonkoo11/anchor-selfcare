@@ -7,6 +7,7 @@ const OFFLINE_URL = '/';
 // Assets to cache immediately on install
 const PRECACHE_ASSETS = [
   '/',
+  '/crisis',
   '/baseline',
   '/when-off',
   '/mind',

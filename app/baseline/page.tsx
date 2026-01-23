@@ -57,7 +57,7 @@ export default function Baseline() {
         </Collapsible>
 
         <Collapsible title="Eating" icon={<CoffeeIcon />}>
-          <p className="text-clay mb-4">
+          <p className="text-clay dark:text-ash mb-4">
             Your brain needs fuel to function. You don't need a perfect meal.
             You need something in your body.
           </p>
@@ -69,6 +69,55 @@ export default function Baseline() {
             ]}
             closingNote="A snack counts. Food is food."
           />
+          <div className="mt-4 pt-4 border-t border-stone-200/50 dark:border-night-600/50">
+            <p className="text-sm text-clay dark:text-ash mb-3">
+              <strong className="text-bark dark:text-parchment">Why it matters:</strong> Your brain uses 20% of your daily calories despite being only 2% of your body weight. Low blood sugar = poor focus, irritability, and decision fatigue.
+            </p>
+            <ul className="space-y-2 text-sm text-clay dark:text-ash">
+              <li className="flex items-start gap-2">
+                <span className="text-sage/60 flex-shrink-0">-</span>
+                <span><strong className="text-bark dark:text-parchment">Protein stabilizes energy.</strong> It digests slowly, preventing the crash that comes from sugar alone.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-sage/60 flex-shrink-0">-</span>
+                <span><strong className="text-bark dark:text-parchment">Hunger affects mood.</strong> "Hangry" is real - low glucose makes your brain prioritize survival over rational thinking.</span>
+              </li>
+            </ul>
+          </div>
+        </Collapsible>
+
+        <Collapsible title="Hydration" icon={<WaterGlassIcon />}>
+          <p className="text-clay dark:text-ash mb-4">
+            Most people are mildly dehydrated most of the time.
+            Even 1-2% dehydration affects focus and mood.
+          </p>
+          <InstructionBlock
+            steps={[
+              "Get a glass of water.",
+              "Drink it. All of it.",
+              "Do this a few times a day."
+            ]}
+            closingNote="If you feel thirsty, you're already dehydrated. Don't wait for thirst."
+          />
+          <div className="mt-4 pt-4 border-t border-stone-200/50 dark:border-night-600/50">
+            <p className="text-sm text-clay dark:text-ash mb-3">
+              <strong className="text-bark dark:text-parchment">Signs you need water:</strong>
+            </p>
+            <ul className="space-y-1 text-sm text-clay dark:text-ash">
+              <li className="flex items-start gap-2">
+                <span className="text-sage/60 flex-shrink-0">-</span>
+                <span>Headache or fatigue (often mistaken for hunger)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-sage/60 flex-shrink-0">-</span>
+                <span>Trouble concentrating</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-sage/60 flex-shrink-0">-</span>
+                <span>Dark urine (aim for light yellow)</span>
+              </li>
+            </ul>
+          </div>
         </Collapsible>
 
         <Collapsible title="Movement" icon={<ActivityIcon />}>
@@ -86,10 +135,15 @@ export default function Baseline() {
           />
         </Collapsible>
 
-        <Collapsible title="Sleep" icon={<MoonIcon />}>
+        <Collapsible title="Sleep" icon={<MoonIcon />} variant="featured">
           <p className="text-clay dark:text-ash mb-4">
             Everything is harder when you're tired. Sleep isn't lazy.
-            Sleep is how your body repairs itself.
+            Sleep is when your brain takes out the trash - literally. Your brain has a cleaning system
+            that flushes out waste while you sleep. It works twice as fast when you're asleep versus awake.
+          </p>
+          <p className="text-clay dark:text-ash mb-4">
+            Sleep debt is real. Your brain keeps a running tab. You can't fully "catch up" on weekends -
+            studies show even a week of recovery sleep doesn't restore full cognitive function.
           </p>
           <InstructionBlock
             steps={[
@@ -103,29 +157,33 @@ export default function Baseline() {
           {/* Sleep Hygiene Tips */}
           <div className="mt-6 pt-5 border-t border-stone-200/50 dark:border-night-600/50">
             <p className="text-sm font-medium text-bark dark:text-parchment mb-3">If sleep is hard:</p>
-            <ul className="space-y-2 text-sm text-clay dark:text-ash">
+            <ul className="space-y-3 text-sm text-clay dark:text-ash">
               <li className="flex items-start gap-2">
                 <span className="text-sage/60 flex-shrink-0">—</span>
-                <span>Same bedtime, same wake time. Even weekends. Your body likes rhythm.</span>
+                <span><strong className="text-bark dark:text-parchment">Same time, every day.</strong> Even weekends. Your body runs on a 24-hour clock. Irregular sleep confuses it.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-sage/60 flex-shrink-0">—</span>
-                <span>Screens off 30 minutes before bed. The light tricks your brain.</span>
+                <span><strong className="text-bark dark:text-parchment">Screens off 1-2 hours before bed.</strong> The blue light from your screen tells your brain it's daytime. Your brain won't make the "time to sleep" hormone (melatonin) while it thinks the sun is up.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-sage/60 flex-shrink-0">—</span>
-                <span>Cool room, dark room. Your body temperature drops when you sleep.</span>
+                <span><strong className="text-bark dark:text-parchment">Cool room, dark room.</strong> Your body temperature drops 1-2 degrees before sleep - that's the signal. A cool room (60-67°F / 16-19°C) helps this happen. Too warm = fragmented sleep.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-sage/60 flex-shrink-0">—</span>
-                <span>Can't sleep after 20 minutes? Get up. Do something boring. Try again.</span>
+                <span><strong className="text-bark dark:text-parchment">Caffeine has a long tail.</strong> Half-life is 5-6 hours. That 2pm coffee? Half its caffeine is still in you at 8pm. If you sleep at 10pm, cut caffeine by 2pm at the latest.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-sage/60 flex-shrink-0">—</span>
+                <span><strong className="text-bark dark:text-parchment">Can't sleep after 20 minutes?</strong> Get up. Do something boring in dim light. Lying awake trains your brain that bed = frustration. Break the pattern.</span>
               </li>
             </ul>
           </div>
         </Collapsible>
       </div>
 
-      <Footer>
+      <Footer nextPage={{ href: '/when-off', label: 'If something feels off' }}>
         You don't have to do all of these perfectly. Pick one. Start there.
         Tomorrow is another day.
       </Footer>
@@ -189,6 +247,14 @@ function MoonIcon() {
   return (
     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+    </svg>
+  )
+}
+
+function WaterGlassIcon() {
+  return (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 2h8l-1 9H9L8 2zM7 11h10v2a5 5 0 01-10 0v-2zM12 18v3" />
     </svg>
   )
 }

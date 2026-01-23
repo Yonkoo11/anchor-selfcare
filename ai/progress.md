@@ -18,17 +18,39 @@
 - **Blockers/Issues:**
   - ESLint not configured (interactive prompt)
 
-## Current Session (January 12, 2025)
-- **Goal:** Apply vibecoding knowledge base infrastructure
-- **Tasks:**
-  - [x] Create ai/ memory directory
-  - [x] Create memory.md
-  - [x] Create progress.md
-  - [ ] Create feature_backlog.json
-  - [ ] Initialize git repository
-  - [ ] Configure ESLint
-  - [ ] Capture baseline screenshots
-  - [ ] Register in ~/PROJECTS.md
+## Last Session Summary
+- **Date:** January 13, 2026
+- **What was done:**
+  - [x] Redesigned header/navigation component (full-width, logo at far left)
+  - [x] Rebranded from "Self-Care Guide" → "ANCHOR"
+  - [x] Updated all metadata (layout.tsx, manifest.json, about page)
+  - [x] Added Framework Selection guide to CLAUDE.md
+  - [x] Updated /session-end skill with tooling reflection step
+  - [x] Logged framework selection lesson to LESSONS_LOG.md
+- **What's next:**
+  - Test header on all pages (verify full-width layout)
+  - Design/create ANCHOR logo/icon
+  - Update OG images with new branding
+  - Consider migrating to Svelte+Vite (per framework lesson)
+- **Blockers/Issues:**
+  - Next.js dev server slow (20+ second compiles) - noted for future projects
+
+### Rebrand: ANCHOR
+- Brand name: "ANCHOR" - Something to hold onto when you're drifting
+- All caps, bold typography in header
+- Updated: Navigation.tsx, layout.tsx, manifest.json, about/page.tsx
+- New tagline: "Something to hold onto when you're drifting"
+
+### Framework Lesson Captured
+- Added to CLAUDE.md: Framework Selection decision matrix
+- Added to LESSONS_LOG.md: Next.js vs Vite lesson
+- Updated /session-end: Mandatory tooling reflection step
+
+### Previous Session (January 12, 2026)
+- Created ai/ memory directory
+- Initialized git repository
+- Applied V1 Earthy Cabin design
+- Created world-class landing page
 
 ## Handover Notes
 

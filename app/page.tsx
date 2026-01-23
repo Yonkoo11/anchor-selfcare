@@ -15,7 +15,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════════
           HERO SECTION - Emotional Hook
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="relative pt-12 pb-16 md:pt-20 md:pb-24">
+      <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 gradient-animate">
         {/* Subtle texture overlay */}
         <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0iIzAwMCIvPgo8Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIxLjUiIGZpbGw9IiNmZmYiLz4KPC9zdmc+')]" />
 
@@ -283,8 +283,8 @@ export default function Home() {
           max-w-2xl mx-auto
           mb-8
         ">
-          "The goal isn't to be productive.<br />
-          <span className="text-sage">The goal is to still be here tomorrow."</span>
+          "The goal isn't to be productive."<br />
+          <span className="text-sage">"The goal is to still be here tomorrow."</span>
         </blockquote>
 
         <Link
@@ -320,9 +320,19 @@ export default function Home() {
           ═══════════════════════════════════════════════════════════════════════ */}
       <footer className="py-8 border-t border-stone-200/50 dark:border-night-600/50">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-dust dark:text-coal">
-          <div className="flex items-center gap-1">
-            <span className="font-serif font-medium text-bark dark:text-parchment">
-              Self-Care Guide
+          <div className="flex items-center gap-2">
+            <span className="
+              w-5 h-5
+              flex items-center justify-center
+              rounded
+              bg-gradient-to-br from-sage to-moss
+              text-cream
+              text-[9px] font-bold tracking-tight
+            ">
+              A
+            </span>
+            <span className="font-medium tracking-wide text-bark dark:text-parchment">
+              ANCHOR
             </span>
             <span className="text-stone-300 dark:text-night-600 mx-2">·</span>
             <span>For the overwhelmed</span>
@@ -368,6 +378,7 @@ function GuideCard({
         p-5 sm:p-6
         rounded-lg
         transition-all duration-200
+        card-shine overflow-hidden
         ${featured
           ? 'bg-cream dark:bg-night-800 border-l-[3px] border-l-sage shadow-sm hover:shadow-md'
           : 'bg-cream/60 dark:bg-night-800/40 border border-stone-200/50 dark:border-night-600/50 hover:bg-cream dark:hover:bg-night-800'

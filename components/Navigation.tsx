@@ -4,172 +4,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ThemeToggle, ThemeToggleCompact } from './ThemeToggle'
 
-const navItems = [
-  { href: '/', label: 'Start', icon: HomeIcon },
-  { href: '/baseline', label: 'Baseline', icon: CheckCircleIcon },
-  { href: '/when-off', label: 'When Off', icon: HelpCircleIcon },
-  { href: '/mind', label: 'Mind', icon: MindIcon },
-  { href: '/movement', label: 'Movement', icon: HeartIcon },
-]
-
-export function Navigation() {
-  const pathname = usePathname()
-
-  return (
-    <>
-      {/* Skip Link for Accessibility */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-sage focus:text-cream focus:rounded-lg focus:shadow-lg"
-      >
-        Skip to main content
-      </a>
-
-      {/* Desktop Navigation - Premium Glassmorphism */}
-      <nav aria-label="Main navigation" className="hidden md:block sticky top-0 z-50 transition-colors duration-slow" style={{
-        background: 'rgba(250, 248, 245, 0.7)',
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
-        borderBottom: '1px solid rgba(232, 228, 222, 0.5)',
-      }}>
-        <div className="dark:hidden absolute inset-0" style={{
-          background: 'rgba(250, 248, 245, 0.7)',
-        }} />
-        <div className="hidden dark:block absolute inset-0" style={{
-          background: 'rgba(33, 31, 29, 0.8)',
-          borderBottom: '1px solid rgba(69, 65, 61, 0.5)',
-        }} />
-
-        <div className="relative max-w-reading mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo with subtle animation */}
-            <Link
-              href="/"
-              className="group flex items-center gap-3 transition-all duration-normal hover:opacity-80"
-            >
-              <span className="
-                w-9 h-9
-                flex items-center justify-center
-                rounded-xl
-                bg-gradient-to-br from-sage to-moss
-                text-cream
-                font-semibold text-sm
-                shadow-soft
-                transition-transform duration-normal
-                group-hover:scale-105
-              ">
-                SC
-              </span>
-              <span className="font-serif text-lg text-bark dark:text-parchment font-medium transition-colors">
-                Self-Care Guide
-              </span>
-            </Link>
-
-            {/* Nav Links + Theme Toggle */}
-            <div className="flex items-center gap-1">
-              {navItems.map((item) => {
-                const isActive = pathname === item.href
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`
-                      relative px-4 py-2 rounded-lg
-                      text-sm font-medium
-                      transition-all duration-fast
-                      ${isActive
-                        ? 'text-bark dark:text-parchment'
-                        : 'text-clay dark:text-ash hover:text-bark dark:hover:text-parchment hover:bg-stone-100/50 dark:hover:bg-night-700/50'
-                      }
-                    `}
-                  >
-                    {item.label}
-                    {/* Active indicator - terracotta underline */}
-                    {isActive && (
-                      <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-to-r from-terracotta to-terracotta/50 rounded-full" />
-                    )}
-                  </Link>
-                )
-              })}
-
-              {/* Theme Toggle */}
-              <div className="ml-4 pl-4 border-l border-stone-200/50 dark:border-night-600/50">
-                <ThemeToggle />
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Mobile Navigation - Premium Glassmorphism */}
-      <nav aria-label="Main navigation" className="md:hidden fixed bottom-0 left-0 right-0 z-50 safe-area-bottom transition-colors duration-slow" style={{
-        background: 'rgba(250, 248, 245, 0.85)',
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
-        borderTop: '1px solid rgba(232, 228, 222, 0.5)',
-      }}>
-        <div className="dark:hidden absolute inset-0" style={{
-          background: 'rgba(250, 248, 245, 0.85)',
-        }} />
-        <div className="hidden dark:block absolute inset-0" style={{
-          background: 'rgba(33, 31, 29, 0.9)',
-          borderTop: '1px solid rgba(69, 65, 61, 0.5)',
-        }} />
-
-        <div className="relative flex justify-around py-2 px-2">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href
-            const Icon = item.icon
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`
-                  flex flex-col items-center gap-1
-                  px-3 py-2 rounded-xl
-                  transition-all duration-fast
-                  ${isActive
-                    ? 'text-sage'
-                    : 'text-clay dark:text-ash'
-                  }
-                `}
-              >
-                <span className={`
-                  w-10 h-10
-                  flex items-center justify-center
-                  rounded-xl
-                  transition-all duration-fast
-                  ${isActive
-                    ? 'bg-gradient-to-br from-sage-muted to-sage/20 dark:from-sage-muted-dark dark:to-sage/10 shadow-sm'
-                    : ''
-                  }
-                `}>
-                  <Icon className="w-5 h-5" strokeWidth={isActive ? 2.5 : 2} />
-                </span>
-                <span className={`text-xs font-medium ${isActive ? 'text-sage' : 'text-dust dark:text-coal'}`}>
-                  {item.label}
-                </span>
-                {/* Active dot indicator */}
-                {isActive && (
-                  <span className="absolute -bottom-0.5 w-1 h-1 rounded-full bg-terracotta" />
-                )}
-              </Link>
-            )
-          })}
-
-          {/* Theme Toggle for Mobile */}
-          <div className="flex flex-col items-center gap-1 px-3 py-2">
-            <ThemeToggleCompact />
-            <span className="text-xs font-medium text-dust dark:text-coal">Theme</span>
-          </div>
-        </div>
-      </nav>
-    </>
-  )
-}
-
 // ─────────────────────────────────────────────────────────────────────────────
-// ICONS (inline for simplicity - could be moved to separate file)
+// ICONS (must be defined before navItems)
 // ─────────────────────────────────────────────────────────────────────────────
 
 function HomeIcon({ className, strokeWidth = 2 }: { className?: string; strokeWidth?: number }) {
@@ -209,5 +45,163 @@ function MindIcon({ className, strokeWidth = 2 }: { className?: string; strokeWi
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={strokeWidth}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
     </svg>
+  )
+}
+
+function InfoIcon({ className, strokeWidth = 2 }: { className?: string; strokeWidth?: number }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={strokeWidth}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  )
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// NAV ITEMS
+// ─────────────────────────────────────────────────────────────────────────────
+
+function AnchorIcon({ className, strokeWidth = 2 }: { className?: string; strokeWidth?: number }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={strokeWidth}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a2 2 0 100 4 2 2 0 000-4zM12 6v14m0 0l-4-2m4 2l4-2M5 12a7 7 0 1114 0" />
+    </svg>
+  )
+}
+
+const navItems = [
+  { href: '/crisis', label: 'Right Now', icon: AnchorIcon },
+  { href: '/baseline', label: 'Baseline', icon: CheckCircleIcon },
+  { href: '/when-off', label: 'When Off', icon: HelpCircleIcon },
+  { href: '/mind', label: 'Mind', icon: MindIcon },
+  { href: '/movement', label: 'Movement', icon: HeartIcon },
+  { href: '/about', label: 'About', icon: InfoIcon },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// NAVIGATION COMPONENT
+// ─────────────────────────────────────────────────────────────────────────────
+
+export function Navigation() {
+  const pathname = usePathname()
+  const isHome = pathname === '/'
+
+  return (
+    <>
+      {/* Skip Link for Accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-sage focus:text-cream focus:rounded-lg focus:shadow-lg"
+      >
+        Skip to main content
+      </a>
+
+      {/* Desktop Navigation - Editorial Style */}
+      <nav aria-label="Main navigation" className="hidden md:block sticky top-0 z-50">
+        <div className="bg-cream/95 dark:bg-night-900/95 backdrop-blur-md border-b border-stone-200/60 dark:border-night-700/60">
+          <div className="w-full px-8 lg:px-12">
+            <div className="flex items-center justify-between h-16">
+              {/* Wordmark - Editorial Typography */}
+              <Link
+                href="/"
+                className="group flex items-baseline gap-1.5 transition-opacity duration-200 hover:opacity-70"
+              >
+                <span className="font-bold text-xl tracking-wider text-bark dark:text-parchment">
+                  ANCHOR
+                </span>
+              </Link>
+
+              {/* Nav Links - Clean Editorial */}
+              <div className="flex items-center">
+                <div className="flex items-center gap-1">
+                  {navItems.map((item) => {
+                    const isActive = pathname === item.href
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={`
+                          relative px-3.5 py-2
+                          text-[13px] tracking-wide uppercase
+                          transition-colors duration-200
+                          ${isActive
+                            ? 'text-bark dark:text-parchment font-medium'
+                            : 'text-clay/70 dark:text-ash/70 hover:text-bark dark:hover:text-parchment nav-link-hover'
+                          }
+                        `}
+                      >
+                        {item.label}
+                        {isActive && (
+                          <span className="absolute bottom-1 left-3.5 right-3.5 h-px bg-sage" />
+                        )}
+                      </Link>
+                    )
+                  })}
+                </div>
+
+                {/* Theme Toggle */}
+                <div className="ml-6 pl-6 border-l border-stone-200/60 dark:border-night-700/60">
+                  <ThemeToggle />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Navigation - Clean Bottom Bar */}
+      <nav aria-label="Main navigation" className="md:hidden fixed bottom-0 left-0 right-0 z-50 safe-area-bottom">
+        <div className="bg-cream/95 dark:bg-night-900/95 backdrop-blur-md border-t border-stone-200/60 dark:border-night-700/60">
+          <div className="flex justify-around py-2 px-1">
+            {/* Home link for mobile */}
+            <Link
+              href="/"
+              className={`
+                flex flex-col items-center gap-0.5 px-2 py-1.5 min-w-[48px]
+                transition-colors duration-200
+                ${isHome ? 'text-sage' : 'text-clay/60 dark:text-ash/60'}
+              `}
+            >
+              <HomeIcon className="w-5 h-5" strokeWidth={isHome ? 2 : 1.5} />
+              <span className="text-[9px] tracking-wide uppercase font-medium">Home</span>
+            </Link>
+
+            {navItems.slice(0, 5).map((item) => {
+              const isActive = pathname === item.href
+              const Icon = item.icon
+              // Shorten labels for mobile
+              const mobileLabel = {
+                'Right Now': 'Now',
+                'Baseline': 'Daily',
+                'When Off': 'Off',
+                'Mind': 'Mind',
+                'Movement': 'Move',
+              }[item.label] || item.label
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`
+                    flex flex-col items-center gap-0.5 px-2 py-1.5 min-w-[48px]
+                    transition-colors duration-200
+                    ${isActive ? 'text-sage' : 'text-clay/60 dark:text-ash/60'}
+                  `}
+                >
+                  <Icon className="w-5 h-5" strokeWidth={isActive ? 2 : 1.5} />
+                  <span className="text-[9px] tracking-wide uppercase font-medium whitespace-nowrap">
+                    {mobileLabel}
+                  </span>
+                </Link>
+              )
+            })}
+
+            {/* Theme Toggle */}
+            <div className="flex flex-col items-center gap-0.5 px-2 py-1.5 min-w-[48px]">
+              <ThemeToggleCompact />
+              <span className="text-[9px] tracking-wide uppercase font-medium text-clay/60 dark:text-ash/60">Theme</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </>
   )
 }

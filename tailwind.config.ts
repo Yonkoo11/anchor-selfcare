@@ -74,8 +74,8 @@ const config: Config = {
       // TYPOGRAPHY
       // ═══════════════════════════════════════════════════════════════════════
       fontFamily: {
-        sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
-        serif: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['var(--font-inter)', 'Segoe UI', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-fraunces)', 'Georgia', 'serif'],
       },
       fontSize: {
         xs: ['12px', { lineHeight: '1.5' }],

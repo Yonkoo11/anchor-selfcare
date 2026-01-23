@@ -1,6 +1,22 @@
 import type { Metadata, Viewport } from 'next'
-import { Navigation, SiteFooter, ThemeProvider } from '@/components'
+import { Inter, Fraunces } from 'next/font/google'
+import { Navigation, SiteFooter, ThemeProvider, ParallaxOrbs } from '@/components'
 import './globals.css'
+
+// Optimized font loading via next/font
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-fraunces',
+  display: 'swap',
+})
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -15,21 +31,21 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://selfcare-guide.vercel.app'),
+  metadataBase: new URL('https://anchor.app'),
   title: {
-    default: 'Self-Care Guide',
-    template: '%s | Self-Care Guide',
+    default: 'ANCHOR',
+    template: '%s | ANCHOR',
   },
-  description: 'Simple instructions for taking care of your body and presence. A calm, practical guide for humans who need clarity, not motivation.',
-  keywords: ['self-care', 'wellness', 'breathing exercises', 'mental health', 'mindfulness', 'grounding techniques', 'daily routine', 'posture', 'stress relief'],
-  authors: [{ name: 'Self-Care Guide' }],
-  creator: 'Self-Care Guide',
-  publisher: 'Self-Care Guide',
+  description: 'Something to hold onto when you\'re drifting. Simple self-care for humans who need grounding, not optimization.',
+  keywords: ['self-care', 'wellness', 'breathing exercises', 'mental health', 'mindfulness', 'grounding techniques', 'anchor', 'stress relief'],
+  authors: [{ name: 'ANCHOR' }],
+  creator: 'ANCHOR',
+  publisher: 'ANCHOR',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'Self-Care',
+    title: 'ANCHOR',
   },
   icons: {
     icon: [
@@ -43,22 +59,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Self-Care Guide',
-    title: 'Self-Care Guide',
-    description: 'Simple instructions for taking care of your body and presence. No accounts. No tracking. No pressure.',
+    siteName: 'ANCHOR',
+    title: 'ANCHOR',
+    description: 'Something to hold onto when you\'re drifting. No accounts. No tracking. No pressure.',
     images: [
       {
         url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'Self-Care Guide - Simple instructions for taking care of yourself',
+        alt: 'ANCHOR - Something to hold onto',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Self-Care Guide',
-    description: 'Simple instructions for taking care of your body and presence. No accounts. No tracking. No pressure.',
+    title: 'ANCHOR',
+    description: 'Something to hold onto when you\'re drifting. No accounts. No tracking. No pressure.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -78,7 +94,7 @@ export const metadata: Metadata = {
 const themeScript = `
   (function() {
     try {
-      const stored = localStorage.getItem('selfcare-theme');
+      const stored = localStorage.getItem('anchor-theme');
       const theme = stored || 'system';
       let resolved = theme;
       if (theme === 'system') {
@@ -107,23 +123,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`} suppressHydrationWarning>
       <head>
         {/* Prevent flash of wrong theme */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         {/* Register service worker for offline support */}
         <script dangerouslySetInnerHTML={{ __html: swScript }} />
-        {/* Preload fonts for better performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Inter for body text, Fraunces for headings (distinctive, warm) */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap"
-          rel="stylesheet"
-        />
       </head>
-      <body className="min-h-screen bg-cream dark:bg-night-900 texture-paper transition-colors duration-slow overflow-x-hidden">
+      <body className="font-sans min-h-screen bg-cream dark:bg-night-900 texture-paper transition-colors duration-slow overflow-x-hidden">
         <ThemeProvider>
+          {/* Ambient floating orbs - creates "alive" feel across all pages */}
+          <ParallaxOrbs />
+
           <Navigation />
 
           {/* Main content with page entrance animation */}

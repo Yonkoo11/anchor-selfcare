@@ -144,7 +144,7 @@ export function FeedbackForm() {
 
       {/* Privacy note */}
       <p className="text-xs text-dust dark:text-coal text-center pt-2">
-        We don&apos;t track or store anything. Your feedback goes directly to email.
+        We don't track or store anything. Your feedback goes directly to email.
       </p>
     </form>
   )

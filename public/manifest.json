@@ -1,7 +1,7 @@
 {
-  "name": "Self-Care Guide",
-  "short_name": "Self-Care",
-  "description": "Simple instructions for taking care of your body and presence. No accounts. No tracking. No pressure.",
+  "name": "ANCHOR",
+  "short_name": "ANCHOR",
+  "description": "Something to hold onto when you're drifting. No accounts. No tracking. No pressure.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FAF8F5",
@@ -30,5 +30,5 @@
   "lang": "en",
   "dir": "ltr",
   "scope": "/",
-  "id": "selfcare-guide"
+  "id": "anchor-app"
 }

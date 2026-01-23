@@ -11,11 +11,11 @@ export function SiteFooter() {
               rounded-md
               bg-gradient-to-br from-sage to-moss
               text-cream
-              text-xs font-semibold
+              text-[10px] font-bold tracking-tight
             ">
-              SC
+              A
             </span>
-            <span>Self-Care Guide</span>
+            <span className="font-medium tracking-wide">ANCHOR</span>
           </div>
 
           {/* Right side - Credits */}
