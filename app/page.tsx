@@ -16,11 +16,11 @@ export default function Home() {
           HERO SECTION - Emotional Hook
           ═══════════════════════════════════════════════════════════════════════ */}
       <section className="relative pt-8 pb-12 md:pt-12 md:pb-16 -mx-6 px-6">
-        {/* Hero content container - wider than reading width */}
+        {/* Hero content container - generous width and padding */}
         <div className="
           relative z-20
-          max-w-3xl mx-auto
-          p-8 sm:p-10 md:p-12
+          max-w-4xl mx-auto
+          p-10 sm:p-12 md:p-16
           bg-cream/95 dark:bg-night-800/95
           backdrop-blur-md
           border border-stone-200/50 dark:border-night-600/50
