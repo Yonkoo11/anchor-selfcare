@@ -1,4 +1,4 @@
-import { Collapsible, InstructionBlock, Footer, PageHeader } from '@/components'
+import { Collapsible, InstructionBlock, Footer, PageHeader, ContentDisclaimer } from '@/components'
 
 export default function Baseline() {
   return (
@@ -8,6 +8,8 @@ export default function Baseline() {
         description="The non-negotiables. The things your body needs every day to function. You don't have to do all of them perfectly."
         icon={<BaselineIcon />}
       />
+
+      <ContentDisclaimer className="mb-8" />
 
       {/* Collapsible sections with icons */}
       <div className="space-y-4 stagger-children">

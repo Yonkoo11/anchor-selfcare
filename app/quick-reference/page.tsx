@@ -1,4 +1,4 @@
-import { PageHeader, Footer } from '@/components'
+import { PageHeader, Footer, ContentDisclaimer } from '@/components'
 
 export default function QuickReference() {
   return (
@@ -8,6 +8,8 @@ export default function QuickReference() {
         description="Everything in one place. Bookmark this page for easy access."
         icon={<BookmarkIcon />}
       />
+
+      <ContentDisclaimer className="mb-8" />
 
       {/* Daily Baseline */}
       <section className="mb-10">

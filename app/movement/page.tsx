@@ -1,4 +1,4 @@
-import { Collapsible, InstructionBlock, Footer, PageHeader } from '@/components'
+import { Collapsible, InstructionBlock, Footer, PageHeader, ContentDisclaimer } from '@/components'
 
 export default function Movement() {
   return (
@@ -8,6 +8,8 @@ export default function Movement() {
         description="Basic body mechanics explained without jargon. Your body already knows how to do most of this. These instructions just remind it."
         icon={<BodyIcon />}
       />
+
+      <ContentDisclaimer className="mb-8" />
 
       {/* Screen Worker Section */}
       <section className="mb-8">

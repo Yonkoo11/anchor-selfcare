@@ -1,4 +1,4 @@
-import { BreathingTimer, Collapsible, InstructionBlock, Footer, PageHeader } from '@/components'
+import { BreathingTimer, Collapsible, InstructionBlock, Footer, PageHeader, ContentDisclaimer, Contraindication } from '@/components'
 
 export default function Mind() {
   return (
@@ -8,6 +8,8 @@ export default function Mind() {
         description="Your mind is connected to your body. When thoughts race or feelings overwhelm, start with your breath. These techniques work."
         icon={<MindIcon />}
       />
+
+      <ContentDisclaimer className="mb-8" />
 
       {/* Why This Works - Nervous System Basics */}
       <section className="mb-8">
@@ -40,6 +42,9 @@ export default function Mind() {
         <BreathingTimer />
         <p className="text-center text-sm text-dust dark:text-coal mt-4 italic">
           One cycle is enough. You can stop anytime.
+        </p>
+        <p className="text-center text-xs text-terracotta/80 mt-2">
+          If you feel dizzy or lightheaded, return to normal breathing.
         </p>
       </section>
 
@@ -106,9 +111,16 @@ export default function Mind() {
           />
           <div className="mt-4 pt-4 border-t border-stone-200/50 dark:border-night-600/50">
             <p className="text-sm text-clay dark:text-ash">
-              <strong className="text-bark dark:text-parchment">Why it works:</strong> Cold water on your face triggers the mammalian dive reflex - an ancient survival mechanism. Your heart rate drops 10-25%, blood redirects to vital organs, and your vagus nerve fires. This works even when you're panicking because it bypasses your thinking brain entirely.
+              <strong className="text-bark dark:text-parchment">Why it works:</strong> Cold water on your face triggers the mammalian dive reflex - an ancient survival mechanism. Your heart rate may slow, blood redirects to vital organs, and your vagus nerve activates. This works even when you're panicking because it bypasses your thinking brain entirely.
             </p>
           </div>
+          <Contraindication
+            warnings={[
+              "Not recommended if you have heart conditions, Raynaud's syndrome, or are pregnant",
+              "If you feel chest pain or extreme discomfort, stop immediately"
+            ]}
+            className="mt-4"
+          />
         </Collapsible>
 
         <Collapsible title="Name the Feeling" icon={<TagIcon />}>

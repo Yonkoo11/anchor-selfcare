@@ -124,6 +124,137 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════
+          PATHWAY SELECTOR - Guide users based on how they feel
+          ═══════════════════════════════════════════════════════════════════════ */}
+      <section className="py-12 md:py-16">
+        <div className="text-center mb-8">
+          <h2 className="
+            font-serif text-2xl sm:text-3xl font-semibold
+            text-bark dark:text-parchment
+            mb-3
+          ">
+            How are you right now?
+          </h2>
+          <p className="text-clay dark:text-ash">
+            Start where you are. There's no wrong answer.
+          </p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {/* I'm doing okay */}
+          <Link
+            href="/baseline"
+            className="
+              group
+              p-6
+              bg-sage/5 hover:bg-sage/10
+              border border-sage/20 hover:border-sage/30
+              rounded-xl
+              text-center
+              transition-all duration-200
+            "
+          >
+            <div className="
+              w-12 h-12 mx-auto mb-4
+              flex items-center justify-center
+              rounded-full
+              bg-sage/10 text-sage
+              group-hover:bg-sage/20
+              transition-colors
+            ">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+              </svg>
+            </div>
+            <h3 className="font-medium text-bark dark:text-parchment mb-1">
+              I'm doing okay
+            </h3>
+            <p className="text-sm text-clay dark:text-ash">
+              Build sustainable daily habits
+            </p>
+          </Link>
+
+          {/* I'm struggling */}
+          <Link
+            href="/when-off"
+            className="
+              group
+              p-6
+              bg-terracotta/5 hover:bg-terracotta/10
+              border border-terracotta/20 hover:border-terracotta/30
+              rounded-xl
+              text-center
+              transition-all duration-200
+            "
+          >
+            <div className="
+              w-12 h-12 mx-auto mb-4
+              flex items-center justify-center
+              rounded-full
+              bg-terracotta/10 text-terracotta
+              group-hover:bg-terracotta/20
+              transition-colors
+            ">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+              </svg>
+            </div>
+            <h3 className="font-medium text-bark dark:text-parchment mb-1">
+              I'm struggling
+            </h3>
+            <p className="text-sm text-clay dark:text-ash">
+              Quick resets when things feel hard
+            </p>
+          </Link>
+
+          {/* I need help now */}
+          <Link
+            href="/crisis"
+            className="
+              group
+              p-6
+              bg-bark/5 dark:bg-parchment/5
+              hover:bg-bark/10 dark:hover:bg-parchment/10
+              border border-bark/20 dark:border-parchment/20
+              hover:border-bark/30 dark:hover:border-parchment/30
+              rounded-xl
+              text-center
+              transition-all duration-200
+            "
+          >
+            <div className="
+              w-12 h-12 mx-auto mb-4
+              flex items-center justify-center
+              rounded-full
+              bg-bark/10 dark:bg-parchment/10
+              text-bark dark:text-parchment
+              group-hover:bg-bark/20 dark:group-hover:bg-parchment/20
+              transition-colors
+            ">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+              </svg>
+            </div>
+            <h3 className="font-medium text-bark dark:text-parchment mb-1">
+              I need help now
+            </h3>
+            <p className="text-sm text-clay dark:text-ash">
+              Crisis resources and grounding
+            </p>
+          </Link>
+        </div>
+
+        <p className="text-center text-sm text-dust dark:text-coal mt-6">
+          Or explore by topic:{' '}
+          <Link href="/mind" className="text-sage hover:underline">Mind</Link>
+          {' · '}
+          <Link href="/movement" className="text-sage hover:underline">Movement</Link>
+          {' · '}
+          <Link href="/quick-reference" className="text-sage hover:underline">Quick Reference</Link>
+        </p>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════
           ANTI-WELLNESS MANIFESTO
           ═══════════════════════════════════════════════════════════════════════ */}
       <section className="py-12 md:py-16 -mx-6 px-6 bg-sand/50 dark:bg-night-800/50">

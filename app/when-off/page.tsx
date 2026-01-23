@@ -1,4 +1,4 @@
-import { Collapsible, InstructionBlock, Footer, PageHeader } from '@/components'
+import { Collapsible, InstructionBlock, Footer, PageHeader, ContentDisclaimer } from '@/components'
 
 export default function WhenOff() {
   return (
@@ -8,6 +8,8 @@ export default function WhenOff() {
         description="Sometimes you know something is wrong but you don't know what to do about it. Find your situation below."
         icon={<CompassIcon />}
       />
+
+      <ContentDisclaimer className="mb-8" />
 
       {/* Collapsible scenarios */}
       <div className="space-y-4 stagger-children">

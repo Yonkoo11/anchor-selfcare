@@ -39,7 +39,7 @@ const suggestions = [
   {
     category: 'Daily Baseline',
     title: 'Sleep',
-    tip: 'Get horizontal. Close your eyes. Let go of the day. Rest is not optional—it\'s maintenance.',
+    tip: 'Get horizontal. Close your eyes. Let go of the day. Rest is not optional. It\'s maintenance.',
     href: '/baseline',
   },
   // When Off

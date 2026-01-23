@@ -129,7 +129,7 @@ export default function About() {
       <section className="mb-12">
         <h2 className="heading-section mb-5">Share Feedback</h2>
         <p className="text-clay dark:text-ash mb-6">
-          Did this help? Have a suggestion? Let us know — anonymously, of course.
+          Did this help? Have a suggestion? Let us know (anonymously, of course).
         </p>
         <FeedbackForm />
       </section>
