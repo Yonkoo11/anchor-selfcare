@@ -1,6 +1,7 @@
 export { BreathingTimer } from './BreathingTimer'
 export { Collapsible } from './Collapsible'
 export { FeedbackForm } from './FeedbackForm'
+export { FeatureInterestForm } from './FeatureInterestForm'
 export { InstructionBlock } from './InstructionBlock'
 export { Navigation } from './Navigation'
 export { Footer } from './Footer'
