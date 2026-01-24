@@ -20,7 +20,7 @@ export default function Home() {
         <div className="
           relative z-20
           max-w-4xl mx-auto
-          px-8 py-10 sm:px-12 sm:py-12 md:px-16 md:py-16 lg:px-20
+          px-10 py-10 sm:px-14 sm:py-12 md:px-20 md:py-16 lg:px-24
           bg-cream/95 dark:bg-night-800/95
           backdrop-blur-md
           border border-stone-200/50 dark:border-night-600/50
