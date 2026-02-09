@@ -1,0 +1,36 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAF8F5"/>
+      <stop offset="50%" style="stop-color:#F5F2ED"/>
+      <stop offset="100%" style="stop-color:#EDE8E0"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C4A484"/>
+      <stop offset="100%" style="stop-color:#C4A484;stop-opacity:0.5"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="150" cy="100" r="120" fill="#7D8B7A" fill-opacity="0.08"/>
+  <circle cx="1050" cy="480" r="90" fill="#C4A484" fill-opacity="0.08"/>
+
+  <!-- Logo circle -->
+  <circle cx="600" cy="180" r="45" fill="#7D8B7A"/>
+  <text x="600" y="195" text-anchor="middle" fill="#FAF8F5" font-family="Georgia, serif" font-size="32" font-weight="600">SC</text>
+
+  <!-- Title -->
+  <text x="600" y="300" text-anchor="middle" fill="#3D3632" font-family="Georgia, serif" font-size="64" font-weight="600">Self-Care Guide</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="360" text-anchor="middle" fill="#6B6560" font-family="system-ui, sans-serif" font-size="24">Simple instructions for taking care of yourself.</text>
+
+  <!-- Accent line -->
+  <rect x="570" y="400" width="60" height="4" rx="2" fill="url(#accent)"/>
+
+  <!-- Tagline -->
+  <text x="600" y="470" text-anchor="middle" fill="#8B8580" font-family="Georgia, serif" font-size="18" font-style="italic">No accounts. No tracking. No pressure.</text>
+</svg>
