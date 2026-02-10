@@ -1,90 +1,53 @@
-# Session Progress - Self-Care Guide
+# Session Progress - ANCHOR
 
 ## Last Session Summary
-- **Date:** January 10, 2025
+- **Date:** 2026-02-10
 - **What was done:**
-  - Completed full app implementation (7 pages)
-  - Built comprehensive design system (DESIGN_SYSTEM.md)
-  - Created 15+ reusable components
-  - Implemented light/dark theme toggle
-  - Added breathing timer with audio cues
-  - Created scroll/text reveal animations
-  - Built static export for Vercel deployment
-  - Created mockup generation script (generate-mockups.js)
-- **What's next:**
-  - Apply vibecoding infrastructure (memory system, git, screenshots)
-  - Consider PWA support
-  - Consider additional breathing patterns
-- **Blockers/Issues:**
-  - ESLint not configured (interactive prompt)
+  - Tagged repo with "portfolio" topic (will auto-appear on dev portfolio)
+  - Identified current visual issues (oversized SVG icons dominate viewport on GH Pages)
+  - Captured user's new vision for Anchor v2
 
-## Last Session Summary
-- **Date:** January 13, 2026
-- **What was done:**
-  - [x] Redesigned header/navigation component (full-width, logo at far left)
-  - [x] Rebranded from "Self-Care Guide" → "ANCHOR"
-  - [x] Updated all metadata (layout.tsx, manifest.json, about page)
-  - [x] Added Framework Selection guide to CLAUDE.md
-  - [x] Updated /session-end skill with tooling reflection step
-  - [x] Logged framework selection lesson to LESSONS_LOG.md
-- **What's next:**
-  - Test header on all pages (verify full-width layout)
-  - Design/create ANCHOR logo/icon
-  - Update OG images with new branding
-  - Consider migrating to Svelte+Vite (per framework lesson)
-- **Blockers/Issues:**
-  - Next.js dev server slow (20+ second compiles) - noted for future projects
+## User Vision: Anchor v2 - Health Knowledge Base
+Transform from static self-care guide into an **interactive health knowledge base**:
+- AI-powered search where users ask health & self-care questions
+- All content scientifically backed and fact-checked
+- Similar to medical textbook approach but public-facing
+- Users come to verify any health or self-care claim
+- Think: WebMD meets Perplexity, but clean, trustworthy, no ads
 
-### Rebrand: ANCHOR
-- Brand name: "ANCHOR" - Something to hold onto when you're drifting
-- All caps, bold typography in header
-- Updated: Navigation.tsx, layout.tsx, manifest.json, about/page.tsx
-- New tagline: "Something to hold onto when you're drifting"
+## What Needs to Happen (next session)
+1. **Explore current codebase** - full file structure, all 7 pages, components
+2. **Product definition** - scope v1 of knowledge base (what ships first)
+3. **Architecture decisions**:
+   - Knowledge base storage (markdown? structured JSON? vector DB?)
+   - AI search: which model, RAG for grounded answers with citations
+   - Cost model (AI API calls, hosting)
+   - Content sourcing and fact-checking pipeline
+4. **Design overhaul** - current UI has issues (giant icons on GH Pages)
+5. **Add override to portfolio** - proper title, description, featured flag
 
-### Framework Lesson Captured
-- Added to CLAUDE.md: Framework Selection decision matrix
-- Added to LESSONS_LOG.md: Next.js vs Vite lesson
-- Updated /session-end: Mandatory tooling reflection step
+## Previous Sessions
 
-### Previous Session (January 12, 2026)
-- Created ai/ memory directory
-- Initialized git repository
-- Applied V1 Earthy Cabin design
-- Created world-class landing page
+### January 13, 2026
+- Rebranded from "Self-Care Guide" to "ANCHOR"
+- Updated header/navigation, metadata, manifest
+- Tagline: "Something to hold onto when you're drifting"
 
-## Handover Notes
+### January 12, 2026
+- Created ai/ memory directory, initialized git
+- Applied V1 Earthy Cabin design, created landing page
 
-### App Status
-- **State:** Production-ready, fully functional
-- **Deployment:** Configured for Vercel (https://selfcare-guide.vercel.app)
-- **Build:** Static export available in `out/` directory
+### January 10, 2025
+- Full app implementation (7 pages, 15+ components)
+- Light/dark theme, breathing timer, animations
+- Design system: cream #FAF8F5, bark #2D2A26, sage #7D8B7A, terracotta #C4A484
 
-### Quick Commands
+## Tech Stack
+- Next.js (App Router), Tailwind CSS, static export
+- PWA support (manifest.json, service worker)
+
+## Quick Commands
 ```bash
-# Development
-npm run dev          # Start dev server at localhost:3000
-
-# Production
-npm run build        # Build for production
-npm run start        # Start production server
-
-# Linting (requires .eslintrc.json)
-npm run lint
+npm run dev          # localhost:3000
+npm run build        # Production build
 ```
-
-### Important Files
-| File | Purpose |
-|------|---------|
-| `DESIGN_SYSTEM.md` | Design decisions and token reference |
-| `tailwind.config.ts` | Color palette, typography, shadows |
-| `app/globals.css` | 800+ lines of custom CSS utilities |
-| `components/ThemeProvider.tsx` | Theme state management |
-| `components/BreathingTimer.tsx` | Main interactive feature |
-
-### Design System Quick Reference
-- **Cream background**: #FAF8F5
-- **Bark text**: #2D2A26
-- **Sage accent**: #7D8B7A
-- **Terracotta warm**: #C4A484
-- **Card padding**: 24px minimum
-- **Max reading width**: 65ch (~680px)
