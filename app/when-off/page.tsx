@@ -13,7 +13,7 @@ export default function WhenOff() {
 
       {/* Collapsible scenarios */}
       <div className="space-y-4 stagger-children reveal-on-scroll">
-        <Collapsible title="If you feel tired" icon={<BatteryIcon />} variant="featured">
+        <Collapsible title="If you feel tired" icon={<BatteryIcon />} variant="featured" id="tired">
           <p className="text-clay dark:text-ash mb-4">
             Tiredness is information, not weakness. Your body is telling you something.
             Listen to it.
@@ -34,7 +34,7 @@ export default function WhenOff() {
           </div>
         </Collapsible>
 
-        <Collapsible title="If you're about to go out" icon={<DoorIcon />}>
+        <Collapsible title="If you're about to go out" icon={<DoorIcon />} id="going-out">
           <p className="text-clay dark:text-ash mb-4">
             Transitions are hard. Going from inside to outside takes effort.
             Here's a quick checklist to make it easier.
@@ -51,7 +51,7 @@ export default function WhenOff() {
           />
         </Collapsible>
 
-        <Collapsible title="If you feel stiff" icon={<StretchIcon />}>
+        <Collapsible title="If you feel stiff" icon={<StretchIcon />} id="stiff">
           <p className="text-clay dark:text-ash mb-4">
             Your body has been in one position too long.
             It needs to remember it can move.
@@ -73,7 +73,7 @@ export default function WhenOff() {
           </div>
         </Collapsible>
 
-        <Collapsible title="If you feel unconfident" icon={<ShieldIcon />}>
+        <Collapsible title="If you feel unconfident" icon={<ShieldIcon />} id="unconfident">
           <p className="text-clay dark:text-ash mb-4">
             Low confidence is usually physical, not mental. Your body affects your mind.
             Start with your body.
@@ -94,7 +94,7 @@ export default function WhenOff() {
           </div>
         </Collapsible>
 
-        <Collapsible title="If you've skipped routines" icon={<RefreshIcon />}>
+        <Collapsible title="If you've skipped routines" icon={<RefreshIcon />} id="skipped-routines">
           <p className="text-clay dark:text-ash mb-4">
             Happens to everyone. This is not a moral failing.
             You just need to restart, not punish yourself.
@@ -109,7 +109,7 @@ export default function WhenOff() {
           />
         </Collapsible>
 
-        <Collapsible title="If you can't stop checking" icon={<PhoneIcon />}>
+        <Collapsible title="If you can't stop checking" icon={<PhoneIcon />} id="cant-stop-checking">
           <p className="text-clay dark:text-ash mb-4">
             Markets, feeds, notifications. The urge to check is a stress response, not a strategy.
             You're looking for certainty in a place that can't give it.
@@ -130,7 +130,7 @@ export default function WhenOff() {
           </div>
         </Collapsible>
 
-        <Collapsible title="Post-volatility reset" icon={<HeartResetIcon />}>
+        <Collapsible title="Post-volatility reset" icon={<HeartResetIcon />} id="post-volatility">
           <p className="text-clay dark:text-ash mb-4">
             After big moves - up or down - your nervous system is activated.
             This reset helps you return to baseline.

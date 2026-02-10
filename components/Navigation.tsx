@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ThemeToggle, ThemeToggleCompact } from './ThemeToggle'
+import { CommandPaletteToggle } from './CommandPaletteToggle'
 
 // ─────────────────────────────────────────────────────────────────────────────
 // ICONS (must be defined before navItems)
@@ -138,8 +139,9 @@ export function Navigation() {
                   })}
                 </div>
 
-                {/* Theme Toggle */}
-                <div className="ml-6 pl-6 border-l border-stone-200/60 dark:border-night-700/60">
+                {/* Search + Theme Toggle */}
+                <div className="ml-6 pl-6 border-l border-stone-200/60 dark:border-night-700/60 flex items-center gap-2">
+                  <CommandPaletteToggle />
                   <ThemeToggle />
                 </div>
               </div>

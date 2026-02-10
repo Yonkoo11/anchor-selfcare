@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Fraunces } from 'next/font/google'
-import { Navigation, SiteFooter, ThemeProvider, ParallaxOrbs, CrisisButton, ThemeToggleCompact } from '@/components'
+import { Navigation, SiteFooter, ThemeProvider, ParallaxOrbs, CrisisButton, ThemeToggleCompact, CommandPalette } from '@/components'
 import './globals.css'
 
 // Optimized font loading via next/font
@@ -136,6 +136,7 @@ export default function RootLayout({
           <ParallaxOrbs />
 
           <Navigation />
+          <CommandPalette />
           <CrisisButton />
 
           {/* Mobile-only theme toggle */}

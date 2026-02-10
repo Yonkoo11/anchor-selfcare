@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, ReactNode, useId } from 'react'
+import { useState, useRef, useEffect, ReactNode, useId } from 'react'
 
 interface CollapsibleProps {
   title: string
@@ -8,10 +8,24 @@ interface CollapsibleProps {
   icon?: ReactNode
   children: ReactNode
   variant?: 'featured' | 'glass' | 'standard'
+  id?: string
 }
 
-export function Collapsible({ title, defaultOpen = false, icon, children, variant = 'glass' }: CollapsibleProps) {
+export function Collapsible({ title, defaultOpen = false, icon, children, variant = 'glass', id }: CollapsibleProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
+
+  // Auto-open when navigated to via hash link
+  useEffect(() => {
+    if (!id) return
+    const hash = window.location.hash.slice(1)
+    if (hash === id) {
+      setIsOpen(true)
+      // Scroll to the element after a short delay for render
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
+    }
+  }, [id])
   const contentRef = useRef<HTMLDivElement>(null)
   const contentId = useId()
 
@@ -45,6 +59,7 @@ export function Collapsible({ title, defaultOpen = false, icon, children, varian
 
   return (
     <div
+      id={id}
       className={`
         group
         transition-all duration-normal ease-out

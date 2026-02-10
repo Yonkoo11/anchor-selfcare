@@ -12,7 +12,7 @@ export default function Movement() {
       <ContentDisclaimer className="mb-8" />
 
       {/* Screen Worker Section */}
-      <section className="mb-8">
+      <section className="mb-8" id="screen-worker">
         <div className="card-glass p-6 border-l-[3px] border-l-terracotta">
           <h2 className="font-medium text-bark dark:text-parchment mb-3">If you work at a screen</h2>
           <p className="text-clay dark:text-ash mb-4">
@@ -38,7 +38,7 @@ export default function Movement() {
 
       {/* Collapsible sections */}
       <div className="space-y-4 stagger-children reveal-on-scroll">
-        <Collapsible title="What Good Posture Actually Is" icon={<AlignIcon />} variant="featured">
+        <Collapsible title="What Good Posture Actually Is" icon={<AlignIcon />} variant="featured" id="good-posture">
           <p className="text-clay dark:text-ash mb-4">
             Good posture is not rigid, military, or forced.
             It's stacked. Head over shoulders, shoulders over hips.
@@ -60,7 +60,7 @@ export default function Movement() {
           </div>
         </Collapsible>
 
-        <Collapsible title="How To Reset Your Posture" icon={<RefreshIcon />}>
+        <Collapsible title="How To Reset Your Posture" icon={<RefreshIcon />} id="reset-posture">
           <p className="text-clay mb-4">
             A quick way to find neutral posture when you've been slouching.
             Takes ten seconds.
@@ -77,7 +77,7 @@ export default function Movement() {
           />
         </Collapsible>
 
-        <Collapsible title="Balance" icon={<BalanceIcon />}>
+        <Collapsible title="Balance" icon={<BalanceIcon />} id="balance">
           <p className="text-clay mb-4">
             Balance keeps you stable and confident. It's simple to practice.
             You can do this while waiting for anything.
@@ -94,7 +94,7 @@ export default function Movement() {
           />
         </Collapsible>
 
-        <Collapsible title="Push-Ups (The Basics)" icon={<ArrowUpIcon />}>
+        <Collapsible title="Push-Ups (The Basics)" icon={<ArrowUpIcon />} id="push-ups">
           <p className="text-clay mb-4">
             A push-up is just pushing your body away from something.
             Start wherever you need to start.
@@ -111,7 +111,7 @@ export default function Movement() {
           />
         </Collapsible>
 
-        <Collapsible title="Hip Hinge (Why Your Back Hurts)" icon={<PivotIcon />}>
+        <Collapsible title="Hip Hinge (Why Your Back Hurts)" icon={<PivotIcon />} id="hip-hinge">
           <p className="text-clay dark:text-ash mb-4">
             Most back pain comes from bending wrong.
             You should bend from your hips, not your spine.
@@ -133,7 +133,7 @@ export default function Movement() {
           </div>
         </Collapsible>
 
-        <Collapsible title="Neck & Shoulder Reset" icon={<NeckIcon />}>
+        <Collapsible title="Neck & Shoulder Reset" icon={<NeckIcon />} id="neck-reset">
           <p className="text-clay dark:text-ash mb-4">
             If you've been staring at a screen, your neck is probably jutting forward and your shoulders are hunched.
             This takes 30 seconds to fix.

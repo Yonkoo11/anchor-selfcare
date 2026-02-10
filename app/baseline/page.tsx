@@ -13,7 +13,7 @@ export default function Baseline() {
 
       {/* Collapsible sections with icons */}
       <div className="space-y-4 stagger-children reveal-on-scroll">
-        <Collapsible title="Bathing" icon={<DropletIcon />} variant="featured">
+        <Collapsible title="Bathing" icon={<DropletIcon />} variant="featured" id="bathing">
           <p className="text-clay mb-4">
             Water resets your body's sense of itself. It's not about being clean for others.
             It's about feeling like you exist in your body.
@@ -28,7 +28,7 @@ export default function Baseline() {
           />
         </Collapsible>
 
-        <Collapsible title="Face" icon={<SparklesIcon />}>
+        <Collapsible title="Face" icon={<SparklesIcon />} id="face">
           <p className="text-clay mb-4">
             Your face accumulates the day. Oil, dust, stress.
             Washing it is a small reset button.
@@ -43,7 +43,7 @@ export default function Baseline() {
           />
         </Collapsible>
 
-        <Collapsible title="Clean Clothes" icon={<ShirtIcon />}>
+        <Collapsible title="Clean Clothes" icon={<ShirtIcon />} id="clean-clothes">
           <p className="text-clay mb-4">
             Fresh fabric changes how you feel. You don't need a full outfit change.
             The basics are enough.
@@ -58,7 +58,7 @@ export default function Baseline() {
           />
         </Collapsible>
 
-        <Collapsible title="Eating" icon={<CoffeeIcon />}>
+        <Collapsible title="Eating" icon={<CoffeeIcon />} id="eating">
           <p className="text-clay dark:text-ash mb-4">
             Your brain needs fuel to function. You don't need a perfect meal.
             You need something in your body.
@@ -88,7 +88,7 @@ export default function Baseline() {
           </div>
         </Collapsible>
 
-        <Collapsible title="Hydration" icon={<WaterGlassIcon />}>
+        <Collapsible title="Hydration" icon={<WaterGlassIcon />} id="hydration">
           <p className="text-clay dark:text-ash mb-4">
             Most people are mildly dehydrated most of the time.
             Even 1-2% dehydration affects focus and mood.
@@ -122,7 +122,7 @@ export default function Baseline() {
           </div>
         </Collapsible>
 
-        <Collapsible title="Movement" icon={<ActivityIcon />}>
+        <Collapsible title="Movement" icon={<ActivityIcon />} id="movement">
           <p className="text-clay mb-4">
             Bodies need to move to feel alive. This isn't exercise.
             This is reminding your body it has limbs.
@@ -137,7 +137,7 @@ export default function Baseline() {
           />
         </Collapsible>
 
-        <Collapsible title="Sleep" icon={<MoonIcon />} variant="featured">
+        <Collapsible title="Sleep" icon={<MoonIcon />} variant="featured" id="sleep">
           <p className="text-clay dark:text-ash mb-4">
             Everything is harder when you're tired. Sleep isn't lazy.
             Sleep is when your brain takes out the trash - literally. Your brain has a cleaning system

@@ -57,7 +57,7 @@ export default function Mind() {
 
         {/* Collapsible sections */}
         <div className="space-y-4 stagger-children">
-          <Collapsible title="5-4-3-2-1 Grounding" icon={<AnchorIcon />} variant="featured">
+          <Collapsible title="5-4-3-2-1 Grounding" icon={<AnchorIcon />} variant="featured" id="grounding">
           <p className="text-clay dark:text-ash mb-4">
             When your mind is spinning, this pulls you back to the present moment.
             Uses your senses to anchor you to reality.
@@ -74,7 +74,7 @@ export default function Mind() {
           />
         </Collapsible>
 
-        <Collapsible title="The Physiological Sigh" icon={<WindIcon />}>
+        <Collapsible title="The Physiological Sigh" icon={<WindIcon />} id="physiological-sigh">
           <p className="text-clay dark:text-ash mb-4">
             The fastest way to calm your nervous system. One breath.
             Discovered by Stanford neuroscientists.
@@ -95,7 +95,7 @@ export default function Mind() {
           </div>
         </Collapsible>
 
-        <Collapsible title="Cold Water Reset" icon={<DropletIcon />}>
+        <Collapsible title="Cold Water Reset" icon={<DropletIcon />} id="cold-water">
           <p className="text-clay dark:text-ash mb-4">
             Cold water on your face triggers the dive reflex.
             It physically slows your heart rate and calms you down.
@@ -123,7 +123,7 @@ export default function Mind() {
           />
         </Collapsible>
 
-        <Collapsible title="Name the Feeling" icon={<TagIcon />}>
+        <Collapsible title="Name the Feeling" icon={<TagIcon />} id="name-the-feeling">
           <p className="text-clay dark:text-ash mb-4">
             Naming an emotion reduces its intensity.
             This is called "affect labeling" and it's backed by brain science.
@@ -139,7 +139,7 @@ export default function Mind() {
           />
         </Collapsible>
 
-        <Collapsible title="The 90-Second Rule" icon={<ClockIcon />}>
+        <Collapsible title="The 90-Second Rule" icon={<ClockIcon />} id="90-second-rule">
           <p className="text-clay dark:text-ash mb-4">
             Strong emotions last about 90 seconds in your body.
             After that, you're choosing to keep them going.
