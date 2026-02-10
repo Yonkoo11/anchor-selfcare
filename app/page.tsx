@@ -16,6 +16,9 @@ export default function Home() {
           HERO SECTION - Emotional Hook
           ═══════════════════════════════════════════════════════════════════════ */}
       <section className="relative pt-8 pb-12 md:pt-12 md:pb-16 -mx-6 px-6">
+        {/* Ambient breathing background glow */}
+        <div className="hero-breathe" aria-hidden="true" />
+
         {/* Hero content container - generous width and padding */}
         <div className="
           relative z-20
@@ -122,6 +125,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Divider */}
+      <hr className="divider" />
 
       {/* ═══════════════════════════════════════════════════════════════════════
           PATHWAY SELECTOR - Guide users based on how they feel
@@ -305,6 +311,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider */}
+      <hr className="divider" />
+
       {/* ═══════════════════════════════════════════════════════════════════════
           THE GUIDE - Navigation
           ═══════════════════════════════════════════════════════════════════════ */}
@@ -360,6 +369,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider */}
+      <hr className="divider" />
+
       {/* ═══════════════════════════════════════════════════════════════════════
           QUICK BREATHING - Interactive Element
           ═══════════════════════════════════════════════════════════════════════ */}
@@ -370,44 +382,49 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════════
           TRUST SECTION
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16 -mx-6 px-6 bg-sand/30 dark:bg-night-800/30">
-        <div className="text-center max-w-xl mx-auto">
-          <h2 className="
-            font-serif text-xl sm:text-2xl font-medium
-            text-bark dark:text-parchment
-            mb-6
+      <section className="py-16 md:py-24 -mx-6 px-6 bg-bark dark:bg-night-950">
+        <div className="max-w-xl mx-auto">
+          <span className="
+            block text-xs font-medium tracking-widest uppercase
+            text-sage mb-4
           ">
-            Built on evidence. Designed for exhaustion.
+            Our Promise
+          </span>
+
+          <h2 className="
+            font-serif text-2xl sm:text-3xl md:text-4xl font-semibold
+            text-cream dark:text-parchment
+            leading-tight mb-12
+          ">
+            Built on evidence.<br />
+            Free of everything else.
           </h2>
 
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-clay dark:text-ash">
+          <div className="space-y-8">
             {[
-              'Neuroscience-backed breathing',
-              'Trauma-informed grounding',
-              'Physical therapy basics',
+              { numeral: 'I', title: 'Evidence-based only', desc: 'Every answer cites peer-reviewed research. No wellness trends, no anecdotal remedies presented as fact.' },
+              { numeral: 'II', title: 'No tracking, no ads', desc: 'We do not collect personal data, run analytics, or serve advertisements. Zero cookies, zero trackers.' },
+              { numeral: 'III', title: 'Scientifically verified', desc: 'Content is reviewed against current medical literature. When research is conflicting, we say so plainly.' },
+              { numeral: 'IV', title: 'Free forever', desc: 'Health information should not be paywalled. No premium tiers, no gated content, no "subscribe to read more."' },
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2">
-                <span className="w-1 h-1 rounded-full bg-sage" />
-                {item}
+              <div key={i} className="flex gap-6 pb-8 border-b border-cream/10 dark:border-parchment/10 last:border-0 last:pb-0">
+                <span className="
+                  flex-shrink-0
+                  font-serif text-2xl font-semibold
+                  text-sage
+                ">
+                  {item.numeral}
+                </span>
+                <div>
+                  <h3 className="font-medium text-cream dark:text-parchment mb-1">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-cream/60 dark:text-parchment/60 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-stone-200/50 dark:border-night-600/50">
-            <div className="flex items-center justify-center gap-6 text-xs text-dust dark:text-coal">
-              <div className="flex items-center gap-2">
-                <LockIcon className="w-4 h-4" />
-                <span>Zero tracking</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <HeartIcon className="w-4 h-4" />
-                <span>Free forever</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldIcon className="w-4 h-4" />
-                <span>No accounts</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -458,9 +475,9 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════════
           FOOTER
           ═══════════════════════════════════════════════════════════════════════ */}
-      <footer className="py-8 border-t border-stone-200/50 dark:border-night-600/50">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-dust dark:text-coal">
-          <div className="flex items-center gap-2">
+      <footer className="py-10 border-t border-stone-200/50 dark:border-night-600/50">
+        <div className="flex flex-col items-center gap-6 text-sm">
+          <div className="flex items-center gap-2 text-dust dark:text-coal">
             <span className="
               w-5 h-5
               flex items-center justify-center
@@ -478,7 +495,11 @@ export default function Home() {
             <span>For the overwhelmed</span>
           </div>
 
-          <div className="flex items-center gap-6">
+          <p className="text-xs text-dust/70 dark:text-coal/70 italic">
+            No data collected. Ever.
+          </p>
+
+          <div className="flex items-center gap-6 text-dust dark:text-coal">
             <Link href="/about" className="hover:text-bark dark:hover:text-parchment transition-colors">
               About
             </Link>
@@ -653,7 +674,7 @@ function QuickBreath() {
         </p>
 
         {/* Breathing circle */}
-        <div className="relative w-32 h-32 mx-auto mb-8">
+        <div className="relative w-40 h-40 mx-auto mb-8">
           <div
             className={`
               absolute inset-0
@@ -661,7 +682,7 @@ function QuickBreath() {
               border-2
               transition-all duration-1000 ease-in-out
               ${isActive
-                ? 'border-sage bg-sage/10'
+                ? 'border-sage bg-sage/10 glow-breathe'
                 : 'border-stone-200 dark:border-night-600'
               }
             `}
