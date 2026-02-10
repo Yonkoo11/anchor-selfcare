@@ -10,23 +10,6 @@ import { useState, useEffect } from 'react'
 // ═══════════════════════════════════════════════════════════════════════════════
 
 export default function Home() {
-  useEffect(() => {
-    const sections = document.querySelectorAll('.reveal-on-scroll')
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed')
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.08, rootMargin: '0px 0px -60px 0px' }
-    )
-    sections.forEach(s => observer.observe(s))
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <div className="min-h-screen">
       {/* ═══════════════════════════════════════════════════════════════════════

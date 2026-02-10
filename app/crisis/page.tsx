@@ -48,7 +48,7 @@ export default function Crisis() {
       </section>
 
       {/* Grounding - 5-4-3-2-1 */}
-      <section className="mb-10">
+      <section className="mb-10 reveal-on-scroll">
         <h2 className="text-sm font-medium text-clay dark:text-ash mb-3 uppercase tracking-wide">If you need grounding</h2>
         <div className="card-glass p-6">
           <p className="text-bark dark:text-parchment font-medium mb-4">Name what you notice:</p>
@@ -63,7 +63,7 @@ export default function Crisis() {
       </section>
 
       {/* Permission */}
-      <section className="mb-10">
+      <section className="mb-10 reveal-on-scroll">
         <div className="card-glass p-6 border-l-[3px] border-l-sage bg-sage/5">
           <p className="text-bark dark:text-parchment font-medium mb-2">Remember:</p>
           <ul className="space-y-2 text-clay dark:text-ash">
@@ -84,7 +84,7 @@ export default function Crisis() {
       </section>
 
       {/* Crisis Resources */}
-      <section className="mb-10">
+      <section className="mb-10 reveal-on-scroll">
         <h2 className="text-sm font-medium text-clay dark:text-ash mb-3 uppercase tracking-wide">If you need more support</h2>
         <div className="card-glass p-5 space-y-3">
           <CrisisLink

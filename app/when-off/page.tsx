@@ -1,4 +1,4 @@
-import { Collapsible, InstructionBlock, Footer, PageHeader, ContentDisclaimer } from '@/components'
+import { Collapsible, InstructionBlock, Footer, PageHeader, ContentDisclaimer, GuideNav } from '@/components'
 
 export default function WhenOff() {
   return (
@@ -12,7 +12,7 @@ export default function WhenOff() {
       <ContentDisclaimer className="mb-8" />
 
       {/* Collapsible scenarios */}
-      <div className="space-y-4 stagger-children">
+      <div className="space-y-4 stagger-children reveal-on-scroll">
         <Collapsible title="If you feel tired" icon={<BatteryIcon />} variant="featured">
           <p className="text-clay dark:text-ash mb-4">
             Tiredness is information, not weakness. Your body is telling you something.
@@ -153,7 +153,9 @@ export default function WhenOff() {
         </Collapsible>
       </div>
 
-      <Footer nextPage={{ href: '/mind', label: 'Calm your mind' }}>
+      <GuideNav currentIndex={1} />
+
+      <Footer>
         Start with the first step. If that's too much, just notice how you feel.
         That counts too.
       </Footer>

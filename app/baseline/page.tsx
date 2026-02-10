@@ -1,4 +1,4 @@
-import { Collapsible, InstructionBlock, Footer, PageHeader, ContentDisclaimer } from '@/components'
+import { Collapsible, InstructionBlock, Footer, PageHeader, ContentDisclaimer, GuideNav } from '@/components'
 
 export default function Baseline() {
   return (
@@ -12,7 +12,7 @@ export default function Baseline() {
       <ContentDisclaimer className="mb-8" />
 
       {/* Collapsible sections with icons */}
-      <div className="space-y-4 stagger-children">
+      <div className="space-y-4 stagger-children reveal-on-scroll">
         <Collapsible title="Bathing" icon={<DropletIcon />} variant="featured">
           <p className="text-clay mb-4">
             Water resets your body's sense of itself. It's not about being clean for others.
@@ -185,7 +185,9 @@ export default function Baseline() {
         </Collapsible>
       </div>
 
-      <Footer nextPage={{ href: '/when-off', label: 'If something feels off' }}>
+      <GuideNav currentIndex={0} />
+
+      <Footer>
         You don't have to do all of these perfectly. Pick one. Start there.
         Tomorrow is another day.
       </Footer>

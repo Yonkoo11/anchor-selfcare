@@ -1,4 +1,4 @@
-import { Collapsible, InstructionBlock, Footer, PageHeader, ContentDisclaimer } from '@/components'
+import { Collapsible, InstructionBlock, Footer, PageHeader, ContentDisclaimer, GuideNav } from '@/components'
 
 export default function Movement() {
   return (
@@ -37,7 +37,7 @@ export default function Movement() {
       </section>
 
       {/* Collapsible sections */}
-      <div className="space-y-4 stagger-children">
+      <div className="space-y-4 stagger-children reveal-on-scroll">
         <Collapsible title="What Good Posture Actually Is" icon={<AlignIcon />} variant="featured">
           <p className="text-clay dark:text-ash mb-4">
             Good posture is not rigid, military, or forced.
@@ -151,7 +151,9 @@ export default function Movement() {
         </Collapsible>
       </div>
 
-      <Footer nextPage={{ href: '/baseline', label: 'Back to daily basics' }}>
+      <GuideNav currentIndex={3} />
+
+      <Footer>
         Your body already knows how to do most of this.
         These instructions just remind it.
       </Footer>

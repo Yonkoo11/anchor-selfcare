@@ -1,4 +1,4 @@
-import { BreathingTimer, Collapsible, InstructionBlock, Footer, PageHeader, ContentDisclaimer, Contraindication } from '@/components'
+import { BreathingTimer, Collapsible, InstructionBlock, Footer, PageHeader, ContentDisclaimer, Contraindication, GuideNav } from '@/components'
 
 export default function Mind() {
   return (
@@ -49,7 +49,7 @@ export default function Mind() {
       </section>
 
       {/* Quick Reference Techniques */}
-      <section>
+      <section className="reveal-on-scroll">
         <h2 className="heading-section mb-5">Quick Techniques</h2>
         <p className="text-clay dark:text-ash mb-6">
           When you don't have time for guided breathing, try one of these.
@@ -159,7 +159,7 @@ export default function Mind() {
       </section>
 
       {/* Crisis Resources - Gentle and Non-judgmental */}
-      <section className="mt-12">
+      <section className="mt-12 reveal-on-scroll">
         <div className="card-glass p-6 border-l-[3px] border-l-sage">
           <div className="flex items-start gap-4">
             <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-sage-muted dark:bg-sage-muted-dark text-sage">
@@ -210,7 +210,9 @@ export default function Mind() {
         </div>
       </section>
 
-      <Footer nextPage={{ href: '/movement', label: 'Move your body' }}>
+      <GuideNav currentIndex={2} />
+
+      <Footer>
         Your mind and body are not separate. Calming one calms the other.
         Start with your breath.
       </Footer>

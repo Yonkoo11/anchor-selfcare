@@ -194,11 +194,6 @@ export function Navigation() {
               )
             })}
 
-            {/* Theme Toggle */}
-            <div className="flex flex-col items-center gap-0.5 px-2 py-1.5 min-w-[48px]">
-              <ThemeToggleCompact />
-              <span className="text-[9px] tracking-wide uppercase font-medium text-clay/60 dark:text-ash/60">Theme</span>
-            </div>
           </div>
         </div>
       </nav>

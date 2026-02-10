@@ -29,7 +29,7 @@ export default function About() {
       </section>
 
       {/* What We Do Not Do */}
-      <section className="mb-12">
+      <section className="mb-12 reveal-on-scroll">
         <h2 className="heading-section mb-5">What We Don't Do</h2>
         <div className="card-glass p-6">
           <ul className="space-y-3 text-clay dark:text-ash">
@@ -58,7 +58,7 @@ export default function About() {
       </section>
 
       {/* Our Approach */}
-      <section className="mb-12">
+      <section className="mb-12 reveal-on-scroll">
         <h2 className="heading-section mb-5">Our Approach</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <ApproachCard
@@ -81,7 +81,7 @@ export default function About() {
       </section>
 
       {/* Privacy */}
-      <section className="mb-12">
+      <section className="mb-12 reveal-on-scroll">
         <h2 className="heading-section mb-5">Privacy</h2>
         <div className="card-glass p-6 border-l-[3px] border-l-sage">
           <p className="text-clay dark:text-ash mb-4">
@@ -96,7 +96,7 @@ export default function About() {
       </section>
 
       {/* Inspiration */}
-      <section className="mb-12">
+      <section className="mb-12 reveal-on-scroll">
         <h2 className="heading-section mb-5">Inspired By</h2>
         <p className="text-clay dark:text-ash mb-4">
           The content here draws from evidence-based techniques:
@@ -126,7 +126,7 @@ export default function About() {
       </section>
 
       {/* Feedback */}
-      <section className="mb-12">
+      <section className="mb-12 reveal-on-scroll">
         <h2 className="heading-section mb-5">Share Feedback</h2>
         <p className="text-clay dark:text-ash mb-6">
           Did this help? Have a suggestion? Let us know (anonymously, of course).
