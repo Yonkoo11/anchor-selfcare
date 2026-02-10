@@ -69,11 +69,11 @@ function AnchorIcon({ className, strokeWidth = 2 }: { className?: string; stroke
 }
 
 const navItems = [
-  { href: '/crisis', label: 'Right Now', icon: AnchorIcon },
-  { href: '/baseline', label: 'Baseline', icon: CheckCircleIcon },
-  { href: '/when-off', label: 'When Off', icon: HelpCircleIcon },
-  { href: '/mind', label: 'Mind', icon: MindIcon },
+  { href: '/baseline', label: 'The Basics', icon: CheckCircleIcon },
+  { href: '/when-off', label: 'Quick Reset', icon: HelpCircleIcon },
+  { href: '/mind', label: 'Mind & Calm', icon: MindIcon },
   { href: '/movement', label: 'Movement', icon: HeartIcon },
+  { href: '/crisis', label: 'Crisis Help', icon: AnchorIcon },
   { href: '/about', label: 'About', icon: InfoIcon },
 ]
 
@@ -170,11 +170,11 @@ export function Navigation() {
               const Icon = item.icon
               // Shorten labels for mobile
               const mobileLabel = {
-                'Right Now': 'Now',
-                'Baseline': 'Daily',
-                'When Off': 'Off',
-                'Mind': 'Mind',
+                'The Basics': 'Basics',
+                'Quick Reset': 'Reset',
+                'Mind & Calm': 'Mind',
                 'Movement': 'Move',
+                'Crisis Help': 'Crisis',
               }[item.label] || item.label
               return (
                 <Link

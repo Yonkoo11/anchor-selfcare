@@ -10,6 +10,23 @@ import { useState, useEffect } from 'react'
 // ═══════════════════════════════════════════════════════════════════════════════
 
 export default function Home() {
+  useEffect(() => {
+    const sections = document.querySelectorAll('.reveal-on-scroll')
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.08, rootMargin: '0px 0px -60px 0px' }
+    )
+    sections.forEach(s => observer.observe(s))
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <div className="min-h-screen">
       {/* ═══════════════════════════════════════════════════════════════════════
@@ -21,6 +38,7 @@ export default function Home() {
 
         {/* Hero content container - generous width and padding */}
         <div className="
+          hero-entrance
           relative z-20
           max-w-4xl mx-auto
           px-10 py-10 sm:px-14 sm:py-12 md:px-20 md:py-16 lg:px-24
@@ -132,7 +150,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════════
           PATHWAY SELECTOR - Guide users based on how they feel
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 reveal-on-scroll">
         <div className="text-center mb-8">
           <h2 className="
             font-serif text-2xl sm:text-3xl font-semibold
@@ -263,7 +281,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════════
           ANTI-WELLNESS MANIFESTO
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16 -mx-6 px-6 bg-sand/50 dark:bg-night-800/50">
+      <section className="py-12 md:py-16 -mx-6 px-6 bg-sand/50 dark:bg-night-800/50 reveal-on-scroll">
         <div className="max-w-2xl">
           <h2 className="
             font-serif text-2xl sm:text-3xl font-semibold
@@ -317,7 +335,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════════
           THE GUIDE - Navigation
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 reveal-on-scroll">
         <div className="flex items-end justify-between mb-8">
           <div>
             <h2 className="
@@ -375,14 +393,14 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════════
           QUICK BREATHING - Interactive Element
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 reveal-on-scroll">
         <QuickBreath />
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════
           TRUST SECTION
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24 -mx-6 px-6 bg-bark dark:bg-night-950">
+      <section className="py-16 md:py-24 -mx-6 px-6 bg-bark dark:bg-night-950 reveal-on-scroll">
         <div className="max-w-xl mx-auto">
           <span className="
             block text-xs font-medium tracking-widest uppercase
@@ -432,7 +450,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════════
           FINAL CTA
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24 text-center">
+      <section className="py-16 md:py-24 text-center reveal-on-scroll">
         <blockquote className="
           font-serif text-2xl sm:text-3xl md:text-4xl
           text-bark dark:text-parchment
