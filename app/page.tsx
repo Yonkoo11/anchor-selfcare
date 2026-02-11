@@ -364,8 +364,8 @@ export default function Home() {
           <GuideCard
             href="/movement"
             number="04"
-            title="Movement & Posture"
-            description="Basic body mechanics explained simply. No gym, no equipment, no jargon."
+            title="Movement & Body"
+            description="Body mechanics and workouts explained simply. From posture fixes to gym programs."
           />
         </div>
       </section>
