@@ -378,7 +378,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════════
           TRUST SECTION
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24 -mx-6 px-6 section-mood-deep reveal-on-scroll">
+      <section className="py-16 md:py-24 -mx-6 px-6 bg-bark dark:bg-night-950 reveal-on-scroll">
         <div className="max-w-xl mx-auto">
           <span className="
             block text-xs font-medium tracking-widest uppercase
