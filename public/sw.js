@@ -1,23 +1,23 @@
-// Self-Care Guide Service Worker
+// ANCHOR Service Worker
 // Provides offline functionality for the PWA
 
-const CACHE_NAME = 'selfcare-guide-v1';
-const OFFLINE_URL = '/';
+const CACHE_NAME = 'anchor-v2';
+const OFFLINE_URL = '/anchor-selfcare/';
 
 // Assets to cache immediately on install
 const PRECACHE_ASSETS = [
-  '/',
-  '/crisis',
-  '/baseline',
-  '/when-off',
-  '/mind',
-  '/movement',
-  '/quick-reference',
-  '/about',
-  '/manifest.json',
-  '/icon.svg',
-  '/icon-192.png',
-  '/icon-512.png',
+  '/anchor-selfcare/',
+  '/anchor-selfcare/crisis',
+  '/anchor-selfcare/baseline',
+  '/anchor-selfcare/when-off',
+  '/anchor-selfcare/mind',
+  '/anchor-selfcare/movement',
+  '/anchor-selfcare/quick-reference',
+  '/anchor-selfcare/about',
+  '/anchor-selfcare/manifest.json',
+  '/anchor-selfcare/icon.svg',
+  '/anchor-selfcare/icon-192.png',
+  '/anchor-selfcare/icon-512.png',
 ];
 
 // Install event - precache essential assets
@@ -57,22 +57,17 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
-        // Return cached version
         return cachedResponse;
       }
 
-      // Not in cache - fetch from network
       return fetch(event.request)
         .then((response) => {
-          // Don't cache non-successful responses
           if (!response || response.status !== 200) {
             return response;
           }
 
-          // Clone the response - one for cache, one for browser
           const responseToCache = response.clone();
 
-          // Cache the fetched response for future
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(event.request, responseToCache);
           });
@@ -80,7 +75,6 @@ self.addEventListener('fetch', (event) => {
           return response;
         })
         .catch(() => {
-          // Network failed - try to return cached offline page
           return caches.match(OFFLINE_URL);
         });
     })

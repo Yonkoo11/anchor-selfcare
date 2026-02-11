@@ -52,13 +52,14 @@ export function GuideNav({ currentIndex }: GuideNavProps) {
               bg-cream dark:bg-night-800
               border border-stone-200/50 dark:border-night-600/50
               rounded-lg
-              transition-all duration-200
+              transition-all duration-fast
               hover:border-sage/30 hover:shadow-sm
             "
           >
             <svg
-              className="w-4 h-4 flex-shrink-0 text-clay dark:text-ash transition-transform duration-200 group-hover:-translate-x-0.5"
+              className="w-4 h-4 flex-shrink-0 text-clay dark:text-ash transition-transform duration-fast group-hover:-translate-x-0.5"
               fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+              aria-hidden="true"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
@@ -77,7 +78,7 @@ export function GuideNav({ currentIndex }: GuideNavProps) {
               bg-cream dark:bg-night-800
               border border-stone-200/50 dark:border-night-600/50
               rounded-lg
-              transition-all duration-200
+              transition-all duration-fast
               hover:border-sage/30 hover:shadow-sm
               text-right
               ${!prev ? 'col-start-1' : ''}
@@ -88,8 +89,9 @@ export function GuideNav({ currentIndex }: GuideNavProps) {
               <span className="block text-sm font-medium text-bark dark:text-parchment truncate">{next.short}</span>
             </div>
             <svg
-              className="w-4 h-4 flex-shrink-0 text-clay dark:text-ash transition-transform duration-200 group-hover:translate-x-0.5"
+              className="w-4 h-4 flex-shrink-0 text-clay dark:text-ash transition-transform duration-fast group-hover:translate-x-0.5"
               fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+              aria-hidden="true"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>

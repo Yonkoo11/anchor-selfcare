@@ -2,26 +2,26 @@
   "name": "ANCHOR",
   "short_name": "ANCHOR",
   "description": "Something to hold onto when you're drifting. No accounts. No tracking. No pressure.",
-  "start_url": "/",
+  "start_url": "/anchor-selfcare/",
   "display": "standalone",
   "background_color": "#FAF8F5",
   "theme_color": "#7D8B7A",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/anchor-selfcare/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/anchor-selfcare/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon.svg",
+      "src": "/anchor-selfcare/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     }
@@ -29,6 +29,6 @@
   "categories": ["health", "lifestyle", "wellness"],
   "lang": "en",
   "dir": "ltr",
-  "scope": "/",
+  "scope": "/anchor-selfcare/",
   "id": "anchor-app"
 }

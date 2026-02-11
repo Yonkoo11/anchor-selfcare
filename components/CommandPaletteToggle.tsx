@@ -12,14 +12,14 @@ export function CommandPaletteToggle() {
         flex items-center gap-2 px-3 py-1.5
         text-clay/60 dark:text-ash/60
         hover:text-bark dark:hover:text-parchment
-        transition-colors duration-200
+        transition-colors duration-fast
         rounded-lg
         hover:bg-stone-100/50 dark:hover:bg-night-700/50
       "
       aria-label="Search (Cmd+K)"
       title="Search (Cmd+K)"
     >
-      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
       </svg>
       <span className="hidden lg:inline text-[13px] tracking-wide uppercase">Search</span>

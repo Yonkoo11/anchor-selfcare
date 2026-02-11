@@ -21,8 +21,8 @@ const fraunces = Fraunces({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  maximumScale: 5,
+  userScalable: true,
   viewportFit: 'cover',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#FAF8F5' },
@@ -31,7 +31,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://anchor.app'),
+  metadataBase: new URL('https://yonkoo11.github.io/anchor-selfcare'),
   title: {
     default: 'ANCHOR',
     template: '%s | ANCHOR',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'ANCHOR' }],
   creator: 'ANCHOR',
   publisher: 'ANCHOR',
-  manifest: '/manifest.json',
+  manifest: '/anchor-selfcare/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     description: 'Something to hold onto when you\'re drifting. No accounts. No tracking. No pressure.',
     images: [
       {
-        url: '/og-image.svg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'ANCHOR - Something to hold onto',
@@ -110,7 +110,7 @@ const themeScript = `
 const swScript = `
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/sw.js').catch(function(err) {
+      navigator.serviceWorker.register('/anchor-selfcare/sw.js').catch(function(err) {
         console.log('SW registration failed:', err);
       });
     });
@@ -129,6 +129,28 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         {/* Register service worker for offline support */}
         <script dangerouslySetInnerHTML={{ __html: swScript }} />
+        {/* JSON-LD structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Organization',
+                name: 'ANCHOR',
+                url: 'https://yonkoo11.github.io/anchor-selfcare',
+                description: 'Something to hold onto when you\'re drifting. Simple self-care for humans who need grounding.',
+                logo: 'https://yonkoo11.github.io/anchor-selfcare/icon-512.png',
+              },
+              {
+                '@type': 'WebSite',
+                name: 'ANCHOR',
+                url: 'https://yonkoo11.github.io/anchor-selfcare',
+                description: 'Simple self-care instructions for tired humans. No accounts. No tracking. No pressure.',
+              },
+            ],
+          }) }}
+        />
       </head>
       <body className="font-sans min-h-screen bg-cream dark:bg-night-900 vignette texture-paper transition-colors duration-slow overflow-x-hidden">
         <ThemeProvider>

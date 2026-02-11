@@ -201,7 +201,7 @@
   /* Glass card - V1 Earthy Cabin style with backdrop blur */
   .card-glass {
     @apply rounded-lg;
-    @apply transition-all duration-200 ease-out;
+    @apply transition-all duration-fast ease-out;
     background: theme('colors.cream');
     border: 1px solid rgba(214, 211, 209, 0.5);
     -webkit-backdrop-filter: blur(8px);
@@ -616,7 +616,7 @@
 
 /* Button press effect */
 .btn-press {
-  @apply transition-transform duration-100;
+  @apply transition-transform duration-fast;
 }
 .btn-press:active {
   transform: scale(0.97);
@@ -644,7 +644,7 @@
 }
 .card-shine::before {
   content: '';
-  @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+  @apply absolute inset-0 opacity-0 transition-opacity duration-slow;
   background: linear-gradient(
     105deg,
     transparent 40%,
@@ -668,7 +668,7 @@
 
 /* Icon bounce on hover */
 .icon-bounce {
-  @apply transition-transform duration-300;
+  @apply transition-transform duration-normal;
   transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .group:hover .icon-bounce,
@@ -691,13 +691,13 @@
 
 /* Springy chevron rotation */
 .chevron-spring {
-  @apply transition-transform duration-500;
+  @apply transition-transform duration-slow;
   transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Scroll reveal stagger animation */
 .reveal-stagger > * {
-  @apply opacity-0 transition-all duration-500 ease-out;
+  @apply opacity-0 transition-all duration-slow ease-out;
   transform: translateY(20px);
 }
 .reveal-stagger.visible > *:nth-child(1) { transition-delay: calc(var(--stagger-delay, 80ms) * 0); opacity: 1; transform: none; }
@@ -879,7 +879,7 @@
 
 /* Magnetic hover effect helper */
 .magnetic {
-  @apply transition-transform duration-200 ease-out;
+  @apply transition-transform duration-fast ease-out;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -1170,6 +1170,16 @@
   50% { background-position: 100% 50%; }
 }
 
+/* Dark mode: lighter gradient colors for contrast on dark backgrounds */
+.dark .text-gradient-animate {
+  background: linear-gradient(90deg, #A3B09F, #D4BFA0, #8FA08E, #A3B09F);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text-shift 6s ease-in-out infinite;
+}
+
 /* Gradient Border Card - mask-composite trick */
 .card-gradient-border {
   position: relative;
@@ -1388,6 +1398,10 @@
   .text-gradient-animate {
     -webkit-text-fill-color: unset !important;
     color: #7D8B7A !important;
+  }
+
+  .dark .text-gradient-animate {
+    color: #A3B09F !important;
   }
 
   .reveal-on-scroll {

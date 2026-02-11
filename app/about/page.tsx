@@ -1,8 +1,36 @@
 import { PageHeader, Footer, FeedbackForm } from '@/components'
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is ANCHOR?',
+      acceptedAnswer: { '@type': 'Answer', text: 'ANCHOR is a free, open-source self-care guide for people who are overwhelmed. It provides simple, evidence-based instructions for basic self-care with no accounts, tracking, or gamification.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does ANCHOR track my data?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. ANCHOR has no accounts, no analytics, no cookies, and no tracking. Your theme preference is stored locally in your browser. Nothing is sent to any server.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is ANCHOR free?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. ANCHOR is completely free and open-source. There are no premium tiers, ads, or hidden costs.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is this medical advice?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. ANCHOR provides general self-care information, not medical advice. If you are in crisis, please contact emergency services or a crisis helpline. The Crisis Help page has immediate resources.' },
+    },
+  ],
+}
+
 export default function About() {
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <PageHeader
         title="About ANCHOR"
         description="Why this exists and what it's trying to be."
@@ -155,7 +183,7 @@ function ApproachCard({ title, description }: { title: string; description: stri
 // Icons
 function InfoIcon() {
   return (
-    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
   )
@@ -163,7 +191,7 @@ function InfoIcon() {
 
 function NoIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>
   )

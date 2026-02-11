@@ -139,6 +139,8 @@ const config: Config = {
 
       // ═══════════════════════════════════════════════════════════════════════
       // BORDER RADIUS
+      // Usage: rounded-lg = buttons/inputs, rounded-xl = cards,
+      // rounded-2xl = featured/premium cards, rounded-full = badges/avatars
       // ═══════════════════════════════════════════════════════════════════════
       borderRadius: {
         'sm': '2px',
@@ -146,6 +148,18 @@ const config: Config = {
         'lg': '6px',
         'xl': '8px',
         '2xl': '12px',
+      },
+
+      // ═══════════════════════════════════════════════════════════════════════
+      // Z-INDEX HIERARCHY
+      // ═══════════════════════════════════════════════════════════════════════
+      zIndex: {
+        'content': '10',
+        'hero': '20',
+        'crisis': '40',
+        'nav': '50',
+        'modal': '60',
+        'skip-link': '100',
       },
 
       // ═══════════════════════════════════════════════════════════════════════
@@ -160,9 +174,8 @@ const config: Config = {
       transitionTimingFunction: {
         'ease-out-soft': 'cubic-bezier(0, 0, 0.2, 1)',
         'ease-in-soft': 'cubic-bezier(0.4, 0, 1, 1)',
-        'bounce-gentle': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
-        'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
-        'spring-soft': 'cubic-bezier(0.22, 1, 0.36, 1)',
+        'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',      // Interactive: buttons, toggles
+        'spring-soft': 'cubic-bezier(0.22, 1, 0.36, 1)',     // Page: entrances, reveals
       },
       keyframes: {
         'fade-in': {

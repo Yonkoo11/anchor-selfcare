@@ -334,7 +334,7 @@ export default function Movement() {
 
 function BodyIcon() {
   return (
-    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
     </svg>
   )
@@ -342,7 +342,7 @@ function BodyIcon() {
 
 function AlignIcon() {
   return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v20M4 6h16M4 12h16M4 18h16" />
     </svg>
   )
@@ -350,7 +350,7 @@ function AlignIcon() {
 
 function RefreshIcon() {
   return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
     </svg>
   )
@@ -358,7 +358,7 @@ function RefreshIcon() {
 
 function BalanceIcon() {
   return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M3 12l9-9 9 9" />
     </svg>
   )
@@ -366,7 +366,7 @@ function BalanceIcon() {
 
 function ArrowUpIcon() {
   return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
     </svg>
   )
@@ -374,7 +374,7 @@ function ArrowUpIcon() {
 
 function PivotIcon() {
   return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 19V5M5 12l7-7 7 7" />
       <circle cx="12" cy="19" r="2" fill="currentColor" />
     </svg>
@@ -383,7 +383,7 @@ function PivotIcon() {
 
 function NeckIcon() {
   return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <circle cx="12" cy="5" r="3" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4M8 12h8M10 16l2 4 2-4" />
     </svg>
@@ -396,7 +396,7 @@ function NeckIcon() {
 
 function TimerIcon() {
   return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <circle cx="12" cy="13" r="8" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v4l2 2M10 2h4" />
     </svg>
@@ -405,7 +405,7 @@ function TimerIcon() {
 
 function CircuitIcon() {
   return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M4 4h4v4H4zM16 4h4v4h-4zM10 16h4v4h-4zM6 8v4a4 4 0 004 4M18 8v4a4 4 0 01-4 4" />
     </svg>
   )
@@ -413,7 +413,7 @@ function CircuitIcon() {
 
 function StretchIcon() {
   return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M4 12h4m8 0h4M12 4v4m0 8v4M7.05 7.05l2.83 2.83m4.24 4.24l2.83 2.83M7.05 16.95l2.83-2.83m4.24-4.24l2.83-2.83" />
     </svg>
   )
@@ -421,7 +421,7 @@ function StretchIcon() {
 
 function CoreIcon() {
   return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <circle cx="12" cy="12" r="3" />
       <circle cx="12" cy="12" r="8" />
     </svg>
@@ -430,7 +430,7 @@ function CoreIcon() {
 
 function WalkingIcon() {
   return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <circle cx="13" cy="4" r="2" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M13 6l-2 6 3 3 2 5M11 12l-3 3-2 5" />
     </svg>
@@ -439,7 +439,7 @@ function WalkingIcon() {
 
 function GymIcon() {
   return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M6 7v10M18 7v10M2 9v6M22 9v6M6 12h12" />
     </svg>
   )

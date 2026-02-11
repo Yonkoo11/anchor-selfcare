@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://selfcare-guide.vercel.app/sitemap.xml',
+    sitemap: 'https://yonkoo11.github.io/anchor-selfcare/sitemap.xml',
   }
 }

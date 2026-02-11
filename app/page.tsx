@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { ScrollProgress } from '@/components'
+import { ScrollProgress, RandomSuggestion } from '@/components'
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // WORLD-CLASS LANDING PAGE
@@ -82,13 +82,14 @@ export default function Home() {
                 shadow-md hover:shadow-lg
                 hover:-translate-y-0.5
                 active:scale-[0.97] active:translate-y-0
+                transition-all duration-slow ease-spring
               "
-              style={{ transition: 'all 400ms cubic-bezier(0.34, 1.56, 0.64, 1)' }}
             >
               Begin with the basics
               <svg
                 className="w-4 h-4 transition-transform group-hover:translate-x-1"
                 fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                aria-hidden="true"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -104,8 +105,8 @@ export default function Home() {
                 hover:text-bark dark:hover:text-parchment
                 rounded-lg
                 btn-gradient-border
+                transition-all duration-slow ease-spring
               "
-              style={{ transition: 'all 400ms cubic-bezier(0.34, 1.56, 0.64, 1)' }}
             >
               Browse the guide
             </Link>
@@ -152,7 +153,7 @@ export default function Home() {
               border border-sage/20 hover:border-sage/30
               rounded-xl
               text-center
-              transition-all duration-200
+              transition-all duration-fast
             "
           >
             <div className="
@@ -163,7 +164,7 @@ export default function Home() {
               group-hover:bg-sage/20
               transition-colors
             ">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
               </svg>
             </div>
@@ -185,7 +186,7 @@ export default function Home() {
               border border-terracotta/20 hover:border-terracotta/30
               rounded-xl
               text-center
-              transition-all duration-200
+              transition-all duration-fast
             "
           >
             <div className="
@@ -196,7 +197,7 @@ export default function Home() {
               group-hover:bg-terracotta/20
               transition-colors
             ">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
               </svg>
             </div>
@@ -220,7 +221,7 @@ export default function Home() {
               hover:border-bark/30 dark:hover:border-parchment/30
               rounded-xl
               text-center
-              transition-all duration-200
+              transition-all duration-fast
             "
           >
             <div className="
@@ -232,7 +233,7 @@ export default function Home() {
               group-hover:bg-bark/20 dark:group-hover:bg-parchment/20
               transition-colors
             ">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
               </svg>
             </div>
@@ -377,6 +378,26 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════
+          NOT SURE WHERE TO START - Random Suggestion
+          ═══════════════════════════════════════════════════════════════════════ */}
+      <section className="py-16 md:py-20 reveal-on-scroll">
+        <div className="max-w-reading mx-auto text-center mb-8">
+          <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-bark dark:text-parchment mb-3">
+            Not sure where to start?
+          </h2>
+          <p className="text-clay dark:text-ash">
+            Let us pick something for you. No pressure, no wrong answers.
+          </p>
+        </div>
+        <div className="max-w-md mx-auto">
+          <RandomSuggestion />
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="divider-gradient" />
+
+      {/* ═══════════════════════════════════════════════════════════════════════
           TRUST SECTION
           ═══════════════════════════════════════════════════════════════════════ */}
       <section className="py-16 md:py-24 -mx-6 px-6 bg-bark dark:bg-night-950 reveal-on-scroll">
@@ -454,13 +475,14 @@ export default function Home() {
             shadow-md hover:shadow-lg
             hover:-translate-y-0.5
             active:scale-[0.97] active:translate-y-0
+            transition-all duration-slow ease-spring
           "
-          style={{ transition: 'all 400ms cubic-bezier(0.34, 1.56, 0.64, 1)' }}
         >
           Start with one thing
           <svg
             className="w-5 h-5 transition-transform group-hover:translate-x-1"
             fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+            aria-hidden="true"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
@@ -537,7 +559,7 @@ function GuideCard({
         flex items-start gap-4 sm:gap-6
         p-5 sm:p-6
         rounded-lg
-        transition-all duration-200
+        transition-all duration-fast
         card-shine overflow-hidden
         ${featured
           ? 'bg-cream dark:bg-night-800 border-l-[3px] border-l-sage shadow-sm hover:shadow-md card-gradient-border card-inner-glow'
@@ -582,10 +604,10 @@ function GuideCard({
       <span className="
         flex-shrink-0
         text-stone-300 dark:text-night-500
-        transition-all duration-200
+        transition-all duration-fast
         group-hover:text-sage group-hover:translate-x-1
       ">
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
         </svg>
       </span>
@@ -740,7 +762,7 @@ function QuickBreath() {
 
 function LockIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
     </svg>
   )
@@ -748,7 +770,7 @@ function LockIcon({ className }: { className?: string }) {
 
 function HeartIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
     </svg>
   )
@@ -756,7 +778,7 @@ function HeartIcon({ className }: { className?: string }) {
 
 function ShieldIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
     </svg>
   )

@@ -232,7 +232,7 @@ export function BreathingTimer() {
         <div
           className={`
             absolute w-48 h-48 md:w-56 md:h-56 rounded-full
-            border-2 transition-all duration-500
+            border-2 transition-all duration-slow
             ${isRunning
               ? isHold
                 ? 'border-terracotta/40 shadow-[0_0_30px_rgba(196,164,132,0.3)]'
@@ -247,7 +247,7 @@ export function BreathingTimer() {
           <div
             className={`
               absolute w-40 h-40 md:w-48 md:h-48 rounded-full
-              border transition-all duration-300
+              border transition-all duration-normal
               ${isHold ? 'border-terracotta/20' : 'border-sage/20'}
             `}
             style={{
@@ -263,7 +263,7 @@ export function BreathingTimer() {
             rounded-full
             flex items-center justify-center
             transition-all
-            ${isRunning ? 'duration-100' : 'duration-500'}
+            ${isRunning ? 'duration-fast' : 'duration-slow'}
           `}
           style={{
             transform: `scale(${getCircleScale()})`,
@@ -283,7 +283,7 @@ export function BreathingTimer() {
               <>
                 <div className={`
                   text-2xl md:text-3xl font-serif font-semibold mb-1
-                  transition-colors duration-300
+                  transition-colors duration-normal
                   ${isHold ? 'text-terracotta' : 'text-sage'}
                 `}>
                   {currentPhase?.name}
@@ -422,7 +422,7 @@ export function BreathingTimer() {
 // Icons
 function PlayIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M8 5v14l11-7z" />
     </svg>
   )
@@ -430,7 +430,7 @@ function PlayIcon({ className }: { className?: string }) {
 
 function PauseIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
     </svg>
   )
@@ -438,7 +438,7 @@ function PauseIcon({ className }: { className?: string }) {
 
 function ResetIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
     </svg>
   )
@@ -446,7 +446,7 @@ function ResetIcon({ className }: { className?: string }) {
 
 function SoundOnIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M11 5L6 9H2v6h4l5 4V5z" />
     </svg>
   )
@@ -454,7 +454,7 @@ function SoundOnIcon({ className }: { className?: string }) {
 
 function SoundOffIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
     </svg>

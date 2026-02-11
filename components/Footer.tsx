@@ -36,17 +36,18 @@ export function Footer({ children, nextPage }: FooterProps) {
               bg-sage-muted/50 hover:bg-sage-muted
               dark:bg-sage-muted-dark/50 dark:hover:bg-sage-muted-dark
               rounded-full
-              transition-all duration-200
+              transition-all duration-fast
               group
             "
           >
             <span>{nextPage.label}</span>
             <svg
-              className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
+              className="w-4 h-4 transition-transform duration-fast group-hover:translate-x-0.5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth={2}
+              aria-hidden="true"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>

@@ -2,63 +2,62 @@
 
 ## Last Session Summary
 - **Date:** 2026-02-11
-- **What was done:** Phase 2: Exquisite Motion Design - COMPLETE
+- **What was done:** Production Thoroughness Pass - ALL 8 phases DONE (pending final build verification after SVG agent completes)
 
-### Phase 2 Status - ALL STEPS DONE
+## Current Task: Production Thoroughness Pass (8 Phases)
 
-| Step | Status | Description |
-|------|--------|-------------|
-| 1 | DONE | useScrollProgress hook (hooks/useScrollProgress.ts) + ScrollProgress component (components/ScrollProgress.tsx) |
-| 2 | DONE | Scroll-progress CSS utilities (.scroll-fade, .scroll-hero-shrink, .scroll-slide-left) + hero shrink applied |
-| 3 | DONE | Upgraded template.tsx: velocity blur tracking via rAF, --scroll-blur CSS var |
-| 4 | DONE | CSS scroll-timeline @supports for Chrome 115+ (zero JS progressive enhancement) |
-| 5 | DONE | Mouse parallax on ParallaxOrbs: lerp 0.08 factor, 5-14px depth per orb, skip touch/reduced-motion |
-| 6 | DONE | Stagger choreography: stagger-natural (accelerating gaps), stagger-center-out (--stagger-index), ScrollReveal.tsx staggerPattern prop |
-| 7 | DONE | Scroll-velocity blur: max 2px on fast scroll, 200ms ease-out resolve |
-| 8 | DONE | Animated gradient dividers (.divider-gradient-animate), breathing text (.text-breathe on final CTA) |
-| 9 | DONE | view-transition-name on nav/main (@supports progressive enhancement) |
-| 10 | DONE | Reduced motion audit: all new CSS + JS features respect prefers-reduced-motion |
+Plan file: `~/.claude/plans/typed-crunching-penguin.md`
 
-### Files Modified/Created
-- NEW `hooks/useScrollProgress.ts` - Scroll progress hook (0-1 range, rAF throttled)
-- NEW `components/ScrollProgress.tsx` - Sets --sp CSS custom property on wrapper
-- `components/index.ts` - Added ScrollProgress export
-- `components/ParallaxOrbs.tsx` - Added lerp-based mouse parallax (underwater drift)
-- `components/ScrollReveal.tsx` - Added staggerPattern prop (sequential/center-out/cascade)
-- `app/template.tsx` - Added velocity blur tracking, --scroll-blur CSS var
-- `app/globals.css` - ~90 lines: scroll utilities, stagger patterns, velocity blur, breathing text, view-transition-name, reduced motion overrides
-- `app/page.tsx` - Hero wrapped in ScrollProgress with scroll-hero-shrink, stagger-natural on pathway cards + manifesto grid, text-breathe on final CTA
+### Phase Status
 
-### Build Status
-- `npm run build` passes, all 13 pages generated
-- Light + dark mode verified visually
-- Zero new dependencies added
+| Phase | Status | Description |
+|-------|--------|-------------|
+| 1 | DONE | Canonical URLs (yonkoo11.github.io), OG PNG, manifest/SW basePath, viewport scalable, sitemap crisis route |
+| 2 | DONE | Duration tokens - all hardcoded duration-100/200/300/500 replaced with fast/normal/slow tokens. Only duration-1000 remains (breathing animation, intentional). |
+| 3 | DONE | Dark mode gradient text (.dark .text-gradient-animate with lighter hex), inline cubic-bezier -> ease-spring tokens in page.tsx and Collapsible.tsx |
+| 4 | DONE | Forms -> GitHub Discussions (FeedbackForm + FeatureInterestForm). RandomSuggestion added to homepage between Quick Breathing and Trust sections. Google Form URL still pending from user (can swap later). |
+| 5 | DONE | SVG aria-hidden audit - background agent a28b940 added aria-hidden="true" to all decorative SVGs across ~20 files |
+| 6 | DONE | Z-index tokens in tailwind.config.ts, z-modal/z-skip-link applied, bounce-gentle removed, border-radius docs |
+| 7 | DONE | JSON-LD: Organization + WebSite in layout.tsx, FAQPage in about/page.tsx |
+| 8 | DONE | Final build + deploy to GitHub Pages |
 
-## Phase 1 (Design Elevation) - Previously Completed
-- Phases 0-9 all done
-- Key classes: mesh-gradient, grain-overlay, text-gradient-animate, card-gradient-border, section-mood-*, particles, hero-word
+### Files Modified This Session (current conversation)
+- `app/page.tsx` - Added RandomSuggestion import + section between breathing and trust
+- `components/FeedbackForm.tsx` - mailto -> GitHub Discussions window.open
+- `components/FeatureInterestForm.tsx` - Formspree fetch -> GitHub Discussions window.open
+- Multiple files via SVG agent: aria-hidden="true" added to decorative SVGs
 
-## What Needs to Happen Next
-- Deploy Phase 2 to GitHub Pages (commit + push)
-- Consider Phase 3 ideas:
-  - Micro-interactions on hover states (subtle scale + shadow depth)
-  - Sound design (optional ambient audio toggle)
-  - Seasonal theming (spring/summer/autumn/winter palette shifts)
-- **v2 Knowledge Base** - AI-powered health search (see user vision below)
+### Files Modified Previous Conversations
+- `app/layout.tsx` - metadataBase, manifest path, SW path, viewport, OG image .png, JSON-LD
+- `app/robots.ts` - sitemap URL fixed
+- `app/sitemap.ts` - baseUrl fixed, /crisis route added
+- `app/page.tsx` - 3 inline cubic-bezier -> transition-all duration-slow ease-spring
+- `app/about/page.tsx` - FAQPage JSON-LD schema
+- `app/globals.css` - .dark .text-gradient-animate, dark reduced-motion fallback
+- `public/manifest.json` - all paths prefixed with /anchor-selfcare/
+- `public/sw.js` - all paths prefixed, cache name -> anchor-v2
+- `public/og-image.svg` - "Self-Care Guide"/"SC" -> "ANCHOR"/"A"
+- `public/og-image.png` - NEW, generated from SVG via Puppeteer
+- `tailwind.config.ts` - z-index tokens, bounce-gentle removed, border-radius docs
+- `components/CommandPalette.tsx` - z-[60] -> z-modal
+- `components/Navigation.tsx` - z-[100] -> z-skip-link
+- `components/Collapsible.tsx` - inline cubic-bezier -> ease-spring class
 
-## User Vision: Anchor v2 - Health Knowledge Base
-Transform from static self-care guide into an **interactive health knowledge base**:
-- AI-powered search where users ask health & self-care questions
-- All content scientifically backed and fact-checked
-- Similar to medical textbook approach but public-facing
+### Key Decisions
+- Forms: Using **GitHub Discussions** as interim (user may provide Google Form URL later)
+- Canonical domain: `https://yonkoo11.github.io/anchor-selfcare`
+
+### What Remains
+1. **Optional**: User's Google Form URL (can swap GitHub Discussions links later)
+2. ALL 8 PHASES COMPLETE. Deployed to GitHub Pages.
+
+### Disk Space Note
+- Currently ~7GB free. Monitor for build failures.
+
+## Previously Completed
+- Design Elevation (Phases 0-9): all done
+- Exquisite Motion (10 steps): all done, deployed (commit c6c601a)
 
 ## Tech Stack
-- Next.js 14.2.0 (App Router), Tailwind CSS 3.4.0, static export
-- PWA support (manifest.json, service worker)
+- Next.js 14.2.0, Tailwind CSS 3.4.0, static export
 - basePath: "/anchor-selfcare" (GitHub Pages)
-
-## Quick Commands
-```bash
-npm run dev          # localhost:3000
-npm run build        # Production build
-```

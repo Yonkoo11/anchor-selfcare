@@ -158,14 +158,14 @@ export function CommandPalette() {
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 z-[60] bg-bark/30 dark:bg-black/50 backdrop-blur-sm palette-backdrop"
+        className="fixed inset-0 z-modal bg-bark/30 dark:bg-black/50 backdrop-blur-sm palette-backdrop"
         onClick={close}
         aria-hidden="true"
       />
 
       {/* Panel */}
       <div
-        className="fixed inset-0 z-[60] flex items-start justify-center pt-[15vh] md:pt-[20vh] px-4 pointer-events-none"
+        className="fixed inset-0 z-modal flex items-start justify-center pt-[15vh] md:pt-[20vh] px-4 pointer-events-none"
         role="dialog"
         aria-modal="true"
         aria-label="Search"
@@ -232,7 +232,7 @@ export function CommandPalette() {
                     onMouseEnter={() => setSelectedIndex(i)}
                     className={`
                       w-full px-5 py-3 flex items-start gap-4 text-left
-                      transition-colors duration-100
+                      transition-colors duration-fast
                       ${i === selectedIndex ? 'bg-sage-muted dark:bg-sage-muted-dark' : ''}
                     `}
                   >
@@ -297,7 +297,7 @@ export function CommandPalette() {
                       <button
                         key={term}
                         onClick={() => setQuery(term)}
-                        className="w-full px-5 py-2 flex items-center gap-3 text-left hover:bg-sage-muted dark:hover:bg-sage-muted-dark transition-colors duration-100"
+                        className="w-full px-5 py-2 flex items-center gap-3 text-left hover:bg-sage-muted dark:hover:bg-sage-muted-dark transition-colors duration-fast"
                       >
                         <ClockIcon className="w-3.5 h-3.5 text-dust dark:text-coal flex-shrink-0" />
                         <span className="text-sm text-clay dark:text-ash">{term}</span>
@@ -323,7 +323,7 @@ export function CommandPalette() {
                     onMouseEnter={() => setSelectedIndex(i)}
                     className={`
                       w-full px-5 py-2.5 flex items-center gap-3 text-left
-                      transition-colors duration-100
+                      transition-colors duration-fast
                       ${i === selectedIndex ? 'bg-sage-muted dark:bg-sage-muted-dark' : ''}
                     `}
                   >
@@ -367,7 +367,7 @@ export function CommandPalette() {
 // Icons
 function SearchIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
     </svg>
   )
@@ -375,7 +375,7 @@ function SearchIcon({ className }: { className?: string }) {
 
 function ReturnIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 17l-5-5 5-5M4 12h16" />
     </svg>
   )
@@ -383,7 +383,7 @@ function ReturnIcon({ className }: { className?: string }) {
 
 function ClockIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <circle cx="12" cy="12" r="10" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
     </svg>

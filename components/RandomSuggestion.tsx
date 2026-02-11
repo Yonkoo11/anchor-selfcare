@@ -218,7 +218,7 @@ export function RandomSuggestion() {
 
 function DiceIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <rect x="3" y="3" width="18" height="18" rx="3" />
       <circle cx="8" cy="8" r="1.5" fill="currentColor" />
       <circle cx="16" cy="8" r="1.5" fill="currentColor" />
@@ -231,7 +231,7 @@ function DiceIcon({ className }: { className?: string }) {
 
 function ArrowIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
     </svg>
   )
