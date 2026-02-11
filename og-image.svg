@@ -20,13 +20,13 @@
 
   <!-- Logo circle -->
   <circle cx="600" cy="180" r="45" fill="#7D8B7A"/>
-  <text x="600" y="195" text-anchor="middle" fill="#FAF8F5" font-family="Georgia, serif" font-size="32" font-weight="600">SC</text>
+  <text x="600" y="198" text-anchor="middle" fill="#FAF8F5" font-family="Georgia, serif" font-size="36" font-weight="600">A</text>
 
   <!-- Title -->
-  <text x="600" y="300" text-anchor="middle" fill="#3D3632" font-family="Georgia, serif" font-size="64" font-weight="600">Self-Care Guide</text>
+  <text x="600" y="300" text-anchor="middle" fill="#3D3632" font-family="Georgia, serif" font-size="64" font-weight="600">ANCHOR</text>
 
   <!-- Subtitle -->
-  <text x="600" y="360" text-anchor="middle" fill="#6B6560" font-family="system-ui, sans-serif" font-size="24">Simple instructions for taking care of yourself.</text>
+  <text x="600" y="360" text-anchor="middle" fill="#6B6560" font-family="system-ui, sans-serif" font-size="24">Something to hold onto when you're drifting.</text>
 
   <!-- Accent line -->
   <rect x="570" y="400" width="60" height="4" rx="2" fill="url(#accent)"/>
