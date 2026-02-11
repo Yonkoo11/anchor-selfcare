@@ -13,26 +13,14 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* ═══════════════════════════════════════════════════════════════════════
-          HERO SECTION - Emotional Hook
+          HERO SECTION - Immersive Full-Viewport Experience
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="relative pt-8 pb-12 md:pt-12 md:pb-16 -mx-6 px-6">
-        {/* Ambient breathing background glow */}
+      <section className="relative min-h-[85vh] flex items-center -mx-6 px-6">
         <div className="hero-breathe" aria-hidden="true" />
 
-        {/* Hero content container - generous width and padding */}
-        <div className="
-          hero-entrance
-          relative z-20
-          max-w-4xl mx-auto
-          px-10 py-10 sm:px-14 sm:py-12 md:px-20 md:py-16 lg:px-24
-          bg-cream/95 dark:bg-night-800/95
-          backdrop-blur-md
-          border border-stone-200/50 dark:border-night-600/50
-          rounded-2xl
-          shadow-elevated dark:shadow-elevated-dark
-        ">
+        <div className="hero-entrance relative z-20 max-w-4xl mx-auto py-16 md:py-24">
           {/* Badge */}
-          <div className="mb-6">
+          <div className="mb-8">
             <span className="
               inline-flex items-center gap-2
               px-3 py-1.5
@@ -47,21 +35,23 @@ export default function Home() {
             </span>
           </div>
 
-          {/* Main Headline - The Hook */}
+          {/* Main Headline - Dramatic scale with word entrance */}
           <h1 className="
             font-serif
-            text-4xl sm:text-5xl md:text-6xl lg:text-7xl
+            text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl
             font-semibold
-            leading-[1.1]
-            tracking-tight
+            leading-[1.0]
+            tracking-tight lg:tracking-[-0.03em]
             text-bark dark:text-parchment
-            mb-6
+            mb-8
           ">
-            One shower<br />
-            <span className="text-sage">is enough.</span>
+            <span className="hero-word">One </span>
+            <span className="hero-word">shower</span>
+            <br />
+            <span className="hero-word text-gradient-animate">is enough.</span>
           </h1>
 
-          {/* Subheadline - Explain the positioning */}
+          {/* Subheadline */}
           <p className="
             text-lg sm:text-xl
             text-clay dark:text-ash
@@ -76,7 +66,7 @@ export default function Home() {
             </span>
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons with spring easing */}
           <div className="flex flex-wrap items-center gap-4">
             <Link
               href="/baseline"
@@ -89,9 +79,10 @@ export default function Home() {
                 font-medium
                 rounded-lg
                 shadow-md hover:shadow-lg
-                transition-all duration-200
                 hover:-translate-y-0.5
+                active:scale-[0.97] active:translate-y-0
               "
+              style={{ transition: 'all 400ms cubic-bezier(0.34, 1.56, 0.64, 1)' }}
             >
               Begin with the basics
               <svg
@@ -110,15 +101,17 @@ export default function Home() {
                 text-clay dark:text-ash
                 font-medium
                 hover:text-bark dark:hover:text-parchment
-                transition-colors
+                rounded-lg
+                btn-gradient-border
               "
+              style={{ transition: 'all 400ms cubic-bezier(0.34, 1.56, 0.64, 1)' }}
             >
               Browse the guide
             </Link>
           </div>
 
           {/* Visual Accent */}
-          <div className="mt-10 flex items-center gap-3">
+          <div className="mt-12 flex items-center gap-3">
             <div className="h-px flex-1 max-w-[60px] bg-gradient-to-r from-terracotta to-transparent" />
             <span className="text-xs text-dust dark:text-coal tracking-widest uppercase">
               For the overwhelmed
@@ -127,13 +120,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider */}
-      <hr className="divider" />
+      {/* Gradient Divider */}
+      <div className="divider-gradient" />
 
       {/* ═══════════════════════════════════════════════════════════════════════
           PATHWAY SELECTOR - Guide users based on how they feel
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16 reveal-on-scroll">
+      <section className="py-16 md:py-20 reveal-on-scroll">
         <div className="text-center mb-8">
           <h2 className="
             font-serif text-2xl sm:text-3xl font-semibold
@@ -264,7 +257,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════════
           ANTI-WELLNESS MANIFESTO
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16 -mx-6 px-6 bg-sand/50 dark:bg-night-800/50 reveal-on-scroll">
+      <section className="py-16 md:py-20 -mx-6 px-6 section-mood-sage reveal-on-scroll">
         <div className="max-w-2xl">
           <h2 className="
             font-serif text-2xl sm:text-3xl font-semibold
@@ -313,12 +306,12 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <hr className="divider" />
+      <div className="divider-gradient" />
 
       {/* ═══════════════════════════════════════════════════════════════════════
           THE GUIDE - Navigation
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16 reveal-on-scroll">
+      <section className="py-16 md:py-20 reveal-on-scroll">
         <div className="flex items-end justify-between mb-8">
           <div>
             <h2 className="
@@ -371,19 +364,21 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <hr className="divider" />
+      <div className="divider-gradient" />
 
       {/* ═══════════════════════════════════════════════════════════════════════
           QUICK BREATHING - Interactive Element
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16 reveal-on-scroll">
-        <QuickBreath />
+      <section className="py-16 md:py-20 -mx-6 px-6 section-mood-warm reveal-on-scroll">
+        <div className="max-w-reading mx-auto card-gradient-border">
+          <QuickBreath />
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════
           TRUST SECTION
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24 -mx-6 px-6 bg-bark dark:bg-night-950 reveal-on-scroll">
+      <section className="py-16 md:py-24 -mx-6 px-6 section-mood-deep reveal-on-scroll">
         <div className="max-w-xl mx-auto">
           <span className="
             block text-xs font-medium tracking-widest uppercase
@@ -455,9 +450,10 @@ export default function Home() {
             font-medium text-lg
             rounded-lg
             shadow-md hover:shadow-lg
-            transition-all duration-200
             hover:-translate-y-0.5
+            active:scale-[0.97] active:translate-y-0
           "
+          style={{ transition: 'all 400ms cubic-bezier(0.34, 1.56, 0.64, 1)' }}
         >
           Start with one thing
           <svg
@@ -542,7 +538,7 @@ function GuideCard({
         transition-all duration-200
         card-shine overflow-hidden
         ${featured
-          ? 'bg-cream dark:bg-night-800 border-l-[3px] border-l-sage shadow-sm hover:shadow-md'
+          ? 'bg-cream dark:bg-night-800 border-l-[3px] border-l-sage shadow-sm hover:shadow-md card-gradient-border card-inner-glow'
           : 'bg-cream/60 dark:bg-night-800/40 border border-stone-200/50 dark:border-night-600/50 hover:bg-cream dark:hover:bg-night-800'
         }
       `}
@@ -655,6 +651,7 @@ function QuickBreath() {
       border border-stone-200/50 dark:border-night-600/50
       rounded-xl
       text-center
+      card-gradient-border
     ">
       {/* Background pulse when active */}
       {isActive && (

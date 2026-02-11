@@ -130,9 +130,24 @@ export default function RootLayout({
         {/* Register service worker for offline support */}
         <script dangerouslySetInnerHTML={{ __html: swScript }} />
       </head>
-      <body className="font-sans min-h-screen bg-cream dark:bg-night-900 texture-paper transition-colors duration-slow overflow-x-hidden">
+      <body className="font-sans min-h-screen bg-cream dark:bg-night-900 vignette texture-paper transition-colors duration-slow overflow-x-hidden">
         <ThemeProvider>
-          {/* Ambient floating orbs - creates "alive" feel across all pages */}
+          {/* Design elevation: mesh gradient background layer */}
+          <div className="mesh-gradient" aria-hidden="true" />
+
+          {/* CSS-only floating particles */}
+          <div className="particles" aria-hidden="true">
+            <span className="particle" style={{ '--x': '10%', '--speed': '22s', '--delay': '0s', '--drift': '15px' } as React.CSSProperties} />
+            <span className="particle" style={{ '--x': '25%', '--speed': '18s', '--delay': '3s', '--drift': '-20px' } as React.CSSProperties} />
+            <span className="particle" style={{ '--x': '40%', '--speed': '25s', '--delay': '7s', '--drift': '25px' } as React.CSSProperties} />
+            <span className="particle" style={{ '--x': '55%', '--speed': '20s', '--delay': '2s', '--drift': '-15px' } as React.CSSProperties} />
+            <span className="particle" style={{ '--x': '70%', '--speed': '23s', '--delay': '5s', '--drift': '10px' } as React.CSSProperties} />
+            <span className="particle" style={{ '--x': '85%', '--speed': '19s', '--delay': '8s', '--drift': '-25px' } as React.CSSProperties} />
+            <span className="particle" style={{ '--x': '15%', '--speed': '26s', '--delay': '4s', '--drift': '20px' } as React.CSSProperties} />
+            <span className="particle" style={{ '--x': '60%', '--speed': '21s', '--delay': '6s', '--drift': '-10px' } as React.CSSProperties} />
+          </div>
+
+          {/* Ambient floating orbs */}
           <ParallaxOrbs />
 
           <Navigation />
@@ -150,6 +165,9 @@ export default function RootLayout({
           </main>
 
           <SiteFooter />
+
+          {/* Grain overlay - analog texture */}
+          <div className="grain-overlay" aria-hidden="true" />
 
           {/* Subtle gradient fade at bottom */}
           <div className="fixed bottom-0 left-0 right-0 h-20 pointer-events-none gradient-fade-up md:hidden" />

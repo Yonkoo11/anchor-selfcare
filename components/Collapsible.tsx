@@ -39,6 +39,7 @@ export function Collapsible({ title, defaultOpen = false, icon, children, varian
       border-y border-r border-stone-200/50 dark:border-night-600/50
       shadow-sm hover:shadow-md
       transition-shadow duration-200
+      card-gradient-border
     `,
     glass: `
       relative overflow-hidden
@@ -116,7 +117,7 @@ export function Collapsible({ title, defaultOpen = false, icon, children, varian
           transition-all duration-slow
           group-hover:bg-stone-100 dark:group-hover:bg-night-600
           group-hover:scale-110
-          ${isOpen ? 'rotate-180 bg-sage-muted dark:bg-sage-muted-dark text-sage' : ''}
+          ${isOpen ? 'rotate-180 scale-105 bg-sage-muted dark:bg-sage-muted-dark text-sage' : ''}
         `}
         style={{ transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }}
         >

@@ -14,7 +14,7 @@ export default function Movement() {
       {/* ═══════════════════════════════════════════════════════════════════════
           PART 1: BODY MECHANICS
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="mb-12">
+      <section className="mb-14">
         <div className="mb-6">
           <h2 className="font-serif text-xl sm:text-2xl font-semibold text-bark dark:text-parchment mb-1">
             Body Mechanics
@@ -168,9 +168,9 @@ export default function Movement() {
       {/* ═══════════════════════════════════════════════════════════════════════
           PART 2: TRAINING
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="mb-8">
+      <section className="mb-8 section-mood-sage rounded-xl py-8 px-6 -mx-6">
         <div className="mb-6">
-          <div className="h-px mb-8 bg-stone-200/50 dark:bg-night-600/50" />
+          <div className="divider-gradient mb-8" />
           <h2 className="font-serif text-xl sm:text-2xl font-semibold text-bark dark:text-parchment mb-1">
             Training
           </h2>

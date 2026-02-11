@@ -63,7 +63,7 @@ export default function Crisis() {
       </section>
 
       {/* Permission */}
-      <section className="mb-10 reveal-on-scroll">
+      <section className="mb-10 reveal-on-scroll section-mood-warm rounded-xl py-8 px-6 -mx-6">
         <div className="card-glass p-6 border-l-[3px] border-l-sage bg-sage/5">
           <p className="text-bark dark:text-parchment font-medium mb-2">Remember:</p>
           <ul className="space-y-2 text-clay dark:text-ash">

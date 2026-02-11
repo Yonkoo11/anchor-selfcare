@@ -54,8 +54,9 @@ export default function Template({ children }: TemplateProps) {
       className="page-transition"
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'none' : 'translateY(16px) scale(0.998)',
-        transition: 'opacity 500ms cubic-bezier(0.22, 1, 0.36, 1), transform 500ms cubic-bezier(0.22, 1, 0.36, 1)',
+        transform: isVisible ? 'none' : 'translateY(24px)',
+        filter: isVisible ? 'blur(0px)' : 'blur(2px)',
+        transition: 'opacity 600ms cubic-bezier(0.22, 1, 0.36, 1), transform 600ms cubic-bezier(0.22, 1, 0.36, 1), filter 600ms cubic-bezier(0.22, 1, 0.36, 1)',
       }}
     >
       {children}

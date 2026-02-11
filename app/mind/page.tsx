@@ -12,7 +12,7 @@ export default function Mind() {
       <ContentDisclaimer className="mb-8" />
 
       {/* Why This Works - Nervous System Basics */}
-      <section className="mb-8">
+      <section className="mb-12 section-mood-sage rounded-xl py-8 px-6 -mx-6">
         <div className="card-glass p-6 border-l-[3px] border-l-sage">
           <h2 className="font-medium text-bark dark:text-parchment mb-3">Your nervous system has two modes</h2>
           <p className="text-clay dark:text-ash mb-4">
@@ -37,7 +37,7 @@ export default function Mind() {
       </section>
 
       {/* Interactive Breathing Timer */}
-      <section className="mb-12">
+      <section className="mb-14">
         <h2 className="heading-section mb-5">Guided Breathing</h2>
         <BreathingTimer />
         <p className="text-center text-sm text-dust dark:text-coal mt-4 italic">
@@ -159,7 +159,7 @@ export default function Mind() {
       </section>
 
       {/* Crisis Resources - Gentle and Non-judgmental */}
-      <section className="mt-12 reveal-on-scroll">
+      <section className="mt-14 reveal-on-scroll section-mood-warm rounded-xl py-8 px-6 -mx-6">
         <div className="card-glass p-6 border-l-[3px] border-l-sage">
           <div className="flex items-start gap-4">
             <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-sage-muted dark:bg-sage-muted-dark text-sage">

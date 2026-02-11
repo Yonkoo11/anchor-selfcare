@@ -98,7 +98,7 @@ export function Navigation() {
 
       {/* Desktop Navigation - Editorial Style */}
       <nav aria-label="Main navigation" className="hidden md:block sticky top-0 z-50">
-        <div className="bg-cream/95 dark:bg-night-900/95 backdrop-blur-md border-b border-stone-200/60 dark:border-night-700/60">
+        <div className="bg-cream/90 dark:bg-night-900/90 backdrop-blur-xl border-b border-stone-200/60 dark:border-night-700/60">
           <div className="w-full px-8 lg:px-12">
             <div className="flex items-center justify-between h-16">
               {/* Wordmark - Editorial Typography */}
@@ -106,7 +106,7 @@ export function Navigation() {
                 href="/"
                 className="group flex items-baseline gap-1.5 transition-opacity duration-200 hover:opacity-70"
               >
-                <span className="font-bold text-xl tracking-wider text-bark dark:text-parchment">
+                <span className="font-bold text-xl tracking-wider text-bark dark:text-parchment transition-colors duration-200 group-hover:text-sage">
                   ANCHOR
                 </span>
               </Link>
@@ -132,7 +132,7 @@ export function Navigation() {
                       >
                         {item.label}
                         {isActive && (
-                          <span className="absolute bottom-1 left-3.5 right-3.5 h-px bg-sage" />
+                          <span className="absolute bottom-1.5 left-3 right-3 h-[3px] rounded-full bg-gradient-to-r from-sage/60 via-sage to-sage/60" />
                         )}
                       </Link>
                     )
@@ -152,7 +152,7 @@ export function Navigation() {
 
       {/* Mobile Navigation - Clean Bottom Bar */}
       <nav aria-label="Main navigation" className="md:hidden fixed bottom-0 left-0 right-0 z-50 safe-area-bottom">
-        <div className="bg-cream/95 dark:bg-night-900/95 backdrop-blur-md border-t border-stone-200/60 dark:border-night-700/60">
+        <div className="bg-cream/90 dark:bg-night-900/90 backdrop-blur-xl border-t border-stone-200/60 dark:border-night-700/60">
           <div className="flex justify-around py-2 px-1">
             {/* Home link for mobile */}
             <Link

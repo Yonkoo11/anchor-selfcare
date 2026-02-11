@@ -85,6 +85,14 @@
 - All animations respect `prefers-reduced-motion`
 - Alternative instant states provided
 
+## Design Elevation Reference (Feb 2026)
+- Full techniques catalog in `ai/design-reference.md`
+- Approach: Abstract/Linear/Vercel tier polish, pure CSS, no new deps
+- 5 visual layers: mesh gradient bg -> parallax orbs -> particles -> content -> grain overlay
+- Key CSS additions: mesh-gradient, grain-overlay, text-gradient-animate, card-gradient-border, section-mood-*, particles, dot-grid, hero-word entrance, divider-gradient
+- Spring easings: `cubic-bezier(0.34, 1.56, 0.64, 1)` interactive, `cubic-bezier(0.22, 1, 0.36, 1)` page transitions
+- All animations GPU-composited (transform/opacity/filter), reduced-motion safe
+
 ## Reflections
 
 ### What Worked

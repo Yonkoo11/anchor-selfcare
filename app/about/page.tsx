@@ -29,7 +29,7 @@ export default function About() {
       </section>
 
       {/* What We Do Not Do */}
-      <section className="mb-12 reveal-on-scroll">
+      <section className="mb-12 reveal-on-scroll section-mood-sage rounded-xl py-8 px-6 -mx-6">
         <h2 className="heading-section mb-5">What We Don't Do</h2>
         <div className="card-glass p-6">
           <ul className="space-y-3 text-clay dark:text-ash">
@@ -81,7 +81,7 @@ export default function About() {
       </section>
 
       {/* Privacy */}
-      <section className="mb-12 reveal-on-scroll">
+      <section className="mb-12 reveal-on-scroll section-mood-warm rounded-xl py-8 px-6 -mx-6">
         <h2 className="heading-section mb-5">Privacy</h2>
         <div className="card-glass p-6 border-l-[3px] border-l-sage">
           <p className="text-clay dark:text-ash mb-4">
@@ -96,7 +96,7 @@ export default function About() {
       </section>
 
       {/* Inspiration */}
-      <section className="mb-12 reveal-on-scroll">
+      <section className="mb-12 reveal-on-scroll section-mood-deep rounded-xl py-8 px-6 -mx-6">
         <h2 className="heading-section mb-5">Inspired By</h2>
         <p className="text-clay dark:text-ash mb-4">
           The content here draws from evidence-based techniques:

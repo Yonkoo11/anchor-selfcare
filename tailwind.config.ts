@@ -88,6 +88,9 @@ const config: Config = {
         '4xl': ['36px', { lineHeight: '1.2' }],
         '5xl': ['48px', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
         '6xl': ['60px', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        '7xl': ['72px', { lineHeight: '1.05', letterSpacing: '-0.03em' }],
+        '8xl': ['96px', { lineHeight: '1.0', letterSpacing: '-0.03em' }],
+        '9xl': ['128px', { lineHeight: '0.95', letterSpacing: '-0.04em' }],
       },
       letterSpacing: {
         tighter: '-0.02em',
@@ -158,6 +161,8 @@ const config: Config = {
         'ease-out-soft': 'cubic-bezier(0, 0, 0.2, 1)',
         'ease-in-soft': 'cubic-bezier(0.4, 0, 1, 1)',
         'bounce-gentle': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'spring-soft': 'cubic-bezier(0.22, 1, 0.36, 1)',
       },
       keyframes: {
         'fade-in': {
@@ -201,6 +206,31 @@ const config: Config = {
           '0%, 100%': { opacity: '0.4' },
           '50%': { opacity: '0.7' },
         },
+        // Design elevation keyframes
+        'mesh-shift': {
+          '0%, 100%': { backgroundPosition: '0% 50%, 100% 50%, 50% 0%' },
+          '25%': { backgroundPosition: '100% 0%, 0% 100%, 50% 50%' },
+          '50%': { backgroundPosition: '50% 100%, 50% 0%, 0% 50%' },
+          '75%': { backgroundPosition: '0% 0%, 100% 100%, 100% 50%' },
+        },
+        'gradient-text': {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        'particle-drift': {
+          '0%': { transform: 'translateY(100vh) translateX(0)', opacity: '0' },
+          '10%': { opacity: '1' },
+          '90%': { opacity: '1' },
+          '100%': { transform: 'translateY(-10vh) translateX(20px)', opacity: '0' },
+        },
+        'dot-pulse': {
+          '0%, 100%': { opacity: '0.3' },
+          '50%': { opacity: '0.6' },
+        },
+        'hero-word-enter': {
+          '0%': { opacity: '0', transform: 'translateY(40px) rotateX(-20deg)', filter: 'blur(4px)' },
+          '100%': { opacity: '1', transform: 'translateY(0) rotateX(0)', filter: 'blur(0)' },
+        },
         // Toggle animation
         'toggle-on': {
           '0%': { transform: 'translateX(0)' },
@@ -222,6 +252,11 @@ const config: Config = {
         'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
         'shimmer': 'shimmer 3s ease-in-out infinite',
         'pulse-soft': 'pulse-soft 4s ease-in-out infinite',
+        'mesh-shift': 'mesh-shift 25s ease-in-out infinite',
+        'gradient-text': 'gradient-text 6s ease-in-out infinite',
+        'particle-drift': 'particle-drift 20s linear infinite',
+        'dot-pulse': 'dot-pulse 8s ease-in-out infinite',
+        'hero-word-enter': 'hero-word-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards',
       },
 
       // ═══════════════════════════════════════════════════════════════════════
