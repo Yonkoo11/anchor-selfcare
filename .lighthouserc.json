@@ -1,0 +1,18 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "./out",
+      "settings": {
+        "onlyCategories": ["accessibility"],
+        "formFactor": "desktop",
+        "screenEmulation": { "disabled": true }
+      }
+    },
+    "assert": {
+      "assertions": {
+        "categories:accessibility": ["warn", { "minScore": 0.9 }],
+        "color-contrast": "error"
+      }
+    }
+  }
+}

@@ -27,6 +27,18 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Accessibility audit (contrast, ARIA, readability)
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            http://localhost:8080/anchor-selfcare/
+            http://localhost:8080/anchor-selfcare/baseline
+            http://localhost:8080/anchor-selfcare/mind
+            http://localhost:8080/anchor-selfcare/crisis
+          uploadArtifacts: true
+          configPath: .lighthouserc.json
+        continue-on-error: true
+
       - name: Copy 404.html for SPA routing
         run: cp out/index.html out/404.html 2>/dev/null || true
 
