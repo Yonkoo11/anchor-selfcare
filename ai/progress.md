@@ -2,41 +2,49 @@
 
 ## Last Session Summary
 - **Date:** 2026-02-11
-- **What was done:** Full Design Elevation (Phases 0-9) - COMPLETE
+- **What was done:** Phase 2: Exquisite Motion Design - COMPLETE
 
-### Design Elevation Status - ALL PHASES DONE
+### Phase 2 Status - ALL STEPS DONE
 
-| Phase | Status | Description |
-|-------|--------|-------------|
-| 0 | DONE | Design knowledge saved to ai/design-reference.md, ai/memory.md |
-| 1 | DONE | CSS Foundation: ~250 lines added to globals.css, new keyframes/animations/font sizes in tailwind.config.ts |
-| 2 | DONE | Layout Shell: mesh-gradient, 8 CSS particles, grain-overlay, vignette in layout.tsx |
-| 3 | DONE | ParallaxOrbs: 6 orbs (sage, terracotta, moss, cream) with higher blur values |
-| 4 | DONE | PageHeader: responsive sizing (text-3xl to text-5xl), dot-grid background, gradient accent line |
-| 5 | DONE | Navigation: backdrop-blur-xl, 90% opacity, gradient pill active indicator, logo hover |
-| 6 | DONE | Page Transition: blur(2px) hidden state, spring-soft easing at 600ms |
-| 7 | DONE | Collapsible: card-gradient-border on featured variant, spring chevron |
-| 8 | DONE | Homepage Hero: immersive full-viewport, hero-word animation, text-gradient-animate, section-mood-sage/deep, card-gradient-border on GuideCard/QuickBreath, btn-gradient-border, divider-gradient, spring easing CTAs |
-| 9 | DONE | Subpages: mind has section-mood-sage, about has section-mood-sage, movement has divider-gradient. Collapsible-based pages (baseline, when-off) don't have section breaks for mood backgrounds. |
+| Step | Status | Description |
+|------|--------|-------------|
+| 1 | DONE | useScrollProgress hook (hooks/useScrollProgress.ts) + ScrollProgress component (components/ScrollProgress.tsx) |
+| 2 | DONE | Scroll-progress CSS utilities (.scroll-fade, .scroll-hero-shrink, .scroll-slide-left) + hero shrink applied |
+| 3 | DONE | Upgraded template.tsx: velocity blur tracking via rAF, --scroll-blur CSS var |
+| 4 | DONE | CSS scroll-timeline @supports for Chrome 115+ (zero JS progressive enhancement) |
+| 5 | DONE | Mouse parallax on ParallaxOrbs: lerp 0.08 factor, 5-14px depth per orb, skip touch/reduced-motion |
+| 6 | DONE | Stagger choreography: stagger-natural (accelerating gaps), stagger-center-out (--stagger-index), ScrollReveal.tsx staggerPattern prop |
+| 7 | DONE | Scroll-velocity blur: max 2px on fast scroll, 200ms ease-out resolve |
+| 8 | DONE | Animated gradient dividers (.divider-gradient-animate), breathing text (.text-breathe on final CTA) |
+| 9 | DONE | view-transition-name on nav/main (@supports progressive enhancement) |
+| 10 | DONE | Reduced motion audit: all new CSS + JS features respect prefers-reduced-motion |
 
-### Key CSS Classes Added
-- mesh-gradient, grain-overlay, text-gradient-animate
-- card-gradient-border, card-inner-glow
-- divider-gradient, section-mood-sage/warm/deep
-- particles/particle, btn-gradient-border
-- dot-grid, section-number, vignette
-- hero-word, floating-orb-moss, floating-orb-cream
+### Files Modified/Created
+- NEW `hooks/useScrollProgress.ts` - Scroll progress hook (0-1 range, rAF throttled)
+- NEW `components/ScrollProgress.tsx` - Sets --sp CSS custom property on wrapper
+- `components/index.ts` - Added ScrollProgress export
+- `components/ParallaxOrbs.tsx` - Added lerp-based mouse parallax (underwater drift)
+- `components/ScrollReveal.tsx` - Added staggerPattern prop (sequential/center-out/cascade)
+- `app/template.tsx` - Added velocity blur tracking, --scroll-blur CSS var
+- `app/globals.css` - ~90 lines: scroll utilities, stagger patterns, velocity blur, breathing text, view-transition-name, reduced motion overrides
+- `app/page.tsx` - Hero wrapped in ScrollProgress with scroll-hero-shrink, stagger-natural on pathway cards + manifesto grid, text-breathe on final CTA
 
 ### Build Status
 - `npm run build` passes, all 13 pages generated
-- Fixed: hero-word spacing (margin-right: 0.25em)
-- Phase 9 subpages: mind (sage+warm), movement (sage), about (sage+warm+deep), crisis (warm)
-- Dark mode verified: warm firelight aesthetic working
+- Light + dark mode verified visually
+- Zero new dependencies added
+
+## Phase 1 (Design Elevation) - Previously Completed
+- Phases 0-9 all done
+- Key classes: mesh-gradient, grain-overlay, text-gradient-animate, card-gradient-border, section-mood-*, particles, hero-word
 
 ## What Needs to Happen Next
-1. **Deploy to GitHub Pages** - push latest build
-2. **Mobile viewport check** - 375px width screenshots
-4. **Consider v2 knowledge base** - AI-powered health search (see user vision below)
+- Deploy Phase 2 to GitHub Pages (commit + push)
+- Consider Phase 3 ideas:
+  - Micro-interactions on hover states (subtle scale + shadow depth)
+  - Sound design (optional ambient audio toggle)
+  - Seasonal theming (spring/summer/autumn/winter palette shifts)
+- **v2 Knowledge Base** - AI-powered health search (see user vision below)
 
 ## User Vision: Anchor v2 - Health Knowledge Base
 Transform from static self-care guide into an **interactive health knowledge base**:

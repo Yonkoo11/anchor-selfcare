@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { ScrollProgress } from '@/components'
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // WORLD-CLASS LANDING PAGE
@@ -15,10 +16,10 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════════
           HERO SECTION - Immersive Full-Viewport Experience
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-[85vh] flex items-center -mx-6 px-6">
+      <ScrollProgress start={0} end={0.5} className="relative min-h-[85vh] flex items-center -mx-6 px-6">
         <div className="hero-breathe" aria-hidden="true" />
 
-        <div className="hero-entrance relative z-20 max-w-4xl mx-auto py-16 md:py-24">
+        <div className="hero-entrance relative z-20 max-w-4xl mx-auto py-16 md:py-24 scroll-hero-shrink">
           {/* Badge */}
           <div className="mb-8">
             <span className="
@@ -118,7 +119,7 @@ export default function Home() {
             </span>
           </div>
         </div>
-      </section>
+      </ScrollProgress>
 
       {/* Gradient Divider */}
       <div className="divider-gradient" />
@@ -140,7 +141,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3 stagger-natural">
           {/* I'm doing okay */}
           <Link
             href="/baseline"
@@ -267,7 +268,7 @@ export default function Home() {
             This is not a wellness app.
           </h2>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 stagger-natural">
             {[
               { icon: '×', text: 'No habit tracking', sub: 'Your worth isn\'t measured in streaks' },
               { icon: '×', text: 'No gamification', sub: 'Self-care isn\'t a competition' },
@@ -435,6 +436,7 @@ export default function Home() {
           leading-snug
           max-w-2xl mx-auto
           mb-8
+          text-breathe
         ">
           "The goal isn't to be productive."<br />
           <span className="text-sage">"The goal is to still be here tomorrow."</span>

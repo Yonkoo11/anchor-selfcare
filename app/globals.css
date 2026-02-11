@@ -897,6 +897,110 @@
   transform: none;
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   SCROLL PROGRESS UTILITIES
+   Continuous 0-1 animations driven by var(--sp) from ScrollProgress component
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Fade + rise proportional to scroll progress */
+.scroll-fade {
+  opacity: var(--sp, 0);
+  transform: translateY(calc((1 - var(--sp, 0)) * 24px));
+}
+
+/* Hero heading shrinks and fades as user scrolls away */
+.scroll-hero-shrink {
+  --shrink: calc(1 - var(--sp, 0));
+  opacity: var(--shrink);
+  transform: scale(calc(0.85 + var(--shrink) * 0.15)) translateY(calc(var(--sp, 0) * -30px));
+  will-change: transform, opacity;
+}
+
+/* Section headings slide in from left */
+.scroll-slide-left {
+  opacity: var(--sp, 0);
+  transform: translateX(calc((1 - var(--sp, 0)) * -30px));
+}
+
+/* CSS Scroll-Driven Animations (Chrome 115+) - zero JS progressive enhancement */
+@supports (animation-timeline: scroll()) {
+  @keyframes scroll-fade-in {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .scroll-fade-native {
+    animation: scroll-fade-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+}
+
+/* Stagger pattern: natural accelerating gaps */
+.stagger-natural > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stagger-natural.revealed > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-natural.revealed > *:nth-child(2) { transition-delay: 120ms; }
+.stagger-natural.revealed > *:nth-child(3) { transition-delay: 210ms; }
+.stagger-natural.revealed > *:nth-child(4) { transition-delay: 280ms; }
+.stagger-natural.revealed > *:nth-child(5) { transition-delay: 340ms; }
+.stagger-natural.revealed > *:nth-child(6) { transition-delay: 390ms; }
+
+.stagger-natural.revealed > * {
+  opacity: 1;
+  transform: none;
+}
+
+/* Center-out stagger: middle element animates first */
+.stagger-center-out > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--stagger-index, 0) * 100ms);
+}
+
+.stagger-center-out.revealed > * {
+  opacity: 1;
+  transform: none;
+}
+
+/* Scroll-velocity blur: applied to page content on fast scroll */
+.velocity-blur {
+  filter: blur(var(--scroll-blur, 0px));
+  transition: filter 200ms ease-out;
+}
+
+/* Animated gradient divider: gradient position tracks scroll */
+.divider-gradient-animate {
+  background: linear-gradient(90deg, transparent, var(--tw-gradient-from, #7D8B7A) 50%, transparent);
+  background-size: 200% 100%;
+  background-position: calc((1 - var(--sp, 0.5)) * 100%) 0;
+  height: 1px;
+  transition: background-position 50ms linear;
+}
+
+/* Breathing text: barely perceptible pulse */
+.text-breathe {
+  animation: text-breathe 6s ease-in-out infinite;
+}
+
+@keyframes text-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.008); }
+}
+
+/* View Transitions - progressive enhancement */
+@supports (view-transition-name: auto) {
+  nav { view-transition-name: navigation; }
+  main { view-transition-name: main-content; }
+}
+
 /* Hero entrance - plays on page load */
 .hero-entrance {
   animation: hero-enter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -1296,6 +1400,29 @@
   .reveal-on-scroll .stagger-children > * {
     opacity: 1 !important;
     transform: none !important;
+    animation: none !important;
+  }
+
+  /* Scroll progress: show everything at full, no motion */
+  .scroll-fade,
+  .scroll-hero-shrink,
+  .scroll-slide-left {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .stagger-natural > *,
+  .stagger-center-out > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .velocity-blur {
+    filter: none !important;
+  }
+
+  .text-breathe {
     animation: none !important;
   }
 

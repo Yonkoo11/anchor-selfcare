@@ -1,7 +1,9 @@
 'use client'
 
-import { ReactNode } from 'react'
+import { ReactNode, Children } from 'react'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
+
+type StaggerPattern = 'sequential' | 'center-out' | 'cascade'
 
 interface ScrollRevealProps {
   children: ReactNode
@@ -12,6 +14,12 @@ interface ScrollRevealProps {
   distance?: number
   stagger?: boolean
   staggerDelay?: number
+  staggerPattern?: StaggerPattern
+}
+
+function getCenterOutIndex(i: number, total: number): number {
+  const center = (total - 1) / 2
+  return Math.abs(i - center)
 }
 
 export function ScrollReveal({
@@ -23,6 +31,7 @@ export function ScrollReveal({
   distance = 30,
   stagger = false,
   staggerDelay = 80,
+  staggerPattern = 'sequential',
 }: ScrollRevealProps) {
   const { ref, isVisible } = useScrollReveal()
 
@@ -45,10 +54,38 @@ export function ScrollReveal({
   }
 
   if (stagger) {
+    // Determine CSS class based on pattern
+    const patternClass = staggerPattern === 'center-out'
+      ? 'stagger-center-out'
+      : staggerPattern === 'cascade'
+        ? 'stagger-natural'
+        : 'stagger-natural'
+
+    // For center-out, compute --stagger-index per child
+    if (staggerPattern === 'center-out') {
+      const childArray = Children.toArray(children)
+      const total = childArray.length
+      return (
+        <div
+          ref={ref}
+          className={`${patternClass} ${isVisible ? 'revealed' : ''} ${className}`}
+        >
+          {childArray.map((child, i) => (
+            <div
+              key={i}
+              style={{ '--stagger-index': getCenterOutIndex(i, total) } as React.CSSProperties}
+            >
+              {child}
+            </div>
+          ))}
+        </div>
+      )
+    }
+
     return (
       <div
         ref={ref}
-        className={`reveal-stagger ${isVisible ? 'visible' : ''} ${className}`}
+        className={`${patternClass} ${isVisible ? 'revealed' : ''} ${className}`}
         style={{ '--stagger-delay': `${staggerDelay}ms` } as React.CSSProperties}
       >
         {children}
