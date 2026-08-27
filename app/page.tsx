@@ -527,6 +527,9 @@ export default function Home() {
             <Link href="/quick-reference" className="hover:text-bark dark:hover:text-parchment transition-colors">
               Quick Reference
             </Link>
+            <Link href="/token" className="hover:text-bark dark:hover:text-parchment transition-colors">
+              The Coin
+            </Link>
           </div>
         </div>
       </footer>

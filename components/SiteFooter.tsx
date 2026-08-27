@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { FeatureInterestForm } from './FeatureInterestForm'
 
 export function SiteFooter() {
@@ -78,6 +79,10 @@ export function SiteFooter() {
           {/* Right side - Credits */}
           <div className="flex items-center gap-4">
             <span className="hidden sm:inline">No tracking. No accounts. Just help.</span>
+            <span className="text-stone-300 dark:text-night-600">|</span>
+            <Link href="/token" className="hover:text-bark dark:hover:text-parchment transition-colors duration-fast">
+              The coin
+            </Link>
             <span className="text-stone-300 dark:text-night-600">|</span>
             <span>Made with calm intention</span>
           </div>

@@ -41,3 +41,12 @@ coverage/
 *.log
 .vercel
 .env*.local
+
+# Demo video working files (large media)
+demo-video/
+
+# Local working docs (not for the public repo)
+TOKEN-LAUNCH.md
+ai/design-audit.md
+ai/design-progress.md
+proposals/

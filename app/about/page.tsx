@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { PageHeader, Footer, FeedbackForm } from '@/components'
 
 const faqSchema = {
@@ -18,6 +19,11 @@ const faqSchema = {
       '@type': 'Question',
       name: 'Is ANCHOR free?',
       acceptedAnswer: { '@type': 'Answer', text: 'Yes. ANCHOR is completely free and open-source. There are no premium tiers, ads, or hidden costs.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is ANCHOR a crypto project?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. ANCHOR is a free self-care guide. A memecoin using the ANCHOR name was launched on letscash.fun, but the guide never requires a wallet, never locks content behind a token, and never asks you to buy anything. Details are on the Coin page.' },
     },
     {
       '@type': 'Question',
@@ -120,6 +126,33 @@ export default function About() {
             If you save favorites or preferences, they stay on your device in local storage.
             Clear your browser data and they're gone. We never see them.
           </p>
+        </div>
+      </section>
+
+      {/* The Coin */}
+      <section className="mb-12 reveal-on-scroll">
+        <h2 className="heading-section mb-5">About the Coin</h2>
+        <div className="card-glass p-6">
+          <p className="text-clay dark:text-ash mb-4">
+            There is a memecoin using the ANCHOR name, launched on letscash.fun.
+            The guide stays free, nothing here connects to a wallet, and no page is locked
+            behind holding anything.
+          </p>
+          <Link
+            href="/token"
+            className="
+              inline-flex items-center gap-2
+              text-sm font-medium
+              text-sage hover:text-sage-dark
+              transition-colors duration-fast
+              group
+            "
+          >
+            <span>Read the full explanation</span>
+            <svg className="w-4 h-4 transition-transform duration-fast group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </section>
 
