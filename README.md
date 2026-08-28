@@ -4,6 +4,8 @@ A self-care guide for people who are too tired to be optimized.
 
 Live site: https://yonkoo11.github.io/anchor-selfcare/
 
+![The ANCHOR home page](docs/hero.jpg)
+
 One shower is enough. One glass of water is enough. That is the whole idea.
 
 ## What it is
