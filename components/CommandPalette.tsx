@@ -13,6 +13,7 @@ const MAX_RESULTS = 8
 
 // Category quick filters shown when query is empty
 const categories = [
+  { label: 'Sixty Seconds', href: '/sixty-seconds', icon: '○' },
   { label: 'Daily Baseline', href: '/baseline', icon: '○' },
   { label: 'Quick Reset', href: '/when-off', icon: '○' },
   { label: 'Mind & Calm', href: '/mind', icon: '○' },

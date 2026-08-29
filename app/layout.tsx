@@ -49,12 +49,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
-      { url: '/favicon-32x32.svg', sizes: '32x32', type: 'image/svg+xml' },
-      { url: '/favicon-16x16.svg', sizes: '16x16', type: 'image/svg+xml' },
+      { url: '/anchor-selfcare/icon.svg', type: 'image/svg+xml' },
+      { url: '/anchor-selfcare/favicon-32x32.svg', sizes: '32x32', type: 'image/svg+xml' },
+      { url: '/anchor-selfcare/favicon-16x16.svg', sizes: '16x16', type: 'image/svg+xml' },
     ],
-    shortcut: '/icon.svg',
-    apple: '/apple-touch-icon.png',
+    shortcut: '/anchor-selfcare/icon.svg',
+    apple: '/anchor-selfcare/apple-touch-icon.png',
   },
   openGraph: {
     type: 'website',

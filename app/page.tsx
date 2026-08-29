@@ -96,6 +96,25 @@ export default function Home() {
             </Link>
 
             <Link
+              href="/sixty-seconds"
+              className="
+                group
+                inline-flex items-center gap-2
+                px-6 py-3.5
+                text-sage hover:text-sage-dark
+                bg-sage-muted/60 hover:bg-sage-muted
+                dark:bg-sage-muted-dark/60 dark:hover:bg-sage-muted-dark
+                font-medium
+                rounded-lg
+                active:scale-[0.97]
+                transition-all duration-slow ease-spring
+              "
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-sage animate-pulse" aria-hidden="true" />
+              I have sixty seconds
+            </Link>
+
+            <Link
               href="/quick-reference"
               className="
                 inline-flex items-center gap-2
@@ -526,6 +545,9 @@ export default function Home() {
             </Link>
             <Link href="/quick-reference" className="hover:text-bark dark:hover:text-parchment transition-colors">
               Quick Reference
+            </Link>
+            <Link href="/sixty-seconds" className="hover:text-bark dark:hover:text-parchment transition-colors">
+              Sixty Seconds
             </Link>
             <Link href="/token" className="hover:text-bark dark:hover:text-parchment transition-colors">
               The Coin
