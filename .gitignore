@@ -55,3 +55,6 @@ proposals/
 
 # Internal working notes: never published
 ai/
+
+# Launch automation scratch (watchers, flags, logs)
+.launch/
