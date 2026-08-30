@@ -32,6 +32,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://anchorselfcare.app'),
+  alternates: { canonical: './' },
   title: {
     default: 'ANCHOR',
     template: '%s | ANCHOR',
