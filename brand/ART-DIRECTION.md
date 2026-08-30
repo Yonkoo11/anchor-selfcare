@@ -7,14 +7,17 @@ anyone draws, and it imports sailing, boats and navy baggage into a product abou
 tired to shower. It also collides with every "anchor" brand already on the internet: zero
 ownability. Forbidden.
 
-## Signature element
+## Signature element (revised after five rounds — see README for what was tested)
 
-**Drift coming to rest.** One continuous stroke that begins as a wavering line and resolves
-into stillness at a single solid point. Input (drift) → process (the settling curve) →
-resolved output (rest), as one object, not three icons in a tray.
+**A barbless anchor with inverted proportions.** Solid head, a *short* crossbar, and a wide,
+shallow, open cradle. Round caps throughout, no spiked flukes, no shackle ring.
 
-This encodes the core verb literally: the mark *is* the act of steadying. It also encodes
-sufficiency, because what stops the drift is one small point, not a large apparatus.
+The original spec here called for "drift coming to rest" as an abstract transformation. Two
+rounds of vector abstractions and two rounds on the image model killed that idea on evidence,
+not taste: every abstract form collided with a glyph that already means something else. The
+concept survives in the *proportions* instead. A stock anchor has a crossbar roughly as wide as
+its flukes. This one is narrow at the shoulders and wide at the base: small at the top, holding
+at the bottom, which is the product's argument in one shape.
 
 ## Material language
 

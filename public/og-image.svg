@@ -22,7 +22,7 @@
   <circle cx="600" cy="180" r="45" fill="#7D8B7A"/>
   <g transform="translate(600,180) scale(0.145) translate(-256,-262)">
     <g fill="none" stroke="#FAF8F5" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M256 168 L256 412"/><path d="M162 216 L350 216"/>
+      <path d="M256 168 L256 412"/><path d="M196 216 L316 216"/>
       <path d="M124 332 C124 392 180 414 256 414 C332 414 388 392 388 332"/>
     </g><circle cx="256" cy="128" r="42" fill="#FAF8F5"/>
   </g>
