@@ -31,10 +31,10 @@ jobs:
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: |
-            http://localhost:8080/anchor-selfcare/
-            http://localhost:8080/anchor-selfcare/baseline
-            http://localhost:8080/anchor-selfcare/mind
-            http://localhost:8080/anchor-selfcare/crisis
+            http://localhost:8080/
+            http://localhost:8080/baseline
+            http://localhost:8080/mind
+            http://localhost:8080/crisis
           uploadArtifacts: true
           configPath: .lighthouserc.json
         continue-on-error: true
@@ -47,3 +47,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
+          cname: anchorselfcare.app

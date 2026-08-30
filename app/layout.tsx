@@ -31,7 +31,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://yonkoo11.github.io/anchor-selfcare'),
+  metadataBase: new URL('https://anchorselfcare.app'),
   title: {
     default: 'ANCHOR',
     template: '%s | ANCHOR',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'ANCHOR' }],
   creator: 'ANCHOR',
   publisher: 'ANCHOR',
-  manifest: '/anchor-selfcare/manifest.json',
+  manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -49,12 +49,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/anchor-selfcare/icon.svg', type: 'image/svg+xml' },
-      { url: '/anchor-selfcare/favicon-32x32.svg', sizes: '32x32', type: 'image/svg+xml' },
-      { url: '/anchor-selfcare/favicon-16x16.svg', sizes: '16x16', type: 'image/svg+xml' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.svg', sizes: '32x32', type: 'image/svg+xml' },
+      { url: '/favicon-16x16.svg', sizes: '16x16', type: 'image/svg+xml' },
     ],
-    shortcut: '/anchor-selfcare/icon.svg',
-    apple: '/anchor-selfcare/apple-touch-icon.png',
+    shortcut: '/icon.svg',
+    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     type: 'website',
@@ -110,7 +110,7 @@ const themeScript = `
 const swScript = `
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/anchor-selfcare/sw.js').catch(function(err) {
+      navigator.serviceWorker.register('/sw.js').catch(function(err) {
         console.log('SW registration failed:', err);
       });
     });
@@ -138,14 +138,14 @@ export default function RootLayout({
               {
                 '@type': 'Organization',
                 name: 'ANCHOR',
-                url: 'https://yonkoo11.github.io/anchor-selfcare',
+                url: 'https://anchorselfcare.app',
                 description: 'Something to hold onto when you\'re drifting. Simple self-care for humans who need grounding.',
-                logo: 'https://yonkoo11.github.io/anchor-selfcare/icon-512.png',
+                logo: 'https://anchorselfcare.app/icon-512.png',
               },
               {
                 '@type': 'WebSite',
                 name: 'ANCHOR',
-                url: 'https://yonkoo11.github.io/anchor-selfcare',
+                url: 'https://anchorselfcare.app',
                 description: 'Simple self-care instructions for tired humans. No accounts. No tracking. No pressure.',
               },
             ],

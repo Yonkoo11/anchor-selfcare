@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://yonkoo11.github.io/anchor-selfcare/sitemap.xml',
+    sitemap: 'https://anchorselfcare.app/sitemap.xml',
   }
 }

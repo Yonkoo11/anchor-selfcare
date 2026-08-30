@@ -2,7 +2,7 @@
 
 A self-care guide for people who are too tired to be optimized.
 
-Live site: https://yonkoo11.github.io/anchor-selfcare/
+Live site: https://anchorselfcare.app/
 
 ![The ANCHOR home page](docs/hero.jpg)
 
@@ -41,7 +41,7 @@ and no page is locked behind holding anything. It is a memecoin, not a share of 
 promise of future features. The price can go to zero. Do not use money you need for rent, food, or
 care. Copies of this token show up fast, so check the address character by character.
 
-The site explains all of this on its own page: https://yonkoo11.github.io/anchor-selfcare/token
+The site explains all of this on its own page: https://anchorselfcare.app/token
 
 ## Running it locally
 
@@ -49,7 +49,7 @@ Requires Node 20.
 
 ```bash
 npm install
-npm run dev     # http://localhost:3000/anchor-selfcare
+npm run dev     # http://localhost:3000
 npm run build   # static export into out/
 ```
 

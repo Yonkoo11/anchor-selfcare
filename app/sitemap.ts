@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://yonkoo11.github.io/anchor-selfcare'
+  const baseUrl = 'https://anchorselfcare.app'
 
   // Static pages with their priorities and update frequencies
   const routes = [
