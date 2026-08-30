@@ -1,23 +1,23 @@
 // ANCHOR Service Worker
 // Provides offline functionality for the PWA
 
-const CACHE_NAME = 'anchor-v2';
-const OFFLINE_URL = '/anchor-selfcare/';
+const CACHE_NAME = 'anchor-v3';
+const OFFLINE_URL = '/';
 
 // Assets to cache immediately on install
 const PRECACHE_ASSETS = [
-  '/anchor-selfcare/',
-  '/anchor-selfcare/crisis',
-  '/anchor-selfcare/baseline',
-  '/anchor-selfcare/when-off',
-  '/anchor-selfcare/mind',
-  '/anchor-selfcare/movement',
-  '/anchor-selfcare/quick-reference',
-  '/anchor-selfcare/about',
-  '/anchor-selfcare/manifest.json',
-  '/anchor-selfcare/icon.svg',
-  '/anchor-selfcare/icon-192.png',
-  '/anchor-selfcare/icon-512.png',
+  '/',
+  '/crisis',
+  '/baseline',
+  '/when-off',
+  '/mind',
+  '/movement',
+  '/quick-reference',
+  '/about',
+  '/manifest.json',
+  '/icon.svg',
+  '/icon-192.png',
+  '/icon-512.png',
 ];
 
 // Install event - precache essential assets
